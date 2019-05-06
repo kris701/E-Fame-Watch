@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="E_Fame_Watch.ItemDesign"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:E_Fame_Watch"
+             mc:Ignorable="d" 
+             d:DesignHeight="160" d:DesignWidth="520">
+    
+    <Grid x:Name="MainItemGrid" Background="#FF595C61" Margin="2" Height="160" Width="520" Loaded="MainItemGrid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="145"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="ItemRemoveButton" Content="X" Style="{StaticResource StandartButtonStyle}" Click="ItemRemoveButton_Click"/>
+        <Button x:Name="ItemMinimizeButton" Grid.Column="1" Content="V" Style="{StaticResource StandartButtonStyle}" Click="ItemMinimizeButton_Click"/>
+        <TextBox x:Name="ItemNameTextBox" Grid.Column="2" Grid.ColumnSpan="2" Text="Name" Style="{StaticResource StandartTextBoxStyle}"/>
+
+        <Label Grid.ColumnSpan="3" Grid.Row="1" Content="URL" HorizontalAlignment="Right" Style="{StaticResource StandartLabelStyle}"/>
+        <TextBox x:Name="ItemURLTextBox" Grid.Row="1" Grid.Column="3" Text="" Style="{StaticResource StandartTextBoxStyle}"/>
+
+        <Label Grid.ColumnSpan="3" Grid.Row="2" Content="XPath" HorizontalAlignment="Right" Style="{StaticResource StandartLabelStyle}"/>
+        <TextBox x:Name="ItemXPathTextBox" Grid.Row="2" Grid.Column="3" Text="" Style="{StaticResource StandartTextBoxStyle}"/>
+
+        <Label Grid.ColumnSpan="3" Grid.Row="3" Content="Border Color" HorizontalAlignment="Right" Style="{StaticResource StandartLabelStyle}"/>
+        <ComboBox Grid.Column="3" Grid.Row="3" x:Name="ItemBorderColorComboBox" Margin="2"/>
+
+        <Label Grid.ColumnSpan="3" Grid.Row="4" Content="Fill Color" HorizontalAlignment="Right" Style="{StaticResource StandartLabelStyle}"/>
+        <ComboBox Grid.Column="3" Grid.Row="4" x:Name="ItemFillColorComboBox" Margin="2"/>
+
+
+        <Label Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="0" Content="Statistical Data" FontSize="15" Style="{StaticResource StandartLabelStyle}"/>
+
+        <Label x:Name="ItemShareLabel" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="1" Content="Share: Loading" Style="{StaticResource StandartLabelStyle}"/>
+        <Label x:Name="ItemChangeLabel" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="2" Content="Change: Loading" Style="{StaticResource StandartLabelStyle}"/>
+        <Label x:Name="ItemAvrChangeLabel" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="3" Content="Avr Change: Loading" Style="{StaticResource StandartLabelStyle}"/>
+
+
+    </Grid>
+</UserControl>

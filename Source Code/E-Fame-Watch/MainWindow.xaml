@@ -1,0 +1,72 @@
+﻿<Window x:Class="E_Fame_Watch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:E_Fame_Watch"
+        mc:Ignorable="d"
+        Title="E-Fame Watch" Height="260" Width="520" ResizeMode="NoResize" WindowStyle="None" Icon="icon.ico">
+
+    <Border x:Name="MainBorder" BorderThickness="1" BorderBrush="DarkGray" Background="#FF36393F" Loaded="Grid_Loaded" MouseDown="Grid_MouseDown" MouseUp="Grid_MouseUp" MouseMove="Grid_MouseMove">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="165"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="130"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="GraphGrid" Grid.ColumnSpan="2" Background="#FF202225" Height="165">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="1" Content="E-Fame Graph" Style="{StaticResource StandartLabelStyle}"/>
+                <Label x:Name="GraphTopValLabel" Grid.Row="1" Content="1" FontSize="7" Style="{StaticResource StandartLabelStyle}"/>
+                <Label Grid.Row="2" Content="E-Fame" Foreground="White" FontSize="10" Style="{StaticResource StandartLabelStyle}" RenderTransformOrigin="0.5,0.5">
+                    <Label.LayoutTransform>
+                        <RotateTransform Angle="90"/>
+                    </Label.LayoutTransform>
+                </Label>
+                <Label x:Name="GraphBottomValLabel" Grid.Row="3" Content="0" FontSize="7" Style="{StaticResource StandartLabelStyle}"/>
+                <Canvas x:Name="GraphCanvas" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Background="#FF2E3134"/>
+                <Button x:Name="ExpandButton" Grid.Column="1" HorizontalAlignment="Right" Width="25" Content=">" Style="{StaticResource StandartButtonStyle}" Click="ExpandButton_Click"/>
+            </Grid>
+
+            <Label x:Name="GainedLabel" Grid.Row="1" Content="Gained: " Style="{StaticResource StandartLabelStyle}"/>
+            <Label x:Name="TotalLabel" Grid.Row="1" Grid.Column="1" Content="Total: " Style="{StaticResource StandartLabelStyle}"/>
+
+            <ComboBox x:Name="TimeFrameCombobox" Grid.Row="2" Margin="5"/>
+            <ComboBox x:Name="TimeElementsCombobox" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+            <Button x:Name="AddNewItemButton"  Grid.Row="3" Grid.ColumnSpan="2" Content="Add New Item" Height="25" Style="{StaticResource StandartButtonStyle}" Click="AddNewItemButton_Click"/>
+
+            <ScrollViewer x:Name="ItemsScrollBar" Grid.Row="4" Grid.ColumnSpan="4" VerticalScrollBarVisibility="Hidden" Height="733">
+                <StackPanel x:Name="ItemStack" >
+                    
+                </StackPanel>
+            </ScrollViewer>
+
+            <Grid x:Name="PieGraphGrid" Grid.Column="2" Grid.ColumnSpan="2" Background="#FF202225" Height="165">
+                <Canvas x:Name="PieGraphCanvas" Margin="5" Background="#FF2E3134"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

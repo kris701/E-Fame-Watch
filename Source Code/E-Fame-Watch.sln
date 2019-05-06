@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Fame-Watch", "E-Fame-Watch\E-Fame-Watch.csproj", "{78F0AE38-F362-4CC4-B09F-32FDBF4423CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78F0AE38-F362-4CC4-B09F-32FDBF4423CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78F0AE38-F362-4CC4-B09F-32FDBF4423CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78F0AE38-F362-4CC4-B09F-32FDBF4423CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78F0AE38-F362-4CC4-B09F-32FDBF4423CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B062990D-92F4-4501-BB36-84F4A0FF0366}
+	EndGlobalSection
+EndGlobal
