@@ -3,9 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:E_Fame_Watch"
         mc:Ignorable="d"
-        Title="E-Fame Watch" Height="260" Width="520" ResizeMode="NoResize" WindowStyle="None" Icon="icon.ico">
+        Title="E-Fame Watch" Height="260" Width="520" ResizeMode="NoResize" WindowStyle="None" Icon="icon.ico" Opacity="1" AllowsTransparency="True">
 
     <Border x:Name="MainBorder" BorderThickness="1" BorderBrush="DarkGray" Background="#FF36393F" Loaded="Grid_Loaded" MouseDown="Grid_MouseDown" MouseUp="Grid_MouseUp" MouseMove="Grid_MouseMove">
         <Grid>
@@ -27,16 +26,16 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="20"/>
-                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="80"/>
                     <RowDefinition Height="20"/>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="25"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="230"/>
                     <ColumnDefinition Width="5"/>
                 </Grid.ColumnDefinitions>
+                
+                <Button x:Name="ExitButton" Content="X" Style="{StaticResource StandartExitButtonStyle}" Click="ExitButton_Click"/>
 
                 <Label Grid.Column="1" Content="E-Fame Graph" Style="{StaticResource StandartLabelStyle}"/>
                 <Label x:Name="GraphTopValLabel" Grid.Row="1" Content="1" FontSize="7" Style="{StaticResource StandartLabelStyle}"/>
@@ -53,8 +52,8 @@
             <Label x:Name="GainedLabel" Grid.Row="1" Content="Gained: " Style="{StaticResource StandartLabelStyle}"/>
             <Label x:Name="TotalLabel" Grid.Row="1" Grid.Column="1" Content="Total: " Style="{StaticResource StandartLabelStyle}"/>
 
-            <ComboBox x:Name="TimeFrameCombobox" Grid.Row="2" Margin="5"/>
-            <ComboBox x:Name="TimeElementsCombobox" Grid.Row="2" Grid.Column="1" Margin="5"/>
+            <ComboBox x:Name="TimeFrameCombobox" Grid.Row="2" Margin="5" Style="{StaticResource StandartComboboxStyle}"/>
+            <ComboBox x:Name="TimeElementsCombobox" Grid.Row="2" Grid.Column="1" Margin="5" Style="{StaticResource StandartComboboxStyle}"/>
 
             <Button x:Name="AddNewItemButton"  Grid.Row="3" Grid.ColumnSpan="2" Content="Add New Item" Height="25" Style="{StaticResource StandartButtonStyle}" Click="AddNewItemButton_Click"/>
 
@@ -64,9 +63,9 @@
                 </StackPanel>
             </ScrollViewer>
 
-            <Grid x:Name="PieGraphGrid" Grid.Column="2" Grid.ColumnSpan="2" Background="#FF202225" Height="165">
-                <Canvas x:Name="PieGraphCanvas" Margin="5" Background="#FF2E3134"/>
-            </Grid>
+            <StackPanel x:Name="PieGraphGrid" Grid.Column="2" Grid.ColumnSpan="2" Background="#FF202225" Height="165">
+                <Canvas x:Name="PieGraphCanvas" Height="155" Width="250" Margin="5" Background="#FF2E3134"/>
+            </StackPanel>
         </Grid>
     </Border>
 </Window>

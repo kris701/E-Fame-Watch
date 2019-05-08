@@ -32,98 +32,49 @@ namespace E_Fame_Watch
         }
     }
 
+    enum DelayTimes { Second = 1, Minute = 60, Hour = 3600, Day = 86400 }
+
     public partial class MainWindow : Window
     {
         bool Draging = false;
         Point StartDragPoint = new Point();
-        List<List<GraphElement>> _GraphData = new List<List<GraphElement>>();
-        List<DateTime> _TimeTable = new List<DateTime>();
 
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private async void Grid_Loaded(object sender, RoutedEventArgs e)
-        {
-            List<List<GraphElement>> GraphData = new List<List<GraphElement>>();
-            List<DateTime> TimeTable = new List<DateTime>();
-
-            this.Width = 260;
-
-            TimeFrameCombobox.Items.Add("Days");
-            TimeFrameCombobox.Items.Add("Hours");
-            TimeFrameCombobox.Items.Add("Minutes");
-            TimeFrameCombobox.Items.Add("Seconds");
-            TimeFrameCombobox.SelectedIndex = 0;
-
-            for (int i = 0; i < 5; i++)
-            {
-                GraphData.Add(new List<GraphElement>());
-                TimeTable.Add(new DateTime());
-            }
-
-            for (int i = 5; i < 105; i += 5)
-                TimeElementsCombobox.Items.Add(i);
-            TimeElementsCombobox.SelectedIndex = 0;
-
-            LoadSettings(GraphData, TimeTable);
-            await GetAllEFame(GraphData, TimeTable);
+            this.Opacity = 0;
         }
 
         async Task GetAllEFame(List<List<GraphElement>> GraphData, List<DateTime> TimeTable)
         {
             while (true)
             {
+                GraphLoadingControl NewLoading = new GraphLoadingControl();
+                NewLoading.Width = GraphCanvas.ActualWidth;
+                NewLoading.Height = GraphCanvas.ActualHeight;
+                GraphCanvas.Children.Add(NewLoading);
+
+                GraphLoadingControl NewLoading2 = new GraphLoadingControl();
+                NewLoading2.Width = PieGraphCanvas.ActualWidth;
+                NewLoading2.Height = PieGraphCanvas.ActualHeight;
+                PieGraphCanvas.Children.Add(NewLoading2);
+
                 if (ItemStack.Children.Count > 0)
                 {
                     try
                     {
                         ResizeTimeTabelAndGraphData(GraphData, TimeTable);
-
                         TimeTable[GraphData.Count - 1] = DateTime.Now;
-                        if (TimeFrameCombobox.SelectedIndex == 0)
+
+                        if (TimeFrameCombobox.SelectedIndex == 0 && (TimeTable[GraphData.Count - 1] - TimeTable[GraphData.Count - 2]).Days >= 1 ||
+                            TimeFrameCombobox.SelectedIndex == 1 && (TimeTable[GraphData.Count - 1] - TimeTable[GraphData.Count - 2]).Hours >= 1 ||
+                            TimeFrameCombobox.SelectedIndex == 2 && (TimeTable[GraphData.Count - 1] - TimeTable[GraphData.Count - 2]).Minutes >= 1 ||
+                            TimeFrameCombobox.SelectedIndex == 3 && (TimeTable[GraphData.Count - 1] - TimeTable[GraphData.Count - 2]).Seconds >= 1)
                         {
-                            if ((TimeTable[GraphData.Count - 1] - TimeTable[GraphData.Count - 2]).Days >= 1)
+                            for (int i = 0; i < TimeTable.Count - 1; i++)
                             {
-                                for (int i = 0; i < TimeTable.Count - 1; i++)
-                                {
-                                    GraphData[i] = GraphData[i + 1];
-                                    TimeTable[i] = TimeTable[i + 1];
-                                }
-                            }
-                        }
-                        if (TimeFrameCombobox.SelectedIndex == 1)
-                        {
-                            if ((TimeTable[GraphData.Count - 1] - TimeTable[GraphData.Count - 2]).Hours >= 1)
-                            {
-                                for (int i = 0; i < TimeTable.Count - 1; i++)
-                                {
-                                    GraphData[i] = GraphData[i + 1];
-                                    TimeTable[i] = TimeTable[i + 1];
-                                }
-                            }
-                        }
-                        if (TimeFrameCombobox.SelectedIndex == 2)
-                        {
-                            if ((TimeTable[GraphData.Count - 1] - TimeTable[GraphData.Count - 2]).Minutes >= 1)
-                            {
-                                for (int i = 0; i < TimeTable.Count - 1; i++)
-                                {
-                                    GraphData[i] = GraphData[i + 1];
-                                    TimeTable[i] = TimeTable[i + 1];
-                                }
-                            }
-                        }
-                        if (TimeFrameCombobox.SelectedIndex == 3)
-                        {
-                            if ((TimeTable[GraphData.Count - 1] - TimeTable[GraphData.Count - 2]).Seconds >= 1)
-                            {
-                                for (int i = 0; i < TimeTable.Count - 1; i++)
-                                {
-                                    GraphData[i] = GraphData[i + 1];
-                                    TimeTable[i] = TimeTable[i + 1];
-                                }
+                                GraphData[i] = GraphData[i + 1];
+                                TimeTable[i] = TimeTable[i + 1];
                             }
                         }
 
@@ -155,17 +106,50 @@ namespace E_Fame_Watch
                         GraphData[GraphData.Count - 1].Add(new GraphElement(0, "Error", Brushes.Red, Brushes.Pink));
                     }
                 }
-                if (TimeFrameCombobox.SelectedIndex == 0)
-                    await Task.Delay(86400000);
-                if (TimeFrameCombobox.SelectedIndex == 1)
-                    await Task.Delay(3600000);
-                if (TimeFrameCombobox.SelectedIndex == 2)
-                    await Task.Delay(60000);
-                if (TimeFrameCombobox.SelectedIndex == 3)
-                    await Task.Delay(1000);
                 UpdateVisualData(GraphData);
+
+                GraphCanvas.Children.Remove(NewLoading);
+                PieGraphCanvas.Children.Remove(NewLoading2);
+
+                await WaitUntil(DelayTimes.Day, 0);
+                await WaitUntil(DelayTimes.Hour, 1);
+                await WaitUntil(DelayTimes.Minute, 2);
+                await WaitUntil(DelayTimes.Second, 3);
+
                 SaveSettings(GraphData, TimeTable);
             }
+        }
+
+        #region UI Events Region
+
+        private async void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<List<GraphElement>> GraphData = new List<List<GraphElement>>();
+            List<DateTime> TimeTable = new List<DateTime>();
+
+            this.Width = 260;
+
+            TimeFrameCombobox.Items.Add("Days");
+            TimeFrameCombobox.Items.Add("Hours");
+            TimeFrameCombobox.Items.Add("Minutes");
+            TimeFrameCombobox.Items.Add("Seconds");
+            TimeFrameCombobox.SelectedIndex = 0;
+
+            for (int i = 0; i < 5; i++)
+            {
+                GraphData.Add(new List<GraphElement>());
+                TimeTable.Add(new DateTime());
+            }
+
+            for (int i = 5; i < 105; i += 5)
+                TimeElementsCombobox.Items.Add(i);
+            TimeElementsCombobox.SelectedIndex = 0;
+
+            LoadSettings(GraphData, TimeTable);
+
+            await FadeIn(this);
+
+            await GetAllEFame(GraphData, TimeTable);
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
@@ -189,6 +173,46 @@ namespace E_Fame_Watch
                 Top = (System.Windows.Forms.Cursor.Position.Y - StartDragPoint.Y);
             }
         }
+
+        private void AddNewItemButton_Click(object sender, RoutedEventArgs e)
+        {
+            MakeNewItemPanel("Name", "", "", 0, 0, false);
+        }
+
+        private async void ExpandButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Width == 260)
+            {
+                for (int i = 260; i < 520; i += 20)
+                {
+                    this.Width = i;
+                    await Task.Delay(1);
+                }
+                ExpandButton.Content = "<";
+                this.Width = 520;
+            }
+            else
+            {
+                for (int i = 520; i >= 260; i -= 20)
+                {
+                    this.Width = i;
+                    await Task.Delay(1);
+                }
+                ExpandButton.Content = ">";
+                this.Width = 260;
+            }
+        }
+
+
+        private async void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            await FadeOut(this);
+            Application.Current.Shutdown();
+        }
+
+        #endregion
+
+        #region Update Visual Region
 
         void UpdateVisualData(List<List<GraphElement>> Values)
         {
@@ -307,6 +331,8 @@ namespace E_Fame_Watch
 
         void UpdatePieChart(List<List<GraphElement>> Values, int TotalValue)
         {
+            PieGraphCanvas.Children.Clear();
+
             double OffSetAngle = 359;
             List<GraphElement> SortedList = new List<GraphElement>(Values[Values.Count - 1]);
 
@@ -362,6 +388,8 @@ namespace E_Fame_Watch
                     {
                         if (Values[Values.Count - 1].Count > 0 && Values[0].Count > i)
                         {
+                            SenderDesign.ItemValueLabel.Content = "Value: " + Values[Values.Count - 1][i].Value;
+
                             double ShareVal = (((double)Values[Values.Count - 1][i].Value / (double)TotalValue) * 100);
                             SenderDesign.ItemShareLabel.Content = "Share: " + (int)ShareVal + "%";
 
@@ -394,36 +422,9 @@ namespace E_Fame_Watch
             }
         }
 
-        double SumOfRange(List<GraphElement> _Input, int _From, int _To)
-        {
-            if (_Input.Count == 0)
-                return 0;
-            if (_To > _Input.Count)
-                _To = _Input.Count;
-            double ReturnVal = 0;
-            for (int i = _From; i < _To; i++)
-                ReturnVal += _Input[i].Value;
-            return ReturnVal;
-        }
+        #endregion
 
-        private void AddNewItemButton_Click(object sender, RoutedEventArgs e)
-        {
-            MakeNewItemPanel("Name", "", "", 0, 0, false);
-        }
-
-        RowDefinition GetRowWithHeight(int _Height)
-        {
-            RowDefinition NewRow = new RowDefinition();
-            NewRow.Height = new GridLength(_Height);
-            return NewRow;
-        }
-
-        ColumnDefinition GetColumnWithWidth(int _Width)
-        {
-            ColumnDefinition NewColumn = new ColumnDefinition();
-            NewColumn.Width = new GridLength(_Width);
-            return NewColumn;
-        }
+        #region Save and Load Region
 
         void SaveSettings(List<List<GraphElement>> GraphData, List<DateTime> TimeTable)
         {
@@ -488,6 +489,35 @@ namespace E_Fame_Watch
             }
         }
 
+        #endregion
+
+        #region CommonElements
+
+        int GetDiff(List<GraphElement> ListA, List<GraphElement> ListB)
+        {
+            return SumOfList(ListA) - SumOfList(ListB);
+        }
+
+        int SumOfList(List<GraphElement> Values)
+        {
+            int Moment = 0;
+            for (int i = 0; i < Values.Count; i++)
+                Moment += Values[i].Value;
+            return Moment;
+        }
+
+        double SumOfRange(List<GraphElement> _Input, int _From, int _To)
+        {
+            if (_Input.Count == 0)
+                return 0;
+            if (_To > _Input.Count)
+                _To = _Input.Count;
+            double ReturnVal = 0;
+            for (int i = _From; i < _To; i++)
+                ReturnVal += _Input[i].Value;
+            return ReturnVal;
+        }
+
         void ResizeTimeTabelAndGraphData(List<List<GraphElement>> GraphData, List<DateTime> TimeTable)
         {
             if ((int)TimeElementsCombobox.SelectedItem > GraphData.Count)
@@ -515,12 +545,14 @@ namespace E_Fame_Watch
             if (_Minimized)
             {
                 NewDesign.MainItemGrid.Height = 30;
-                this.Height += 34;
+                if (this.Height + 34 < 1000)
+                    this.Height += 34;
             }
             else
             {
-                NewDesign.MainItemGrid.Height = 160;
-                this.Height += 164;
+                NewDesign.MainItemGrid.Height = 150;
+                if (this.Height + 154 < 1000)
+                    this.Height += 154;
             }
 
             NewDesign.ItemNameTextBox.Text = _Name;
@@ -536,41 +568,37 @@ namespace E_Fame_Watch
             ItemStack.Children.Add(NewDesign);
         }
 
-        int GetDiff(List<GraphElement> ListA, List<GraphElement> ListB)
+        async Task WaitUntil(DelayTimes _Delay, int Index)
         {
-            return SumOfList(ListA) - SumOfList(ListB);
-        }
-
-        int SumOfList(List<GraphElement> Values)
-        {
-            int Moment = 0;
-            for (int i = 0; i < Values.Count; i++)
-                Moment += Values[i].Value;
-            return Moment;
-        }
-
-        private async void ExpandButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.Width == 260)
+            if (TimeFrameCombobox.SelectedIndex == Index)
             {
-                for (int i = 260; i < 520; i += 20)
+                for (int i = 0; i < (int)_Delay; i++)
                 {
-                    this.Width = i;
-                    await Task.Delay(1);
+                    await Task.Delay(1000);
+                    if (TimeFrameCombobox.SelectedIndex != Index)
+                        break;
                 }
-                ExpandButton.Content = "<";
-                this.Width = 520;
-            }
-            else
-            {
-                for (int i = 520; i >= 260; i -= 20)
-                {
-                    this.Width = i;
-                    await Task.Delay(1);
-                }
-                ExpandButton.Content = ">";
-                this.Width = 260;
             }
         }
+
+        async Task FadeIn(UIElement FadeElement)
+        {
+            for (int i = 0; i < 100; i += 5)
+            {
+                FadeElement.Opacity = ((double)i / (double)100);
+                await Task.Delay(10);
+            }
+        }
+
+        async Task FadeOut(UIElement FadeElement)
+        {
+            for (int i = 100; i >= 0; i -= 5)
+            {
+                FadeElement.Opacity = ((double)i / (double)100);
+                await Task.Delay(10);
+            }
+        }
+
+        #endregion
     }
 }

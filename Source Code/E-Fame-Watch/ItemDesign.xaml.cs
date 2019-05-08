@@ -40,7 +40,7 @@ namespace E_Fame_Watch
             StackPanel SenderPanel = SenderDesign.Parent as StackPanel;
             if (SenderGrid.Height != 30)
             {
-                for (int i = 160; i >= 30; i -= 20)
+                for (int i = 150; i >= 30; i -= 20)
                 {
                     SenderGrid.Height = i;
                     SetWindowHeight(SenderPanel);
@@ -51,14 +51,14 @@ namespace E_Fame_Watch
             }
             else
             {
-                for (int i = 30; i < 160; i += 20)
+                for (int i = 30; i < 150; i += 20)
                 {
                     SenderGrid.Height = i;
                     SetWindowHeight(SenderPanel);
                     await Task.Delay(1);
                 }
                 SenderButton.Content = "V";
-                SenderGrid.Height = 160;
+                SenderGrid.Height = 150;
             }
             SetWindowHeight(SenderPanel);
         }
