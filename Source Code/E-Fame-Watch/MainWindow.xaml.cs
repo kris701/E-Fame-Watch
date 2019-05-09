@@ -216,21 +216,22 @@ namespace E_Fame_Watch
 
         void UpdateVisualData(List<List<GraphElement>> Values)
         {
-            //Gain Label
-            int Difference = GetDiff(Values[Values.Count - 1], Values[0]);
-            if (Difference > 0)
+            //Avr change label
+
+            double AvrChange = 0;
+            for (int i = 1; i < Values.Count; i++)
             {
-                GainedLabel.Foreground = Brushes.Green;
+                AvrChange += SumOfList(Values[i]) - SumOfList(Values[i - 1]);
             }
-            if (Difference < 0)
-            {
-                GainedLabel.Foreground = Brushes.Red;
-            }
-            if (Difference == 0)
-            {
-                GainedLabel.Foreground = Brushes.White;
-            }
-            GainedLabel.Content = "Gained: " + Difference;
+            AvrChange = AvrChange / Values.Count;
+
+            if (AvrChange > 0)
+                AvrChangeLabel.Foreground = Brushes.Green;
+            if (AvrChange < 0)
+                AvrChangeLabel.Foreground = Brushes.Red;
+            if (AvrChange == 0)
+                AvrChangeLabel.Foreground = Brushes.White;
+            AvrChangeLabel.Content = "Avr Change: " + Math.Round(AvrChange, 2);
 
             //Total Label
             int HighestVal = 0;
@@ -415,7 +416,7 @@ namespace E_Fame_Watch
                                 SenderDesign.ItemAvrChangeLabel.Foreground = Brushes.Red;
                             if (AvrChange == 0)
                                 SenderDesign.ItemAvrChangeLabel.Foreground = Brushes.White;
-                            SenderDesign.ItemAvrChangeLabel.Content = "Avr Change: " + AvrChange;
+                            SenderDesign.ItemAvrChangeLabel.Content = "Avr Change: " + Math.Round(AvrChange, 2);
                         }
                     }
                 }
