@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="160" d:DesignWidth="520">
     
-    <Grid x:Name="MainItemGrid" Background="#FF595C61" Margin="2" Height="150" Width="515" Loaded="MainItemGrid_Loaded">
+    <Grid x:Name="MainItemGrid" Background="#FF595C61" Margin="2" Height="150" Width="515">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
@@ -21,12 +21,16 @@
             <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="145"/>
             <ColumnDefinition Width="50"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
 
         <Button x:Name="ItemRemoveButton" Content="X" Style="{StaticResource StandartExitButtonStyle}" Click="ItemRemoveButton_Click"/>
         <Button x:Name="ItemMinimizeButton" Grid.Column="1" Content="V" Style="{StaticResource StandartButtonStyle}" Click="ItemMinimizeButton_Click"/>
         <TextBox x:Name="ItemNameTextBox" Grid.Column="2" Grid.ColumnSpan="2" Text="Name" Style="{StaticResource StandartTextBoxStyle}"/>
+
+        <Button x:Name="ItemMoveUpButton" Grid.Column="5" Content="Move Up" Style="{StaticResource StandartButtonStyle}" Click="ItemMoveUpButton_Click"/>
+        <Button x:Name="ItemMoveDownButton" Grid.Column="6" Content="Move Down" Style="{StaticResource StandartButtonStyle}" Click="ItemMoveDownButton_Click"/>
 
         <Label Grid.ColumnSpan="3" Grid.Row="1" Content="URL" HorizontalAlignment="Right" Style="{StaticResource StandartLabelStyle}"/>
         <TextBox x:Name="ItemURLTextBox" Grid.Row="1" Grid.Column="3" Text="" Style="{StaticResource StandartTextBoxStyle}"/>
@@ -35,10 +39,10 @@
         <TextBox x:Name="ItemXPathTextBox" Grid.Row="2" Grid.Column="3" Text="" Style="{StaticResource StandartTextBoxStyle}"/>
 
         <Label Grid.ColumnSpan="3" Grid.Row="3" Content="Border Color" HorizontalAlignment="Right" Style="{StaticResource StandartLabelStyle}"/>
-        <ComboBox Grid.Column="3" Grid.Row="3" x:Name="ItemBorderColorComboBox" Margin="2" Style="{StaticResource StandartComboboxStyle}"/>
+        <Button Grid.Column="3" Grid.Row="3" x:Name="ItemBorderColorButton" Margin="2" Click="ItemBorderColorButton_Click"/>
 
         <Label Grid.ColumnSpan="3" Grid.Row="4" Content="Fill Color" HorizontalAlignment="Right" Style="{StaticResource StandartLabelStyle}"/>
-        <ComboBox Grid.Column="3" Grid.Row="4" x:Name="ItemFillColorComboBox" Margin="2" Style="{StaticResource StandartComboboxStyle}"/>
+        <Button Grid.Column="3" Grid.Row="4" x:Name="ItemFillColorButton" Margin="2" Click="ItemFillColorButton_Click"/>
 
 
         <Label x:Name="ItemValueLabel" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="1" Content="Value: Loading" Style="{StaticResource StandartLabelStyle}"/>

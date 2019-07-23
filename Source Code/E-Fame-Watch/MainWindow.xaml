@@ -7,7 +7,7 @@
         Title="E-Fame Watch" Height="260" Width="520" ResizeMode="NoResize" WindowStyle="None" Icon="icon.ico" Opacity="1" AllowsTransparency="True">
 
     <Border x:Name="MainBorder" BorderThickness="1" BorderBrush="DarkGray" Background="#FF36393F" Loaded="Grid_Loaded" MouseDown="Grid_MouseDown" MouseUp="Grid_MouseUp" MouseMove="Grid_MouseMove">
-        <Grid>
+        <Grid x:Name="MainGrid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="165"/>
                 <RowDefinition Height="30"/>
@@ -37,7 +37,8 @@
                 
                 <Button x:Name="ExitButton" Content="X" Style="{StaticResource StandartExitButtonStyle}" Click="ExitButton_Click"/>
 
-                <Label Grid.Column="1" Content="E-Fame Graph" Style="{StaticResource StandartLabelStyle}"/>
+                <Label x:Name="GraphTopLabel" Grid.Column="1" Content="Total" Style="{StaticResource StandartLabelStyle}"/>
+
                 <Label x:Name="GraphTopValLabel" Grid.Row="1" Content="1" FontSize="7" Style="{StaticResource StandartLabelStyle}"/>
                 <Label Grid.Row="2" Content="E-Fame" Foreground="White" FontSize="10" Style="{StaticResource StandartLabelStyle}" RenderTransformOrigin="0.5,0.5">
                     <Label.LayoutTransform>
@@ -49,11 +50,15 @@
                 <Button x:Name="ExpandButton" Grid.Column="1" HorizontalAlignment="Right" Width="25" Content=">" Style="{StaticResource StandartButtonStyle}" Click="ExpandButton_Click"/>
             </Grid>
 
+            <Button x:Name="NextGraphButton" Grid.Column="2" Grid.Row="1" Content="Change to mode 2" Style="{StaticResource StandartButtonStyle}" Click="ChangeModeButton_Click"/>
+            <Button x:Name="ResetGraphButton" Grid.Column="3" Grid.Row="1" Content="Reset graph" Style="{StaticResource StandartButtonStyle}" Click="ResetGraphButton_Click"/>
+            <Button x:Name="FlatlineGraphButton" Grid.Column="3" Grid.Row="2" Content="Flatline graph" Style="{StaticResource StandartButtonStyle}" Click="FlatlineGraphButton_Click"/>
+
             <Label x:Name="AvrChangeLabel" Grid.Row="1" Content="Avr Change: " Style="{StaticResource StandartLabelStyle}"/>
             <Label x:Name="TotalLabel" Grid.Row="1" Grid.Column="1" Content="Total: " Style="{StaticResource StandartLabelStyle}"/>
 
             <ComboBox x:Name="TimeFrameCombobox" Grid.Row="2" Margin="5" Style="{StaticResource StandartComboboxStyle}"/>
-            <ComboBox x:Name="TimeElementsCombobox" Grid.Row="2" Grid.Column="1" Margin="5" Style="{StaticResource StandartComboboxStyle}"/>
+            <ComboBox x:Name="TimeElementsCombobox" Grid.Row="2" Grid.Column="1" Margin="5" Style="{StaticResource StandartComboboxStyle}" SelectionChanged="TimeElementsCombobox_SelectionChanged"/>
 
             <Button x:Name="AddNewItemButton"  Grid.Row="3" Grid.ColumnSpan="2" Content="Add New Item" Height="25" Style="{StaticResource StandartButtonStyle}" Click="AddNewItemButton_Click"/>
 
