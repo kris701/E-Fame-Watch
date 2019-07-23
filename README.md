@@ -5,7 +5,8 @@ Features a normal Column Chart and a Box Chart.
 
 With the program is an example of some of my workshop items from Steam.
 
-![Error Loading Image](https://vweifg.db.files.1drv.com/y4mBTe3UpCiyZsg4036yqNPtqCQ_T4GUfep-4pYwVFDhLg7g9cJvf97ocHaSBBGcxqLTyEvZmwujoL6yE4LWkya9f9FeW6nJsW8DtK9WLcx6SFZmAG81ab_wFVGuUGPYY6_Aj8MOwF5TtorTwt93noc2cq2bMpgKh8PK1rwausf8rDcOqv94nU9Dz3J7hQ_znB8DWJMuyAd8IMstBgoi8ySew?width=520&height=1000&cropmode=none)
+![Error Loading Image](https://yxwzcq.db.files.1drv.com/y4mqGsqjehHGMVyAcnnPluqjUlMN9adgqWV0Fc9VJLDOebZncZBVIJZvcnVoSJpAJmI9skfOS9SywEaJRZjPLJ_XAA2bm0ko3994WYmDOtIkhbHptUSYe4NXsZfLjgrf2MJe0u7WF12AMvOHxTv8VP0fJP05eYTJsFV5YX1yZY0wtpsnTGTlLUqAThuAgQLm65ZZCeA_lRy6xgkWy79EAMQFA?width=520&height=892&cropmode=none)
+![Error Loading Image](https://k5pkkw.db.files.1drv.com/y4mDeKg3uLdI_kKT2SC6Slg_J3s2h4J-sAuE91oOVUezKRXCSa53luM4AdtXgck5k_U1KquZyLEb0mBDYMgtb12rPWziStf8i2ezrX2YYP1hdEz9CaqZ1FhJmNVx4LuukZXN-GwQ96-mJX6OMb6_5_3msKKwYzIvx-uCcLOEf0uxIyQJCiSTN4gC43zkeAbvDkxNq36AfJB0rjWxlx0b5RdRw?width=260&height=532&cropmode=none)
 
 This program uses an external package, called HTMLAgilityPack, that can be found here https://html-agility-pack.net/
 
