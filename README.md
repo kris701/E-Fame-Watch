@@ -5,8 +5,10 @@ Features a normal Column Chart and a Box Chart.
 
 With the program is an example of some of my workshop items from Steam.
 
-![Error Loading Image](https://yxwzcq.db.files.1drv.com/y4mqGsqjehHGMVyAcnnPluqjUlMN9adgqWV0Fc9VJLDOebZncZBVIJZvcnVoSJpAJmI9skfOS9SywEaJRZjPLJ_XAA2bm0ko3994WYmDOtIkhbHptUSYe4NXsZfLjgrf2MJe0u7WF12AMvOHxTv8VP0fJP05eYTJsFV5YX1yZY0wtpsnTGTlLUqAThuAgQLm65ZZCeA_lRy6xgkWy79EAMQFA?width=520&height=892&cropmode=none)
-![Error Loading Image](https://k5pkkw.db.files.1drv.com/y4mDeKg3uLdI_kKT2SC6Slg_J3s2h4J-sAuE91oOVUezKRXCSa53luM4AdtXgck5k_U1KquZyLEb0mBDYMgtb12rPWziStf8i2ezrX2YYP1hdEz9CaqZ1FhJmNVx4LuukZXN-GwQ96-mJX6OMb6_5_3msKKwYzIvx-uCcLOEf0uxIyQJCiSTN4gC43zkeAbvDkxNq36AfJB0rjWxlx0b5RdRw?width=260&height=532&cropmode=none)
+![Error Loading Image](https://m9ogwq.db.files.1drv.com/y4mcqie_1pa29LbHXpfy_nelYiB1vFgaUdMqvzuPpCRzLmeDRrD4KMzb-XTs1WG6WhDHCamC-U6mf-UgSUI5sUZ_cqCG05ilg6ju144BXdppay8KvjRQ_mqzfd7uWkdpXfDxf-Asy8sQAfjouBbp2h10wT1oSIWBN5PXXguaO5j80DBZSCfNaZI6IKm6UWS9x6txyUecNNVvTKB4eu-rfILwg?width=523&height=1004&cropmode=none)
+![Error Loading Image](https://ynwqcq.db.files.1drv.com/y4mgpA393FTxT_GPGcEjqUSHORc75bPxyhXRcHchD1-XIhDbvZRs5_EaKp-xfiS0m4ed-ZmniY7BbLLFFrQHMlARcuXW34UlYli2NZ2wESXgOoPp8uwEVKC5_Dyvu8hSvxFb3a9NF1gxb9kCp8MJYgpLU6mJQ9CLGqnUsWSnkXLCtMWrVs3EFn_ur_rpn-U7CPjJjEdq1-1bdb1Xw_28TAzsg?width=263&height=296&cropmode=none)
+![Error Loading Image](https://qfc3ew.db.files.1drv.com/y4mhjrsWuq0eHqs4YErSEVw_S-SQ_lAgvbbG0UpEI_Q7H9VCxdXTSY8pBV-SPomQIqA_BI2R6VtUa7d7PSmA9uL_tvrzheuG89DT3XJTGaI9qp2OUy6Vm1fF5JWAxnVbhmUWA0AllUxuIZYNn-bUecrDikhWEzr2YJtZore4GeliJphQ0DgQw2F7irvzzF7PO4SHfjkg-AWHkKNKqMME5Eu9w?width=519&height=296&cropmode=none)
+![Error Loading Image](https://mgvftg.db.files.1drv.com/y4m7wo4Twp7g5sbDOQR7sNV8lVdjeyUCPQu0Oy5BzFNVVUuYuZvTDC07r13s7V_wXb55m56TaN7N-PcveRJd1goYSR6H3qO0zBGchi6_IE-on1_G2g9M_cbLWB53WXlftjKzhs8w2qz81c4yhMf_u2Po9yBwR6u11_h4M_5qyXxTULY0t5vHoShM0fYwWlV-UQiJfEc713WKeeC769j-pa_Dg?width=520&height=295&cropmode=none)
 
 This program uses an external package, called HTMLAgilityPack, that can be found here https://html-agility-pack.net/
 
