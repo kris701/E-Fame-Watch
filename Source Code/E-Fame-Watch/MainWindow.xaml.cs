@@ -16,6 +16,8 @@ using HtmlAgilityPack;
 
 namespace E_Fame_Watch
 {
+    #region StructsAndEnums
+
     struct GraphElement
     {
         public double[] Value;
@@ -44,25 +46,123 @@ namespace E_Fame_Watch
         }
     }
 
+    enum GMCS { TotalValues, AVRChange, DisablePieChart, EnablePieChart, PieChart_UseIndex, ColumnChart_UseIndex, Statistical_UseIndex, General_UseIndex, SetChartLabels, SetGraphMode, DisplayGraphMiddleLine, HideGraphMiddleLine };
+
+    struct GMC
+    {
+        public GMCS Command;
+        public int OverloadInt;
+        public int OverloadInt2;
+        public int OverloadInt3;
+        public int Modifier;
+        public int Modifier2;
+        public int Modifier3;
+
+        public GMC(GMCS _Command, int _OverloadInt = 0, int _Modifier = 1, int _OverloadInt2 = 0, int _Modifier2 = 1, int _OverloadInt3 = 0, int _Modifier3 = 1)
+        {
+            Command = _Command;
+            OverloadInt = _OverloadInt;
+            Modifier = _Modifier;
+            OverloadInt2 = _OverloadInt2;
+            Modifier2 = _Modifier2;
+            OverloadInt3 = _OverloadInt3;
+            Modifier3 = _Modifier3;
+        }
+    }
+
+    struct GraphMode
+    {
+        public string Name;
+        public List<GMC> ValueProcessingList;
+        public List<GMC> GraphModeCommandList;
+
+        public GraphMode(string _Name, List<GMC> _GraphModeCommandList, List<GMC> _ValueProcessingList)
+        {
+            Name = _Name;
+            GraphModeCommandList = _GraphModeCommandList;
+            ValueProcessingList = _ValueProcessingList;
+        }
+    }
+
+    #endregion
+
     public partial class MainWindow : Window
     {
+        #region Variabels
+
         bool Draging = false;
         Point StartDragPoint = new Point();
-        enum ChartModes { Total, AVRChange };
-        int CurrentMode = 0;
-        static readonly int TotalChartModes = 1;
-        static readonly string[] ChartModesNames = { "Total", "AVR Change" };
         static readonly int[] DelayTimes = { 86400, 3600, 60, 1 };
-        static readonly int DataCacheSize = 100;
+        static readonly int DataCacheSize = 50;
+
+        #region GraphModes
+
+        static readonly List<GraphMode> GraphModes = new List<GraphMode>() {
+            new GraphMode("Total", 
+                new List<GMC>() {
+                    new GMC(GMCS.EnablePieChart),
+                    new GMC(GMCS.SetGraphMode, 0),
+                    new GMC(GMCS.Statistical_UseIndex, 0),
+                    new GMC(GMCS.General_UseIndex, 0),
+                    new GMC(GMCS.SetChartLabels, 25, 1, 0, 0, 0, 1),
+                    new GMC(GMCS.ColumnChart_UseIndex, 0),
+                    new GMC(GMCS.HideGraphMiddleLine)
+                }, 
+                new List<GMC>() {
+                    new GMC(GMCS.TotalValues)
+                }),
+
+            new GraphMode("Change (Column)", 
+                new List<GMC>() {
+                    new GMC(GMCS.DisablePieChart),
+                    new GMC(GMCS.SetGraphMode, 1),
+                    new GMC(GMCS.Statistical_UseIndex, 0),
+                    new GMC(GMCS.General_UseIndex, 1),
+                    new GMC(GMCS.SetChartLabels, 0, 1, 0, -1, 2, 2),
+                    new GMC(GMCS.ColumnChart_UseIndex, 1),
+                    new GMC(GMCS.DisplayGraphMiddleLine)
+                }, 
+                new List<GMC>() {
+                    new GMC(GMCS.AVRChange)
+                }),
+
+            new GraphMode("Change (Line)", 
+                new List<GMC>() {
+                    new GMC(GMCS.DisablePieChart),
+                    new GMC(GMCS.SetGraphMode, 2),
+                    new GMC(GMCS.Statistical_UseIndex, 0),
+                    new GMC(GMCS.General_UseIndex, 1),
+                    new GMC(GMCS.SetChartLabels, 0, 1, 0, -1, 2, 2),
+                    new GMC(GMCS.ColumnChart_UseIndex, 1),
+                    new GMC(GMCS.DisplayGraphMiddleLine)
+                }, 
+                new List<GMC>() {
+                    new GMC(GMCS.AVRChange)
+                })
+        };
+
+        #endregion
+
+        int CurrentGraphMode = 0;
         bool RefreshModeChange = false;
         bool ClearGraphData = false;
         bool FlatlineGraphData = false;
+        bool EqualizeColorsData = false;
+        bool IsPieChartEnabled = true;
+        int Statistical_UseIndexIs = 0;
+        int PieChart_UseIndexIs = 0;
+        int ColumnChart_UseIndexIs = 0;
+        int General_UseIndexIs = 0;
+        int ChartLabelOffsetTop = 0;
+        int ChartLabelOffSetTopModifier = 1;
+        int ChartLabelOffsetBottom = 0;
+        int ChartLabelOffSetBottomModifier = 1;
+        int GraphModeColumn = 0;
+        int GraphYOffsetModifier = 0;
+        int GraphYTransformModifier = 1;
+        bool DisplayGraphMiddleLine = false;
 
-        public MainWindow()
-        {
-            InitializeComponent();
-            this.Opacity = 0;
-        }
+        #endregion
 
         async Task GetAllEFame(List<GraphColunm> GraphData)
         {
@@ -87,15 +187,15 @@ namespace E_Fame_Watch
                     }
                 }
 
-                GraphLoadingControl NewLoading = new GraphLoadingControl();
-                NewLoading.Width = GraphCanvas.ActualWidth;
-                NewLoading.Height = GraphCanvas.ActualHeight;
-                GraphCanvas.Children.Add(NewLoading);
+                GraphLoadingControl NewLoading = new GraphLoadingControl(GraphCanvas.ActualWidth, GraphCanvas.ActualHeight);
+                GraphCanvas.Children.Add(new GraphLoadingControl(GraphCanvas.ActualWidth, GraphCanvas.ActualHeight));
 
-                GraphLoadingControl NewLoading2 = new GraphLoadingControl();
-                NewLoading2.Width = PieGraphCanvas.ActualWidth;
-                NewLoading2.Height = PieGraphCanvas.ActualHeight;
-                PieGraphCanvas.Children.Add(NewLoading2);
+                GraphLoadingControl NewLoading2 = null;
+                if (IsPieChartEnabled)
+                {
+                    NewLoading2 = new GraphLoadingControl(PieGraphCanvas.ActualWidth, PieGraphCanvas.ActualHeight);
+                    PieGraphCanvas.Children.Add(NewLoading2);
+                }
 
                 if (ItemStack.Children.Count > 0)
                 {
@@ -108,19 +208,27 @@ namespace E_Fame_Watch
                             SolidColorBrush GetBorderBrush = (SolidColorBrush)SenderDesign.ItemBorderColorButton.Background;
                             SolidColorBrush GetFillBrush = (SolidColorBrush)SenderDesign.ItemFillColorButton.Background;
 
+                            SenderDesign.URLErrorLabel.Visibility = Visibility.Visible;
+                            SenderDesign.XPathErrorLabel.Visibility = Visibility.Visible;
+
                             if (SenderDesign.ItemURLTextBox.Text != "" && SenderDesign.ItemXPathTextBox.Text != "")
                             {
                                 HtmlWeb web = new HtmlWeb();
                                 HtmlDocument doc = await web.LoadFromWebAsync(SenderDesign.ItemURLTextBox.Text);
 
+                                SenderDesign.URLErrorLabel.Visibility = Visibility.Hidden;
+
                                 HtmlNode node = doc.DocumentNode.SelectSingleNode(SenderDesign.ItemXPathTextBox.Text.Replace("/tbody", ""));
 
-                                double[] NewData = { Mode1Method(node), 0 };
-                                if (GraphData[1].GraphElements != null)
-                                    if (GraphData[1].GraphElements.Count > i)
-                                    {
-                                        NewData[1] = Mode2Method(node, GraphData[1].GraphElements[i]);
-                                    }
+                                if (node == null)
+                                    break;
+                                SenderDesign.XPathErrorLabel.Visibility = Visibility.Hidden;
+
+                                double[] NewData = new double[GraphModes.Count];
+                                for (int j = 0; j < GraphModes.Count; j++)
+                                {
+                                    NewData[j] = RunCommandList(j, GraphModes[j].ValueProcessingList ,node, GraphData, i);
+                                }
 
                                 NewDataSet.GraphElements.Add(new GraphElement(NewData, SenderDesign.ItemNameTextBox.Text, GetFillBrush, GetBorderBrush));
                             }
@@ -141,10 +249,35 @@ namespace E_Fame_Watch
                     }
                     catch { }
                 }
+
+                if (EqualizeColorsData)
+                {
+                    EqualizeColorsData = false;
+                    for (int i = 1; i < DataCacheSize; i++)
+                    {
+                        for (int j = 0; j < ItemStack.Children.Count; j++)
+                        {
+                            int TargetJ = j;
+                            while (GraphData[i].GraphElements[TargetJ].Name != GraphData[0].GraphElements[j].Name)
+                            {
+                                TargetJ++;
+                                if (TargetJ > ItemStack.Children.Count - 1)
+                                    TargetJ = 0;
+                                if (TargetJ == j)
+                                    break;
+                            }
+                            GraphData[i].GraphElements[TargetJ] = new GraphElement(GraphData[i].GraphElements[TargetJ].Value, GraphData[i].GraphElements[TargetJ].Name, GraphData[0].GraphElements[j].FillColor, GraphData[0].GraphElements[j].BorderColor);
+                        }
+                    }
+                }
+
                 UpdateVisualData(GraphData);
 
                 GraphCanvas.Children.Remove(NewLoading);
-                PieGraphCanvas.Children.Remove(NewLoading2);
+                if (IsPieChartEnabled)
+                {
+                    PieGraphCanvas.Children.Remove(NewLoading2);
+                }
 
                 SaveSettings(GraphData);
 
@@ -153,9 +286,16 @@ namespace E_Fame_Watch
         }
 
         #region UI Events Region
+        public MainWindow()
+        {
+            InitializeComponent();
+            this.Opacity = 0;
+        }
 
         private async void Grid_Loaded(object sender, RoutedEventArgs e)
         {
+            this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, 260, 300) };
+
             List<GraphColunm> GraphData = new List<GraphColunm>();
 
             this.Width = 260;
@@ -176,6 +316,10 @@ namespace E_Fame_Watch
             TimeElementsCombobox.SelectedIndex = 0;
 
             LoadSettings(GraphData);
+
+            RunCommandList(CurrentGraphMode, GraphModes[CurrentGraphMode].GraphModeCommandList, null, null, 0);
+
+            UpdateVisualData(GraphData);
 
             await FadeIn(this);
 
@@ -211,43 +355,59 @@ namespace E_Fame_Watch
 
         private async void ExpandButton_Click(object sender, RoutedEventArgs e)
         {
-            if (this.Width == 260)
+            if (this.Clip.Bounds.Width == 260)
             {
-                for (int i = 260; i < 520; i += 20)
+                Grid.SetColumnSpan(ItemsScrollBar, 5);
+                for (int i = 260; i < 520; i += 10)
                 {
-                    this.Width = i;
+                    this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, i, this.Clip.Bounds.Height) };
                     await Task.Delay(1);
                 }
                 ExpandButton.Content = "<";
-                this.Width = 520;
+                this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, 520, this.Clip.Bounds.Height) };
             }
             else
             {
-                for (int i = 520; i >= 260; i -= 20)
+                for (int i = 520; i > 260; i -= 10)
                 {
-                    this.Width = i;
+                    this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, i, this.Clip.Bounds.Height) };
                     await Task.Delay(1);
                 }
                 ExpandButton.Content = ">";
-                this.Width = 260;
+                this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, 260, this.Clip.Bounds.Height) };
+                Grid.SetColumnSpan(ItemsScrollBar, 3);
             }
         }
 
-        private void ChangeModeButton_Click(object sender, RoutedEventArgs e)
+        private async void ChangeModeButton_Click(object sender, RoutedEventArgs e)
         {
-            NextGraphButton.Content = "Change to mode " + (CurrentMode + 1).ToString();
-            CurrentMode++;
-            if (CurrentMode > TotalChartModes)
+            List<string> MomentList = new List<string>();
+            for (int i = 0; i < GraphModes.Count; i++)
+                MomentList.Add(GraphModes[i].Name);
+
+            ListSelection inputDialog = new ListSelection(this, MomentList, "Select a mode");
+            MainGrid.Children.Add(inputDialog);
+            while (true)
             {
-                CurrentMode = 0;
+                if (inputDialog.SelectionMade)
+                {
+                    if (inputDialog.SelectedIndex != -1)
+                    {
+                        CurrentGraphMode = inputDialog.SelectedIndex;
+                        RefreshModeChange = true;
+                        GraphTopLabel.Content = GraphModes[CurrentGraphMode].Name;
+                        RunCommandList(CurrentGraphMode, GraphModes[CurrentGraphMode].GraphModeCommandList, null, null, 0);
+                    }
+                    MainGrid.Children.Remove(inputDialog);
+                    break;
+                }
+                await Task.Delay(100);
             }
-            GraphTopLabel.Content = ChartModesNames[CurrentMode];
-            RefreshModeChange = true;
         }
 
         private async void ResetGraphButton_Click(object sender, RoutedEventArgs e)
         {
-            WarningPopup inputDialog = new WarningPopup("You are about to reset all graph data, this will remove all previous data. Are you sure you want to continue?", "Warning");
+            WarningPopup inputDialog = new WarningPopup(this, "Flatninging the graph will set all historic value to the newest one. Are you sure you want to continue?", "Warning");
             MainGrid.Children.Add(inputDialog);
             while (true)
             {
@@ -255,8 +415,7 @@ namespace E_Fame_Watch
                 {
                     if (inputDialog.YesBool)
                     {
-                        ClearGraphData = true;
-                        RefreshModeChange = true;
+                        FlatlineGraphData = true;
                         MainGrid.Children.Remove(inputDialog);
                         break;
                     }
@@ -275,7 +434,7 @@ namespace E_Fame_Watch
 
         private async void FlatlineGraphButton_Click(object sender, RoutedEventArgs e)
         {
-            WarningPopup inputDialog = new WarningPopup("Flatninging the graph will set all historic value to the newest one. Are you sure you want to continue?", "Warning");
+            WarningPopup inputDialog = new WarningPopup(this, "Flatninging the graph will set all historic value to the newest one. Are you sure you want to continue?", "Warning");
             MainGrid.Children.Add(inputDialog);
             while (true)
             {
@@ -284,7 +443,6 @@ namespace E_Fame_Watch
                     if (inputDialog.YesBool)
                     {
                         FlatlineGraphData = true;
-                        RefreshModeChange = true;
                         MainGrid.Children.Remove(inputDialog);
                         break;
                     }
@@ -301,10 +459,75 @@ namespace E_Fame_Watch
             }
         }
 
+        private async void EqualizeColorsBotton_Click(object sender, RoutedEventArgs e)
+        {
+            WarningPopup inputDialog = new WarningPopup(this, "Equalizing colors will reset all historic colors. Are you sure you want to continue?", "Warning");
+            MainGrid.Children.Add(inputDialog);
+            while (true)
+            {
+                if (inputDialog.SelectionMade)
+                {
+                    if (inputDialog.YesBool)
+                    {
+                        EqualizeColorsData = true;
+                        MainGrid.Children.Remove(inputDialog);
+                        break;
+                    }
+                    else
+                    {
+                        if (!inputDialog.YesBool)
+                        {
+                            MainGrid.Children.Remove(inputDialog);
+                            break;
+                        }
+                    }
+                }
+                await Task.Delay(100);
+            }
+        }
+
+        private async void MinimizeItemStackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ItemStack.Children.Count > 0)
+            {
+                if (this.Clip.Bounds.Height == 295)
+                {
+                    double TargetHeight = 0;
+                    for (int i = 0; i < ItemStack.Children.Count; i++)
+                    {
+                        ItemDesign SenderDesign = ItemStack.Children[i] as ItemDesign;
+                        TargetHeight += SenderDesign.Height;
+                    }
+                    if (TargetHeight > 1000)
+                        TargetHeight = 1000;
+                    for (int i = (int)this.Clip.Bounds.Height; i < 295 + TargetHeight; i += 10)
+                    {
+                        this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, this.Clip.Bounds.Width, i) };
+                        await Task.Delay(1);
+                    }
+                    this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, this.Clip.Bounds.Width, 295 + TargetHeight) };
+                }
+                else
+                {
+                    for (int i = (int)this.Clip.Bounds.Height; i > 295; i -= 10)
+                    {
+                        this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, this.Clip.Bounds.Width, i) };
+                        await Task.Delay(1);
+                    }
+                    this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, this.Clip.Bounds.Width, 295) };
+                }
+            }
+        }
+
         private async void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             await FadeOut(this);
             Application.Current.Shutdown();
+        }
+
+        private void TimeElementsCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshModeChange = true;
         }
 
         #endregion
@@ -318,23 +541,18 @@ namespace E_Fame_Watch
             double AvrChange = 0;
             for (int i = 0; i < (int)TimeElementsCombobox.SelectedValue - 1; i++)
             {
-                AvrChange += SumOfList(Values[i], CurrentMode) - SumOfList(Values[i + 1], CurrentMode);
+                AvrChange += SumOfList(Values[i], General_UseIndexIs) - SumOfList(Values[i + 1], General_UseIndexIs);
             }
             AvrChange = AvrChange / ((int)TimeElementsCombobox.SelectedValue - 1);
 
-            if (AvrChange > 0)
-                AvrChangeLabel.Foreground = Brushes.Green;
-            if (AvrChange < 0)
-                AvrChangeLabel.Foreground = Brushes.Red;
-            if (AvrChange == 0)
-                AvrChangeLabel.Foreground = Brushes.White;
+            AvrChangeLabel.Foreground = GetColorFromPosNegNeuValue(AvrChange, Brushes.LightGreen, Brushes.Pink, Brushes.White);
             AvrChangeLabel.Content = "Avr Change: " + Math.Round(AvrChange, 2);
 
             //Total Label
             double HighestVal = 0;
             for (int i = 0; i < (int)TimeElementsCombobox.SelectedValue; i++)
             {
-                double Moment = SumOfList(Values[i], CurrentMode);
+                double Moment = Math.Abs(SumOfList(Values[i], General_UseIndexIs));
 
                 if (Moment > HighestVal)
                     HighestVal = Moment;
@@ -348,7 +566,6 @@ namespace E_Fame_Watch
             UpdatePieChart(Values, HighestVal);
 
             //Individual items data
-
             UpdateItemsStatisticalData(Values, HighestVal);
         }
 
@@ -356,41 +573,28 @@ namespace E_Fame_Watch
         {
             GraphCanvas.Children.Clear();
 
-            if (CurrentMode == 0)
-            {
-                TotalValue += 25;
-
-                GraphTopValLabel.Content = TotalValue;
-                GraphTopValLabel.ToolTip = new ToolTip { Content = TotalValue };
-                GraphBottomValLabel.Content = 0;
-                GraphBottomValLabel.ToolTip = new ToolTip { Content = 0 };
-            }
+            if (DisplayGraphMiddleLine)
+                GraphCanvasMiddleLine.Visibility = Visibility.Visible;
             else
-            {
-                if (CurrentMode == 1)
-                {
-                    TotalValue = 25;
-                    GraphTopValLabel.Content = TotalValue + 5;
-                    GraphTopValLabel.ToolTip = new ToolTip { Content = TotalValue + 5 };
-                    GraphBottomValLabel.Content = -(TotalValue + 5);
-                    GraphBottomValLabel.ToolTip = new ToolTip { Content = -(TotalValue + 5) };
-                }
-                else
-                {
+                GraphCanvasMiddleLine.Visibility = Visibility.Hidden;
 
-                }
-            }
+            GraphTopValLabel.Content = ChartLabelOffSetTopModifier * (TotalValue + ChartLabelOffsetTop);
+            GraphTopValLabel.ToolTip = new ToolTip { Content = GraphTopValLabel.Content };
+            GraphBottomValLabel.Content = ChartLabelOffSetBottomModifier * (TotalValue + ChartLabelOffsetBottom);
+            GraphBottomValLabel.ToolTip = new ToolTip { Content = GraphBottomValLabel.Content };
 
             double TransformX = GraphCanvas.ActualWidth / (int)TimeElementsCombobox.SelectedValue;
-            double TransformY = GraphCanvas.ActualHeight / TotalValue;
+            double TransformY = GraphCanvas.ActualHeight / (TotalValue * GraphYTransformModifier);
             double YOffset = 0;
-            if (CurrentMode == 1)
-                YOffset = GraphCanvas.ActualHeight / 2;
+            if (GraphYOffsetModifier != 0)
+                YOffset = GraphCanvas.ActualHeight / GraphYOffsetModifier;
 
             for (int i = 0; i < (int)TimeElementsCombobox.SelectedValue; i++)
             {
                 if (Values[i].GraphElements != null)
                 {
+                    double PosDirOffsetY = 0;
+                    double NegDirOffsetY = 0;
                     for (int j = 0; j < Values[i].GraphElements.Count; j++)
                     {
                         double AddYA = 0;
@@ -398,54 +602,68 @@ namespace E_Fame_Watch
                         double AddYC = 0;
                         double AddYD = 0;
 
-                        if (i == 0)
-                        {
-                            if (j == 0)
-                            {
-                                AddYA = 0;
-                                AddYB = Values[i].GraphElements[j].Value[CurrentMode];
-                                AddYC = Values[i].GraphElements[j].Value[CurrentMode];
-                                AddYD = 0;
-                            }
-                            else
-                            {
-                                AddYA = SumOfRange(Values[i], 0, j, CurrentMode);
-                                AddYB = SumOfRange(Values[i], 0, j + 1, CurrentMode);
-                                AddYC = SumOfRange(Values[i], 0, j + 1, CurrentMode);
-                                AddYD = SumOfRange(Values[i], 0, j, CurrentMode);
-                            }
-                        }
-                        else
-                        {
-                            if (j == 0)
-                            {
-                                AddYA = SumOfRange(Values[i - 1], 0, j, CurrentMode);
-                                AddYB = SumOfRange(Values[i - 1], 0, j + 1, CurrentMode);
-                                AddYC = SumOfRange(Values[i], 0, j + 1, CurrentMode);
-                                AddYD = SumOfRange(Values[i], 0, j, CurrentMode);
-                            }
-                            else
-                            {
-                                AddYA = SumOfRange(Values[i - 1], 0, j, CurrentMode);
-                                AddYB = SumOfRange(Values[i - 1], 0, j + 1, CurrentMode);
-                                AddYC = SumOfRange(Values[i], 0, j + 1, CurrentMode);
-                                AddYD = SumOfRange(Values[i], 0, j, CurrentMode);
-                            }
-                        }
-
                         Polygon NewPolygon = new Polygon();
-                        NewPolygon.Stroke = Values[i].GraphElements[j].BorderColor;
-                        NewPolygon.Fill = Values[i].GraphElements[j].FillColor;
-                        NewPolygon.StrokeThickness = 2;
-                        NewPolygon.Points = new PointCollection() {
-                            new Point((i * TransformX) + 1, (GraphCanvas.ActualHeight - AddYA * TransformY - YOffset) - 1),
-                            new Point((i * TransformX) + 1, (GraphCanvas.ActualHeight - AddYB * TransformY - YOffset) + 1),
-                            new Point(((i + 1) * TransformX) - 1, (GraphCanvas.ActualHeight - AddYC * TransformY - YOffset) + 1),
-                            new Point(((i + 1) * TransformX) - 1, (GraphCanvas.ActualHeight - AddYD * TransformY - YOffset) - 1)
-                        };
+                        ToolTip tooltip = new ToolTip();
 
-                        ToolTip tooltip = new ToolTip { Content = Values[i].GraphElements[j].Name + ": " + Values[i].GraphElements[j].Value[CurrentMode] + " ( " + SumOfList(Values[i], CurrentMode) + " )" };
+                        if (GraphModeColumn == 0)
+                        {
+                            NewPolygon.Stroke = Values[i].GraphElements[j].BorderColor;
+                            NewPolygon.Fill = Values[i].GraphElements[j].FillColor;
+
+                            AddYA = PosDirOffsetY;
+                            AddYB = PosDirOffsetY + Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs];
+                            AddYC = PosDirOffsetY + Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs];
+                            AddYD = PosDirOffsetY;
+
+                            PosDirOffsetY += Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs];
+
+                            tooltip = new ToolTip { Content = Values[i].GraphElements[j].Name + ": " + Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs] + " ( " + SumOfList(Values[i], ColumnChart_UseIndexIs) + " )" };
+                        }
+                        if (GraphModeColumn == 1)
+                        {
+                            NewPolygon.Stroke = Values[i].GraphElements[j].BorderColor;
+                            NewPolygon.Fill = Values[i].GraphElements[j].FillColor;
+                            if (Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs] > 0)
+                            {
+                                AddYA = PosDirOffsetY;
+                                AddYB = PosDirOffsetY + Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs];
+                                AddYC = PosDirOffsetY + Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs];
+                                AddYD = PosDirOffsetY;
+
+                                PosDirOffsetY += Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs];
+                            }
+                            else
+                            {
+                                AddYA = NegDirOffsetY;
+                                AddYB = NegDirOffsetY + Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs];
+                                AddYC = NegDirOffsetY + Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs];
+                                AddYD = NegDirOffsetY;
+
+                                NegDirOffsetY += Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs];
+                            }
+                            tooltip = new ToolTip { Content = Values[i].GraphElements[j].Name + ": " + Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs] + " ( " + SumOfList(Values[i], ColumnChart_UseIndexIs) + " )" };
+                        }
+                        if (GraphModeColumn == 2)
+                        {
+                            NewPolygon.Stroke = Brushes.White;
+                            NewPolygon.Fill = Brushes.Transparent;
+                            AddYA = SumOfRange(Values[i], 0, Values[i].GraphElements.Count, ColumnChart_UseIndexIs);
+                            AddYB = AddYA;
+                            AddYC = SumOfRange(Values[i + 1], 0, Values[i].GraphElements.Count, ColumnChart_UseIndexIs);
+                            AddYD = AddYC;
+
+                            tooltip = new ToolTip { Content = SumOfRange(Values[i], 0, Values[i].GraphElements.Count, ColumnChart_UseIndexIs) };
+                        }
+
                         NewPolygon.ToolTip = tooltip;
+                        NewPolygon.StrokeThickness = 2;
+                        NewPolygon.ClipToBounds = true;
+                        NewPolygon.Points = new PointCollection() {
+                            new Point(FitValue((i * TransformX) + 1, 0, GraphCanvas.ActualWidth), FitValue((GraphCanvas.ActualHeight - AddYA * TransformY - YOffset) - 1, 0, GraphCanvas.ActualHeight)),
+                            new Point(FitValue((i * TransformX) + 1, 0, GraphCanvas.ActualWidth), FitValue((GraphCanvas.ActualHeight - AddYB * TransformY - YOffset) + 1, 0, GraphCanvas.ActualHeight)),
+                            new Point(FitValue(((i + 1) * TransformX) - 1, 0, GraphCanvas.ActualWidth), FitValue((GraphCanvas.ActualHeight - AddYC * TransformY - YOffset) + 1, 0, GraphCanvas.ActualHeight)),
+                            new Point(FitValue(((i + 1) * TransformX) - 1, 0, GraphCanvas.ActualWidth), FitValue((GraphCanvas.ActualHeight - AddYD * TransformY - YOffset) - 1, 0, GraphCanvas.ActualHeight))
+                        };
 
                         GraphCanvas.Children.Add(NewPolygon);
                     }
@@ -453,57 +671,72 @@ namespace E_Fame_Watch
             }
         }
 
+        double FitValue(double Value, double Min, double Max)
+        {
+            if (Value < Min)
+                Value = Min;
+            if (Value > Max)
+                Value = Max;
+            return Value;
+        }
+
         void UpdatePieChart(List<GraphColunm> Values, double TotalValue)
         {
             PieGraphCanvas.Children.Clear();
 
-            double OffSetAngle = 359;
-            List<GraphElement> SortedList = new List<GraphElement>(Values[0].GraphElements);
-
-            SortedList.Sort((s1, s2) => s1.Value[0].CompareTo(s2.Value[0]));
-
-            for (int j = 0; j < SortedList.Count; j++)
+            if (IsPieChartEnabled)
             {
-                Path Newpath = new Path();
-                Newpath.Stroke = SortedList[j].BorderColor;
-                Newpath.Fill = SortedList[j].FillColor;
-                Newpath.StrokeThickness = 2;
-                Newpath.Margin = new Thickness((PieGraphCanvas.ActualWidth / 2), (PieGraphCanvas.ActualHeight / 2), 0, 0);
+                PieGraphLabel.Visibility = Visibility.Hidden;
+                double OffSetAngle = 359;
+                List<GraphElement> SortedList = new List<GraphElement>(Values[0].GraphElements);
 
-                PathGeometry pathGeometry = new PathGeometry();
+                SortedList.Sort((s1, s2) => s1.Value[PieChart_UseIndexIs].CompareTo(s2.Value[PieChart_UseIndexIs]));
 
-                PathFigure pathFigure = new PathFigure();
-                pathFigure.StartPoint = new Point(0, 0);
-                pathFigure.IsClosed = true;
-                double Procent = ((double)SortedList[j].Value[0] / (double)TotalValue);
-                double radius = 70;
-                double angle = OffSetAngle;
-                OffSetAngle -= 360 * Procent;
+                for (int j = 0; j < SortedList.Count; j++)
+                {
+                    Path Newpath = new Path();
+                    Newpath.Stroke = SortedList[j].BorderColor;
+                    Newpath.Fill = SortedList[j].FillColor;
+                    Newpath.StrokeThickness = 2;
+                    Newpath.Margin = new Thickness((PieGraphCanvas.ActualWidth / 2), (PieGraphCanvas.ActualHeight / 2), 0, 0);
 
-                LineSegment lineSegment = new LineSegment(new Point(radius, 0), true);
-                ArcSegment arcSegment = new ArcSegment();
-                arcSegment.IsLargeArc = angle >= 180.0;
-                arcSegment.Point = new Point(Math.Cos(angle * Math.PI / 180) * radius, Math.Sin(angle * Math.PI / 180) * radius);
-                arcSegment.Size = new Size(radius, radius);
-                arcSegment.SweepDirection = SweepDirection.Clockwise;
+                    PathGeometry pathGeometry = new PathGeometry();
 
-                pathFigure.Segments.Add(lineSegment);
-                pathFigure.Segments.Add(arcSegment);
+                    PathFigure pathFigure = new PathFigure();
+                    pathFigure.StartPoint = new Point(0, 0);
+                    pathFigure.IsClosed = true;
+                    double Procent = ((double)SortedList[j].Value[0] / (double)TotalValue);
+                    double radius = 70;
+                    double angle = OffSetAngle;
+                    OffSetAngle -= 360 * Procent;
 
-                pathGeometry.Figures.Add(pathFigure);
+                    LineSegment lineSegment = new LineSegment(new Point(radius, 0), true);
+                    ArcSegment arcSegment = new ArcSegment();
+                    arcSegment.IsLargeArc = angle >= 180.0;
+                    arcSegment.Point = new Point(Math.Cos(angle * Math.PI / 180) * radius, Math.Sin(angle * Math.PI / 180) * radius);
+                    arcSegment.Size = new Size(radius, radius);
+                    arcSegment.SweepDirection = SweepDirection.Clockwise;
 
-                Newpath.Data = pathGeometry;
+                    pathFigure.Segments.Add(lineSegment);
+                    pathFigure.Segments.Add(arcSegment);
 
-                if (Procent > 1)
-                    Procent = 1;
-                if (Procent < 0)
-                    Procent = 0;
+                    pathGeometry.Figures.Add(pathFigure);
 
-                ToolTip tooltip = new ToolTip { Content = SortedList[j].Name + ": " + (int)(Procent * 100) + "%" };
-                Newpath.ToolTip = tooltip;
+                    Newpath.Data = pathGeometry;
 
-                PieGraphCanvas.Children.Add(Newpath);
+                    if (Procent > 1)
+                        Procent = 1;
+                    if (Procent < 0)
+                        Procent = 0;
+
+                    ToolTip tooltip = new ToolTip { Content = SortedList[j].Name + ": " + (int)(Procent * 100) + "%" };
+                    Newpath.ToolTip = tooltip;
+
+                    PieGraphCanvas.Children.Add(Newpath);
+                }
             }
+            else
+                PieGraphLabel.Visibility = Visibility.Visible;
         }
 
         void UpdateItemsStatisticalData(List<GraphColunm> Values, double TotalValue)
@@ -521,18 +754,20 @@ namespace E_Fame_Watch
                             {
                                 if (Values[0].GraphElements.Count > 0 && Values[1].GraphElements.Count > 0)
                                 {
-                                    SenderDesign.ItemValueLabel.Content = "Value: " + Values[0].GraphElements[i].Value[CurrentMode];
+                                    SenderDesign.ItemValueLabel.Content = "Value: " + Values[0].GraphElements[i].Value[Statistical_UseIndexIs];
 
-                                    double ShareVal = (((double)Values[0].GraphElements[i].Value[CurrentMode] / (double)TotalValue) * 100);
-                                    SenderDesign.ItemShareLabel.Content = "Share: " + (int)ShareVal + "%";
+                                    if (IsPieChartEnabled)
+                                    {
+                                        double ShareVal = (((double)Values[0].GraphElements[i].Value[Statistical_UseIndexIs] / (double)TotalValue) * 100);
+                                        SenderDesign.ItemShareLabel.Content = "Share: " + (int)ShareVal + "%";
+                                    }
+                                    else
+                                    {
+                                        SenderDesign.ItemShareLabel.Content = "Share: Disabled";
+                                    }
 
                                     double ChangeVal = Values[0].GraphElements[i].Value[0] - Values[1].GraphElements[i].Value[0];
-                                    if (ChangeVal > 0)
-                                        SenderDesign.ItemChangeLabel.Foreground = Brushes.Green;
-                                    if (ChangeVal < 0)
-                                        SenderDesign.ItemChangeLabel.Foreground = Brushes.Red;
-                                    if (ChangeVal == 0)
-                                        SenderDesign.ItemChangeLabel.Foreground = Brushes.White;
+                                    SenderDesign.ItemChangeLabel.Foreground = GetColorFromPosNegNeuValue(ChangeVal, Brushes.LightGreen, Brushes.Pink, Brushes.White);
                                     SenderDesign.ItemChangeLabel.Content = "Change: " + ChangeVal;
 
                                     double AvrChange = 0;
@@ -540,16 +775,11 @@ namespace E_Fame_Watch
                                     {
                                         if (Values[j].GraphElements.Count > 0)
                                             if (Values[j + 1].GraphElements.Count > 0)
-                                                AvrChange += SumOfListSimple(Values[j].GraphElements[i].Value, CurrentMode) - SumOfListSimple(Values[j + 1].GraphElements[i].Value, CurrentMode);
+                                                AvrChange += Values[j].GraphElements[i].Value[Statistical_UseIndexIs] - Values[j + 1].GraphElements[i].Value[Statistical_UseIndexIs];
                                     }
                                     AvrChange = AvrChange / ((int)TimeElementsCombobox.SelectedValue - 1);
 
-                                    if (AvrChange > 0)
-                                        SenderDesign.ItemAvrChangeLabel.Foreground = Brushes.Green;
-                                    if (AvrChange < 0)
-                                        SenderDesign.ItemAvrChangeLabel.Foreground = Brushes.Red;
-                                    if (AvrChange == 0)
-                                        SenderDesign.ItemAvrChangeLabel.Foreground = Brushes.White;
+                                    SenderDesign.ItemAvrChangeLabel.Foreground = GetColorFromPosNegNeuValue(AvrChange, Brushes.LightGreen, Brushes.Pink, Brushes.White);
                                     SenderDesign.ItemAvrChangeLabel.Content = "Avr Change: " + Math.Round(AvrChange, 2);
                                 }
                             }
@@ -570,6 +800,7 @@ namespace E_Fame_Watch
             {
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter("cfg.txt"))
                 {
+                    file.WriteLine(Application.Current.MainWindow.Left + ";" + Application.Current.MainWindow.Top + ";");
                     file.WriteLine(TimeFrameCombobox.SelectedIndex + ";" + TimeElementsCombobox.SelectedIndex + ";");
                     for (int i = 0; i < ItemStack.Children.Count; i++)
                     {
@@ -652,8 +883,11 @@ namespace E_Fame_Watch
 
                     string[] lines = System.IO.File.ReadAllLines("cfg.txt");
 
-                    TimeFrameCombobox.SelectedIndex = Int32.Parse(lines[0].Split(';')[0]);
-                    TimeElementsCombobox.SelectedIndex = Int32.Parse(lines[0].Split(';')[1]);
+                    Application.Current.MainWindow.Left = Int32.Parse(lines[0].Split(';')[0]);
+                    Application.Current.MainWindow.Top = Int32.Parse(lines[0].Split(';')[1]);
+
+                    TimeFrameCombobox.SelectedIndex = Int32.Parse(lines[1].Split(';')[0]);
+                    TimeElementsCombobox.SelectedIndex = Int32.Parse(lines[1].Split(';')[1]);
 
                     int InnerIndex = 0;
 
@@ -718,6 +952,8 @@ namespace E_Fame_Watch
                             }
                             GraphData[InnerIndex] = NewData;
                             InnerIndex++;
+                            if (InnerIndex > GraphData.Count - 1)
+                                break;
                         }
                     }
                     UpdateVisualData(GraphData);
@@ -740,13 +976,8 @@ namespace E_Fame_Watch
 
             double Moment = 0;
             for (int i = 0; i < Values.GraphElements.Count; i++)
-                Moment += SumOfListSimple(Values.GraphElements[i].Value, _CurrentMode);
+                Moment += Values.GraphElements[i].Value[_CurrentMode];
             return Moment;
-        }
-
-        double SumOfListSimple(double[] Values, int _CurrentMode)
-        {
-            return Values[_CurrentMode];
         }
 
         double SumOfRange(GraphColunm _Input, int _From, int _To, int _CurrentMode)
@@ -761,19 +992,19 @@ namespace E_Fame_Watch
 
         void MakeNewItemPanel(string _Name, string _URL, string _XPath, SolidColorBrush _BorderColor, SolidColorBrush _FillColor, bool _Minimized)
         {
-            ItemDesign NewDesign = new ItemDesign();
+            ItemDesign NewDesign = new ItemDesign(this);
 
             if (_Minimized)
             {
-                NewDesign.MainItemGrid.Height = 30;
-                if (this.Height + 34 < 1000)
-                    this.Height += 34;
+                NewDesign.Height = 34;
+                if (this.Clip.Bounds.Height + 34 < 1000)
+                    this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, this.Clip.Bounds.Width, this.Clip.Bounds.Height + 34) };
             }
             else
             {
-                NewDesign.MainItemGrid.Height = 150;
-                if (this.Height + 154 < 1000)
-                    this.Height += 154;
+                NewDesign.Height = 190;
+                if (this.Clip.Bounds.Height + 184 < 1000)
+                    this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, this.Clip.Bounds.Width, this.Clip.Bounds.Height + 184) };
             }
 
             NewDesign.ItemNameTextBox.Text = _Name;
@@ -791,27 +1022,25 @@ namespace E_Fame_Watch
 
         async Task WaitUntil(int Index, int Index2, List<GraphColunm> GraphData)
         {
-            if (TimeFrameCombobox.SelectedIndex == Index)
+            for (int i = 0; i < DelayTimes[Index]; i++)
             {
-                for (int i = 0; i < DelayTimes[Index]; i++)
+                await Task.Delay(1000);
+                if (TimeFrameCombobox.SelectedIndex != Index)
                 {
-                    await Task.Delay(1000);
-                    if (TimeFrameCombobox.SelectedIndex != Index)
+                    if (TimeFrameCombobox.SelectedIndex > Index)
                     {
-                        if (TimeFrameCombobox.SelectedIndex > Index)
-                        {
-                            break;
-                        }
-                        UpdateVisualData(GraphData);
-                    }
-                    if (RefreshModeChange)
-                    {
-                        UpdateVisualData(GraphData);
-                        RefreshModeChange = false;
-                    }
-                    if (ClearGraphData || FlatlineGraphData)
                         break;
+                    }
+                    UpdateVisualData(GraphData);
+                    Index = TimeFrameCombobox.SelectedIndex;
                 }
+                if (RefreshModeChange)
+                {
+                    UpdateVisualData(GraphData);
+                    RefreshModeChange = false;
+                }
+                if (ClearGraphData || FlatlineGraphData || EqualizeColorsData)
+                    break;
             }
         }
 
@@ -822,6 +1051,7 @@ namespace E_Fame_Watch
                 FadeElement.Opacity = ((double)i / (double)100);
                 await Task.Delay(10);
             }
+            FadeElement.Opacity = 1;
         }
 
         public async Task FadeOut(UIElement FadeElement)
@@ -831,22 +1061,13 @@ namespace E_Fame_Watch
                 FadeElement.Opacity = ((double)i / (double)100);
                 await Task.Delay(10);
             }
-        }
-
-        double Mode1Method(HtmlNode Node)
-        {
-            return Int32.Parse(Node.InnerText.Replace(",", "").Replace(".", ""));
-        }
-
-        double Mode2Method(HtmlNode Node, GraphElement GraphElement)
-        {
-            return Mode1Method(Node) - SumOfListSimple(GraphElement.Value, 0);
+            FadeElement.Opacity = 0;
         }
 
         double[] SplitString(char Delimiter, string Input)
         {
             string[] SplitString = Input.Split(Delimiter);
-            double[] DoubleList = new double[TotalChartModes + 1];
+            double[] DoubleList = new double[SplitString.Length];
             for (int i = 0; i < SplitString.Length - 1; i++)
             {
                 DoubleList[i] = Convert.ToDouble(SplitString[i]);
@@ -862,11 +1083,128 @@ namespace E_Fame_Watch
             return OutString;
         }
 
-        #endregion
-
-        private void TimeElementsCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        double RunCommandList(int GraphModeIndex, List<GMC> _Commands, HtmlNode Node, List<GraphColunm> GraphData, int GraphDataIndex)
         {
-            RefreshModeChange = true;
+            double ReturnValue = 0;
+            try
+            {
+                for (int i = 0; i < _Commands.Count; i++)
+                {
+                    if (_Commands[i].Command == GMCS.TotalValues)
+                        ReturnValue = Int32.Parse(Node.InnerText.Replace(",", "").Replace(".", ""));
+
+                    if (_Commands[i].Command == GMCS.AVRChange)
+                        if (GraphData[1].GraphElements.Count != 0)
+                            ReturnValue = Int32.Parse(Node.InnerText.Replace(",", "").Replace(".", "")) - GraphData[1].GraphElements[GraphDataIndex].Value[0];
+
+                    if (_Commands[i].Command == GMCS.EnablePieChart)
+                        IsPieChartEnabled = true;
+
+                    if (_Commands[i].Command == GMCS.DisablePieChart)
+                        IsPieChartEnabled = false;
+
+                    if (_Commands[i].Command == GMCS.Statistical_UseIndex)
+                    {
+                        Statistical_UseIndexIs = _Commands[i].OverloadInt;
+                    }
+
+                    if (_Commands[i].Command == GMCS.PieChart_UseIndex)
+                    {
+                        PieChart_UseIndexIs = _Commands[i].OverloadInt;
+                    }
+
+                    if (_Commands[i].Command == GMCS.ColumnChart_UseIndex)
+                    {
+                        ColumnChart_UseIndexIs = _Commands[i].OverloadInt;
+                    }
+
+                    if (_Commands[i].Command == GMCS.General_UseIndex)
+                    {
+                        General_UseIndexIs = _Commands[i].OverloadInt;
+                    }
+
+                    if (_Commands[i].Command == GMCS.SetChartLabels)
+                    {
+                        ChartLabelOffsetTop = _Commands[i].OverloadInt;
+                        ChartLabelOffSetTopModifier = _Commands[i].Modifier;
+                        ChartLabelOffsetBottom = _Commands[i].OverloadInt2;
+                        ChartLabelOffSetBottomModifier = _Commands[i].Modifier2;
+                        GraphYOffsetModifier = _Commands[i].OverloadInt3;
+                        GraphYTransformModifier = _Commands[i].Modifier3;
+                    }
+
+                    if (_Commands[i].Command == GMCS.SetGraphMode)
+                    {
+                        GraphModeColumn = _Commands[i].OverloadInt;
+                    }
+
+                    if (_Commands[i].Command == GMCS.DisplayGraphMiddleLine)
+                    {
+                        DisplayGraphMiddleLine = true;
+                    }
+
+                    if (_Commands[i].Command == GMCS.HideGraphMiddleLine)
+                    {
+                        DisplayGraphMiddleLine = false;
+                    }
+                }
+            }
+            catch
+            {
+                ReturnValue = 0;
+            }
+            return ReturnValue;
         }
+
+        public async Task ExpandWindow(bool ExpandOrRectract)
+        {
+            if (ExpandOrRectract)
+            {
+                bool Expand = false;
+                if (this.Clip.Bounds.Width == 260)
+                {
+                    Expand = true;
+                }
+
+                if (Expand)
+                {
+                    for (int i = 260; i < 520; i += 20)
+                    {
+                        this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, i, this.Clip.Bounds.Height) };
+                        await Task.Delay(1);
+                    }
+                    this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, 520, this.Clip.Bounds.Height) };
+                }
+            }
+            else
+            {
+                bool Retract = false;
+                if (this.Clip.Bounds.Width == 520)
+                {
+                    Retract = true;
+                }
+
+                if (Retract)
+                {
+                    for (int i = 520; i >= 260; i -= 20)
+                    {
+                        this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, i, this.Clip.Bounds.Height) };
+                        await Task.Delay(1);
+                    }
+                    this.Clip = new RectangleGeometry { Rect = new Rect(0, 0, 260, this.Clip.Bounds.Height) };
+                }
+            }
+        }
+
+        Brush GetColorFromPosNegNeuValue(double Value, Brush PositiveColor, Brush NegativeColor, Brush NeutralColor)
+        {
+            if (Value > 0)
+                return PositiveColor;
+            if (Value < 0)
+                return NegativeColor;
+            return NeutralColor;
+        }
+
+        #endregion
     }
 }

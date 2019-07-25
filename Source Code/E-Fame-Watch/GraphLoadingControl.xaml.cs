@@ -20,36 +20,24 @@ namespace E_Fame_Watch
     /// </summary>
     public partial class GraphLoadingControl : UserControl
     {
-        public GraphLoadingControl()
+        public GraphLoadingControl(double _Width, double _Height)
         {
+            Width = _Width;
+            Height = _Height;
             InitializeComponent();
         }
 
         private async void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadingRectangle.Width = this.ActualWidth - 10;
+            LoadingRectangle.Width = this.ActualHeight - 10;
             while (true)
             {
-                for (int i = (int)LoadingRectangle.Height; i < this.ActualHeight - 10; i += 10)
+                for (int i = 0; i < 180; i += 10)
                 {
-                    LoadingRectangle.Height = i;
-                    await Task.Delay(10);
+                    LoadingRectangle.RenderTransform = new RotateTransform(i);
+                    await Task.Delay(2);
                 }
-                for (int i = (int)LoadingRectangle.Width; i > 10; i -= 10)
-                {
-                    LoadingRectangle.Width = i;
-                    await Task.Delay(10);
-                }
-                for (int i = (int)LoadingRectangle.Height; i > 10; i -= 10)
-                {
-                    LoadingRectangle.Height = i;
-                    await Task.Delay(10);
-                }
-                for (int i = (int)LoadingRectangle.Width; i < this.ActualWidth - 10; i += 10)
-                {
-                    LoadingRectangle.Width = i;
-                    await Task.Delay(10);
-                }
+                LoadingRectangle.RenderTransform = new RotateTransform(0);
             }
         }
     }

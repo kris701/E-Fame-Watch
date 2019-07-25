@@ -137,5 +137,26 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style TargetType="ScrollViewer" x:Key="StandartScrollviewerStyle">
+            <Style.Resources>
+                <Style TargetType="ScrollBar">
+                    <Style.Triggers>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter Property="Width" Value="10"/>
+                            <Setter Property="MinWidth" Value="10"/>
+                            <Setter Property="Background" Value="#FF36393F"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Clip">
+                                <Setter.Value>
+                                    <RectangleGeometry Rect="0 18 10 670"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Style.Resources>
+        </Style>
+        
     </Application.Resources>
 </Application>

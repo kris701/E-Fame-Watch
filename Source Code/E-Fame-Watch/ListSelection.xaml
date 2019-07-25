@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="E_Fame_Watch.ListSelection"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:E_Fame_Watch"
+             mc:Ignorable="d" 
+            d:DesignHeight="250" d:DesignWidth="250"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Grid.ColumnSpan="10"
+            Grid.RowSpan="10">
+
+    <Grid Background="#FF202225" Initialized="Grid_Initialized">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="ListSelectionTopLabel" Content="" FontSize="20" Style="{StaticResource StandartLabelStyle}"/>
+
+        <StackPanel x:Name="ListSelectionStackPanel" Grid.Row="1" Background="#FF36393F"/>
+
+        <Button x:Name="ListSelectionCancelButton" Grid.Row="12" Content="Cancel" Margin="4" FontSize="10" Style="{StaticResource StandartExitButtonStyle}" Click="ListSelectionCancelButton_Click"/>
+    </Grid>
+</UserControl>

@@ -4,11 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="E-Fame Watch" Height="260" Width="520" ResizeMode="NoResize" WindowStyle="None" Icon="icon.ico" Opacity="1" AllowsTransparency="True">
+        Title="E-Fame Watch" Height="300" Width="520" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStyle="None" Icon="icon.ico" Opacity="1" AllowsTransparency="True">
 
-    <Border x:Name="MainBorder" BorderThickness="1" BorderBrush="DarkGray" Background="#FF36393F" Loaded="Grid_Loaded" MouseDown="Grid_MouseDown" MouseUp="Grid_MouseUp" MouseMove="Grid_MouseMove">
+    <Border x:Name="MainBorder" BorderThickness="0" BorderBrush="DarkGray" Background="#FF36393F" Loaded="Grid_Loaded" MouseDown="Grid_MouseDown" MouseUp="Grid_MouseUp" MouseMove="Grid_MouseMove">
         <Grid x:Name="MainGrid">
             <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
                 <RowDefinition Height="165"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
@@ -17,12 +18,18 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="130"/>
-                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="10"/>
                 <ColumnDefinition Width="130"/>
                 <ColumnDefinition Width="130"/>
             </Grid.ColumnDefinitions>
 
-            <Grid x:Name="GraphGrid" Grid.ColumnSpan="2" Background="#FF202225" Height="165">
+            <Canvas Grid.ColumnSpan="5"  Background="#FF202225"/>
+            <Label x:Name="TitleLabel" Grid.ColumnSpan="3" Content="E-Fame Watch" FontSize="20" Style="{StaticResource StandartLabelStyle}"/>
+            <Button x:Name="ExitButton" HorizontalAlignment="Left" Width="30" Content="X" Margin="4" Style="{StaticResource StandartExitButtonStyle}" Click="ExitButton_Click"/>
+            <Button x:Name="ExpandButton" Grid.Column="1" HorizontalAlignment="Right" Width="30" Content=">" Margin="4" Style="{StaticResource StandartButtonStyle}" Click="ExpandButton_Click"/>
+
+            <Grid x:Name="GraphGrid" Grid.ColumnSpan="3" Grid.Row="1" Background="#FF202225" Height="165">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="20"/>
@@ -34,8 +41,6 @@
                     <ColumnDefinition Width="230"/>
                     <ColumnDefinition Width="5"/>
                 </Grid.ColumnDefinitions>
-                
-                <Button x:Name="ExitButton" Content="X" Style="{StaticResource StandartExitButtonStyle}" Click="ExitButton_Click"/>
 
                 <Label x:Name="GraphTopLabel" Grid.Column="1" Content="Total" Style="{StaticResource StandartLabelStyle}"/>
 
@@ -47,30 +52,33 @@
                 </Label>
                 <Label x:Name="GraphBottomValLabel" Grid.Row="3" Content="0" FontSize="7" Style="{StaticResource StandartLabelStyle}"/>
                 <Canvas x:Name="GraphCanvas" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Background="#FF2E3134"/>
-                <Button x:Name="ExpandButton" Grid.Column="1" HorizontalAlignment="Right" Width="25" Content=">" Style="{StaticResource StandartButtonStyle}" Click="ExpandButton_Click"/>
+                <Canvas x:Name="GraphCanvasMiddleLine" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Height="2" Background="Gray" Visibility="Hidden"/>
             </Grid>
 
-            <Button x:Name="NextGraphButton" Grid.Column="2" Grid.Row="1" Content="Change to mode 2" Style="{StaticResource StandartButtonStyle}" Click="ChangeModeButton_Click"/>
-            <Button x:Name="ResetGraphButton" Grid.Column="3" Grid.Row="1" Content="Reset graph" Style="{StaticResource StandartButtonStyle}" Click="ResetGraphButton_Click"/>
-            <Button x:Name="FlatlineGraphButton" Grid.Column="3" Grid.Row="2" Content="Flatline graph" Style="{StaticResource StandartButtonStyle}" Click="FlatlineGraphButton_Click"/>
+            <Button x:Name="NextGraphButton" Grid.Column="3" Grid.Row="2" Content="Change mode" Style="{StaticResource StandartButtonStyle}" Click="ChangeModeButton_Click"/>
+            <Button x:Name="ResetGraphButton" Grid.Column="4" Grid.Row="2" Content="Reset graph" Style="{StaticResource StandartButtonStyle}" Click="ResetGraphButton_Click"/>
+            <Button x:Name="FlatlineGraphButton" Grid.Column="4" Grid.Row="3" Content="Flatline graph" Style="{StaticResource StandartButtonStyle}" Click="FlatlineGraphButton_Click"/>
+            <Button x:Name="EqualizeColorsBotton" Grid.Column="3" Grid.Row="3" Content="Equalize Colors" Style="{StaticResource StandartButtonStyle}" Click="EqualizeColorsBotton_Click"/>
+            <Button x:Name="MinimizeItemStackButton" Grid.Column="3" Grid.Row="4" Content="Minimize Items" Style="{StaticResource StandartButtonStyle}" Click="MinimizeItemStackButton_Click"/>
 
-            <Label x:Name="AvrChangeLabel" Grid.Row="1" Content="Avr Change: " Style="{StaticResource StandartLabelStyle}"/>
-            <Label x:Name="TotalLabel" Grid.Row="1" Grid.Column="1" Content="Total: " Style="{StaticResource StandartLabelStyle}"/>
+            <Label x:Name="AvrChangeLabel" Grid.Row="2" Content="Avr Change: " Style="{StaticResource StandartLabelStyle}"/>
+            <Label x:Name="TotalLabel" Grid.Row="2" Grid.Column="1" Content="Total: " Style="{StaticResource StandartLabelStyle}"/>
 
-            <ComboBox x:Name="TimeFrameCombobox" Grid.Row="2" Margin="5" Style="{StaticResource StandartComboboxStyle}"/>
-            <ComboBox x:Name="TimeElementsCombobox" Grid.Row="2" Grid.Column="1" Margin="5" Style="{StaticResource StandartComboboxStyle}" SelectionChanged="TimeElementsCombobox_SelectionChanged"/>
+            <ComboBox x:Name="TimeFrameCombobox" Grid.Row="3" Margin="5" Style="{StaticResource StandartComboboxStyle}"/>
+            <ComboBox x:Name="TimeElementsCombobox" Grid.Row="3" Grid.Column="1" Margin="5" Style="{StaticResource StandartComboboxStyle}" SelectionChanged="TimeElementsCombobox_SelectionChanged"/>
 
-            <Button x:Name="AddNewItemButton"  Grid.Row="3" Grid.ColumnSpan="2" Content="Add New Item" Height="25" Style="{StaticResource StandartButtonStyle}" Click="AddNewItemButton_Click"/>
+            <Button x:Name="AddNewItemButton"  Grid.Row="4" Grid.ColumnSpan="2" Content="Add New Item" Height="25" Style="{StaticResource StandartButtonStyle}" Click="AddNewItemButton_Click"/>
 
-            <ScrollViewer x:Name="ItemsScrollBar" Grid.Row="4" Grid.ColumnSpan="4" VerticalScrollBarVisibility="Hidden" Height="733">
-                <StackPanel x:Name="ItemStack" >
-                    
+            <ScrollViewer x:Name="ItemsScrollBar" Grid.Row="5" Grid.ColumnSpan="3" VerticalScrollBarVisibility="Hidden" Height="705" Style="{StaticResource StandartScrollviewerStyle}">
+                <StackPanel x:Name="ItemStack" HorizontalAlignment="Stretch">
+
                 </StackPanel>
             </ScrollViewer>
 
-            <StackPanel x:Name="PieGraphGrid" Grid.Column="2" Grid.ColumnSpan="2" Background="#FF202225" Height="165">
-                <Canvas x:Name="PieGraphCanvas" Height="155" Width="250" Margin="5" Background="#FF2E3134"/>
-            </StackPanel>
+            <Canvas Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3"  Background="#FF202225"/>
+            <Canvas x:Name="PieGraphCanvas" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Height="155" Width="245" Margin="5" Background="#FF2E3134"/>
+            <Label x:Name="PieGraphLabel" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Content="Disabled" Foreground="Red" Style="{StaticResource StandartLabelStyle}" Visibility="Hidden"/>
+            
         </Grid>
     </Border>
 </Window>

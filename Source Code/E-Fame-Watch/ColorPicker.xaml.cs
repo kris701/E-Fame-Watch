@@ -20,9 +20,14 @@ namespace E_Fame_Watch
     /// </summary>
     public partial class ColorPicker : UserControl
     {
-        public ColorPicker()
+        MainWindow SenderWindow;
+
+        public ColorPicker(MainWindow _SenderWindow)
         {
+            SenderWindow = _SenderWindow;
             InitializeComponent();
+            this.VerticalAlignment = VerticalAlignment.Top;
+            this.Height = SenderWindow.Clip.Bounds.Height;
         }
 
         public bool SelectionMade = false;
@@ -33,50 +38,40 @@ namespace E_Fame_Watch
             int Count = 0;
             Type brushesType = typeof(Brushes);
             var properties = brushesType.GetProperties(System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
-            for (int i = 0; i < ColorGrid.ColumnDefinitions.Count; i++)
+            for (int i = 0; i < ColorGrid.RowDefinitions.Count; i++)
             {
-                for (int j = 0; j < ColorGrid.RowDefinitions.Count; j++)
+                for (int j = 0; j < ColorGrid.ColumnDefinitions.Count; j++)
                 {
                     Button NewColorButton = new Button();
                     NewColorButton.Background = (SolidColorBrush)new BrushConverter().ConvertFromString(properties[Count].Name);
                     NewColorButton.Click += ColorClick_Click;
-                    Grid.SetRow(NewColorButton, j);
-                    Grid.SetColumn(NewColorButton, i);
+                    Grid.SetRow(NewColorButton, i);
+                    Grid.SetColumn(NewColorButton, j);
                     ColorGrid.Children.Add(NewColorButton);
                     Count++;
                     if (Count >= properties.Length)
                     {
-                        i = ColorGrid.ColumnDefinitions.Count;
+                        i = ColorGrid.RowDefinitions.Count;
                         break;
                     }
                 }
             }
-            await FadeIn(this);
+
+            await SenderWindow.FadeIn(this);
         }
 
         private async void ColorClick_Click(object sender, RoutedEventArgs e)
         {
-            await FadeOut(this);
+            await SenderWindow.FadeOut(this);
             SelectedColor = (sender as Button).Background;
             SelectionMade = true;
         }
 
-        async Task FadeIn(UIElement FadeElement)
+        private async void ColorPickerCancel_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < 100; i += 5)
-            {
-                FadeElement.Opacity = ((double)i / (double)100);
-                await Task.Delay(10);
-            }
-        }
-
-        public async Task FadeOut(UIElement FadeElement)
-        {
-            for (int i = 100; i >= 0; i -= 5)
-            {
-                FadeElement.Opacity = ((double)i / (double)100);
-                await Task.Delay(10);
-            }
+            await SenderWindow.FadeOut(this);
+            SelectedColor = null;
+            SelectionMade = true;
         }
     }
 }

@@ -17,19 +17,44 @@ namespace E_Fame_Watch
 {
     public partial class ItemDesign : UserControl
     {
-        public ItemDesign()
+        MainWindow SenderWindow;
+
+        public ItemDesign(MainWindow _SenderWindow)
         {
+            SenderWindow = _SenderWindow;
             InitializeComponent();
         }
 
-        private void ItemRemoveButton_Click(object sender, RoutedEventArgs e)
+        private async void ItemRemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            Button SenderButton = sender as Button;
-            Grid SenderGrid = SenderButton.Parent as Grid;
-            ItemDesign SenderDesign = SenderGrid.Parent as ItemDesign;
-            StackPanel SenderPanel = SenderDesign.Parent as StackPanel;
-            SenderPanel.Children.Remove(SenderDesign);
-            SetWindowHeight(SenderPanel);
+            WarningPopup inputDialog = new WarningPopup(SenderWindow, "Are you sure you want to remove this item?", "Warning");
+            SenderWindow.MainGrid.Children.Add(inputDialog);
+            while (true)
+            {
+                if (inputDialog.SelectionMade)
+                {
+                    if (inputDialog.YesBool)
+                    {
+                        Button SenderButton = sender as Button;
+                        Grid SenderGrid = SenderButton.Parent as Grid;
+                        ItemDesign SenderDesign = SenderGrid.Parent as ItemDesign;
+                        StackPanel SenderPanel = SenderDesign.Parent as StackPanel;
+                        SenderPanel.Children.Remove(SenderDesign);
+                        SetWindowHeight(SenderPanel);
+                        SenderWindow.MainGrid.Children.Remove(inputDialog);
+                        break;
+                    }
+                    else
+                    {
+                        if (!inputDialog.YesBool)
+                        {
+                            SenderWindow.MainGrid.Children.Remove(inputDialog);
+                            break;
+                        }
+                    }
+                }
+                await Task.Delay(100);
+            }
         }
 
         private async void ItemMinimizeButton_Click(object sender, RoutedEventArgs e)
@@ -38,27 +63,27 @@ namespace E_Fame_Watch
             Grid SenderGrid = SenderButton.Parent as Grid;
             ItemDesign SenderDesign = SenderGrid.Parent as ItemDesign;
             StackPanel SenderPanel = SenderDesign.Parent as StackPanel;
-            if (SenderGrid.Height != 30)
+            if (SenderDesign.Height != 34)
             {
-                for (int i = 150; i >= 30; i -= 10)
+                SenderButton.Content = "^";
+                for (int i = 190; i >= 34; i -= 10)
                 {
-                    SenderGrid.Height = i;
+                    SenderDesign.Height = i;
                     SetWindowHeight(SenderPanel);
                     await Task.Delay(1);
                 }
-                SenderButton.Content = "^";
-                SenderGrid.Height = 30;
+                SenderDesign.Height = 34;
             }
             else
             {
-                for (int i = 30; i < 150; i += 10)
+                SenderButton.Content = "V";
+                for (int i = 34; i < 190; i += 10)
                 {
-                    SenderGrid.Height = i;
+                    SenderDesign.Height = i;
                     SetWindowHeight(SenderPanel);
                     await Task.Delay(1);
                 }
-                SenderButton.Content = "V";
-                SenderGrid.Height = 150;
+                SenderDesign.Height = 190;
             }
             SetWindowHeight(SenderPanel);
         }
@@ -68,13 +93,12 @@ namespace E_Fame_Watch
             Button SenderButton = sender as Button;
             Grid SenderGrid = SenderButton.Parent as Grid;
             ItemDesign SenderDesign = SenderGrid.Parent as ItemDesign;
-            StackPanel SenderPanel = SenderDesign.Parent as StackPanel;
-            if (SenderPanel.Children.IndexOf(SenderDesign) >= 1)
+            if (SenderWindow.ItemStack.Children.IndexOf(SenderDesign) >= 1)
             {
-                int Index = SenderPanel.Children.IndexOf(SenderDesign) - 1;
-                SenderPanel.Children.Remove(SenderDesign);
-                SenderPanel.Children.Insert(Index, SenderDesign);
-                SetWindowHeight(SenderPanel);
+                int Index = SenderWindow.ItemStack.Children.IndexOf(SenderDesign) - 1;
+                SenderWindow.ItemStack.Children.Remove(SenderDesign);
+                SenderWindow.ItemStack.Children.Insert(Index, SenderDesign);
+                SetWindowHeight(SenderWindow.ItemStack);
             }
         }
 
@@ -83,119 +107,82 @@ namespace E_Fame_Watch
             Button SenderButton = sender as Button;
             Grid SenderGrid = SenderButton.Parent as Grid;
             ItemDesign SenderDesign = SenderGrid.Parent as ItemDesign;
-            StackPanel SenderPanel = SenderDesign.Parent as StackPanel;
-            if (SenderPanel.Children.IndexOf(SenderDesign) < SenderPanel.Children.Count - 1)
+            if (SenderWindow.ItemStack.Children.IndexOf(SenderDesign) < SenderWindow.ItemStack.Children.Count - 1)
             {
-                int Index = SenderPanel.Children.IndexOf(SenderDesign) + 1;
-                SenderPanel.Children.Remove(SenderDesign);
-                SenderPanel.Children.Insert(Index, SenderDesign);
-                SetWindowHeight(SenderPanel);
+                int Index = SenderWindow.ItemStack.Children.IndexOf(SenderDesign) + 1;
+                SenderWindow.ItemStack.Children.Remove(SenderDesign);
+                SenderWindow.ItemStack.Children.Insert(Index, SenderDesign);
+                SetWindowHeight(SenderWindow.ItemStack);
             }
         }
 
         void SetWindowHeight(StackPanel SenderStack)
         {
             ScrollViewer SenderScrollViewer = SenderStack.Parent as ScrollViewer;
-            int AddHeight = 260;
+            double AddHeight = 300;
             for (int i = 0; i < SenderStack.Children.Count; i++)
             {
                 ItemDesign SenderDesign = SenderStack.Children[i] as ItemDesign;
-                AddHeight += (int)(SenderDesign.MainItemGrid.Height + SenderDesign.MainItemGrid.Margin.Top + SenderDesign.MainItemGrid.Margin.Bottom);
+                AddHeight += SenderDesign.Height;
             }
             if (AddHeight > 1000)
             {
-                (((SenderScrollViewer.Parent as Grid).Parent as Border).Parent as MainWindow).Height = 1000;
+                SenderWindow.Clip = new RectangleGeometry { Rect = new Rect(0, 0, SenderWindow.Clip.Bounds.Width, 1000) };
                 SenderScrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
             }
             else
             {
-                (((SenderScrollViewer.Parent as Grid).Parent as Border).Parent as MainWindow).Height = AddHeight;
+                SenderWindow.Clip = new RectangleGeometry { Rect = new Rect(0, 0, SenderWindow.Clip.Bounds.Width, AddHeight) };
                 SenderScrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
             }
         }
 
         private async void ItemBorderColorButton_Click(object sender, RoutedEventArgs e)
         {
-            bool Expand = false;
-            if ((((((this.Parent as StackPanel).Parent as ScrollViewer).Parent as Grid).Parent as Border).Parent as MainWindow).Width == 260)
-            {
-                Expand = true;
-            }
-
-            if (Expand)
-            {
-                for (int i = 260; i < 520; i += 20)
-                {
-                    (((((this.Parent as StackPanel).Parent as ScrollViewer).Parent as Grid).Parent as Border).Parent as MainWindow).Width = i;
-                    await Task.Delay(1);
-                }
-                (((((this.Parent as StackPanel).Parent as ScrollViewer).Parent as Grid).Parent as Border).Parent as MainWindow).Width = 520;
-            }
-
-            ColorPicker PickColor = new ColorPicker();
-            (((this.Parent as StackPanel).Parent as ScrollViewer).Parent as Grid).Children.Add(PickColor);
-            while (true)
-            {
-                if (PickColor.SelectionMade)
-                {
-                    ItemBorderColorButton.Background = PickColor.SelectedColor;
-                    (((this.Parent as StackPanel).Parent as ScrollViewer).Parent as Grid).Children.Remove(PickColor);
-                    break;
-                }
-                await Task.Delay(100);
-            }
-
-            if (Expand)
-            {
-                for (int i = 520; i >= 260; i -= 20)
-                {
-                    (((((this.Parent as StackPanel).Parent as ScrollViewer).Parent as Grid).Parent as Border).Parent as MainWindow).Width = i;
-                    await Task.Delay(1);
-                }
-                (((((this.Parent as StackPanel).Parent as ScrollViewer).Parent as Grid).Parent as Border).Parent as MainWindow).Width = 260;
-            }
+            await ShowColorPickerTask(false);
         }
 
         private async void ItemFillColorButton_Click(object sender, RoutedEventArgs e)
         {
-            bool Expand = false;
-            if ((((((this.Parent as StackPanel).Parent as ScrollViewer).Parent as Grid).Parent as Border).Parent as MainWindow).Width == 260)
-            {
-                Expand = true;
-            }
+            await ShowColorPickerTask(true);
+        }
 
-            if (Expand)
-            {
-                for (int i = 260; i < 520; i += 20)
-                {
-                    (((((this.Parent as StackPanel).Parent as ScrollViewer).Parent as Grid).Parent as Border).Parent as MainWindow).Width = i;
-                    await Task.Delay(1);
-                }
-                (((((this.Parent as StackPanel).Parent as ScrollViewer).Parent as Grid).Parent as Border).Parent as MainWindow).Width = 520;
-            }
+        async Task ShowColorPickerTask(bool FillColorOrBorderColor)
+        {
+            bool RetractAgain = false;
+            if (SenderWindow.Clip.Bounds.Width == 260)
+                RetractAgain = true;
+            await SenderWindow.ExpandWindow(true);
 
-            ColorPicker PickColor = new ColorPicker();
-            (((this.Parent as StackPanel).Parent as ScrollViewer).Parent as Grid).Children.Add(PickColor);
+            ColorPicker PickColor = new ColorPicker(SenderWindow);
+            SenderWindow.MainGrid.Children.Add(PickColor);
             while (true)
             {
                 if (PickColor.SelectionMade)
                 {
-                    ItemFillColorButton.Background = PickColor.SelectedColor;
-                    (((this.Parent as StackPanel).Parent as ScrollViewer).Parent as Grid).Children.Remove(PickColor);
+                    if (FillColorOrBorderColor)
+                    {
+                        if (PickColor.SelectedColor != null)
+                            ItemFillColorButton.Background = PickColor.SelectedColor;
+                    }
+                    else
+                    {
+                        if (PickColor.SelectedColor != null)
+                            ItemBorderColorButton.Background = PickColor.SelectedColor;
+                    }
+                    SenderWindow.MainGrid.Children.Remove(PickColor);
                     break;
                 }
                 await Task.Delay(100);
             }
 
-            if (Expand)
-            {
-                for (int i = 520; i >= 260; i -= 20)
-                {
-                    (((((this.Parent as StackPanel).Parent as ScrollViewer).Parent as Grid).Parent as Border).Parent as MainWindow).Width = i;
-                    await Task.Delay(1);
-                }
-                (((((this.Parent as StackPanel).Parent as ScrollViewer).Parent as Grid).Parent as Border).Parent as MainWindow).Width = 260;
-            }
+            if (RetractAgain)
+                await SenderWindow.ExpandWindow(false);
+        }
+
+        private void ItemNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ItemNameLabel.Content = ItemNameTextBox.Text;
         }
     }
 }
