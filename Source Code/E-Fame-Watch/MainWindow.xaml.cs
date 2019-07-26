@@ -92,7 +92,6 @@ namespace E_Fame_Watch
 
         bool Draging = false;
         Point StartDragPoint = new Point();
-        static readonly int[] DelayTimes = { 86400, 3600, 60, 1 };
         static readonly int DataCacheSize = 50;
 
         #region GraphModes
@@ -281,7 +280,7 @@ namespace E_Fame_Watch
 
                 SaveSettings(GraphData);
 
-                await WaitUntil(TimeFrameCombobox.SelectedIndex, TimeElementsCombobox.SelectedIndex, GraphData);
+                await WaitUntil(TimeFrameCombobox.SelectedIndex, GraphData);
             }
         }
 
@@ -547,6 +546,7 @@ namespace E_Fame_Watch
 
             AvrChangeLabel.Foreground = GetColorFromPosNegNeuValue(AvrChange, Brushes.LightGreen, Brushes.Pink, Brushes.White);
             AvrChangeLabel.Content = "Avr Change: " + Math.Round(AvrChange, 2);
+            AvrChangeLabel.ToolTip = new ToolTip { Content = "AVR(Values / Previous values)" }; ;
 
             //Total Label
             double HighestVal = 0;
@@ -557,8 +557,8 @@ namespace E_Fame_Watch
                 if (Moment > HighestVal)
                     HighestVal = Moment;
             }
-
             TotalLabel.Content = "Total: " + HighestVal;
+            TotalLabel.ToolTip = new ToolTip { Content = "Total value on graph" };
 
             //Charts
             UpdateColumnChart(Values, HighestVal);
@@ -617,7 +617,7 @@ namespace E_Fame_Watch
 
                             PosDirOffsetY += Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs];
 
-                            tooltip = new ToolTip { Content = Values[i].GraphElements[j].Name + ": " + Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs] + " ( " + SumOfList(Values[i], ColumnChart_UseIndexIs) + " )" };
+                            tooltip = new ToolTip { Content = Values[i].GraphElements[j].Name + ": " + Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs] + " ( " + SumOfList(Values[i], ColumnChart_UseIndexIs) + " ) ( " + Values[i].TimeTable + " )" };
                         }
                         if (GraphModeColumn == 1)
                         {
@@ -641,7 +641,7 @@ namespace E_Fame_Watch
 
                                 NegDirOffsetY += Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs];
                             }
-                            tooltip = new ToolTip { Content = Values[i].GraphElements[j].Name + ": " + Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs] + " ( " + SumOfList(Values[i], ColumnChart_UseIndexIs) + " )" };
+                            tooltip = new ToolTip { Content = Values[i].GraphElements[j].Name + ": " + Values[i].GraphElements[j].Value[ColumnChart_UseIndexIs] + " ( " + SumOfList(Values[i], ColumnChart_UseIndexIs) + " ) ( " + Values[i].TimeTable + " )" };
                         }
                         if (GraphModeColumn == 2)
                         {
@@ -652,7 +652,7 @@ namespace E_Fame_Watch
                             AddYC = SumOfRange(Values[i + 1], 0, Values[i].GraphElements.Count, ColumnChart_UseIndexIs);
                             AddYD = AddYC;
 
-                            tooltip = new ToolTip { Content = SumOfRange(Values[i], 0, Values[i].GraphElements.Count, ColumnChart_UseIndexIs) };
+                            tooltip = new ToolTip { Content = SumOfRange(Values[i], 0, Values[i].GraphElements.Count, ColumnChart_UseIndexIs) + " ( " + Values[i].TimeTable + " )" };
                         }
 
                         NewPolygon.ToolTip = tooltip;
@@ -729,7 +729,7 @@ namespace E_Fame_Watch
                     if (Procent < 0)
                         Procent = 0;
 
-                    ToolTip tooltip = new ToolTip { Content = SortedList[j].Name + ": " + (int)(Procent * 100) + "%" };
+                    ToolTip tooltip = new ToolTip { Content = SortedList[j].Name + ": " + (int)(Procent * 100) + "% ( " + Values[0].TimeTable + " )" };
                     Newpath.ToolTip = tooltip;
 
                     PieGraphCanvas.Children.Add(Newpath);
@@ -755,6 +755,7 @@ namespace E_Fame_Watch
                                 if (Values[0].GraphElements.Count > 0 && Values[1].GraphElements.Count > 0)
                                 {
                                     SenderDesign.ItemValueLabel.Content = "Value: " + Values[0].GraphElements[i].Value[Statistical_UseIndexIs];
+                                    SenderDesign.ItemValueLabel.ToolTip = "( " + Values[0].TimeTable + " )";
 
                                     if (IsPieChartEnabled)
                                     {
@@ -765,10 +766,12 @@ namespace E_Fame_Watch
                                     {
                                         SenderDesign.ItemShareLabel.Content = "Share: Disabled";
                                     }
+                                    SenderDesign.ItemShareLabel.ToolTip = "( " + Values[0].TimeTable + " )";
 
                                     double ChangeVal = Values[0].GraphElements[i].Value[0] - Values[1].GraphElements[i].Value[0];
                                     SenderDesign.ItemChangeLabel.Foreground = GetColorFromPosNegNeuValue(ChangeVal, Brushes.LightGreen, Brushes.Pink, Brushes.White);
                                     SenderDesign.ItemChangeLabel.Content = "Change: " + ChangeVal;
+                                    SenderDesign.ItemChangeLabel.ToolTip = "( " + Values[0].TimeTable + " )";
 
                                     double AvrChange = 0;
                                     for (int j = 1; j < (int)TimeElementsCombobox.SelectedValue - 1; j++)
@@ -781,6 +784,7 @@ namespace E_Fame_Watch
 
                                     SenderDesign.ItemAvrChangeLabel.Foreground = GetColorFromPosNegNeuValue(AvrChange, Brushes.LightGreen, Brushes.Pink, Brushes.White);
                                     SenderDesign.ItemAvrChangeLabel.Content = "Avr Change: " + Math.Round(AvrChange, 2);
+                                    SenderDesign.ItemAvrChangeLabel.ToolTip = "( " + Values[0].TimeTable + " )";
                                 }
                             }
                         }
@@ -1020,9 +1024,12 @@ namespace E_Fame_Watch
             ItemStack.Children.Add(NewDesign);
         }
 
-        async Task WaitUntil(int Index, int Index2, List<GraphColunm> GraphData)
+        async Task WaitUntil(int Index, List<GraphColunm> GraphData)
         {
-            for (int i = 0; i < DelayTimes[Index]; i++)
+            while ( (Index == 0 && (DateTime.Now - GraphData[0].TimeTable).Days < 1) ||
+                    (Index == 1 && (DateTime.Now - GraphData[0].TimeTable).Hours < 1) ||
+                    (Index == 2 && (DateTime.Now - GraphData[0].TimeTable).Minutes < 1) ||
+                    (Index == 3 && (DateTime.Now - GraphData[0].TimeTable).Seconds < 1) )
             {
                 await Task.Delay(1000);
                 if (TimeFrameCombobox.SelectedIndex != Index)

@@ -25,11 +25,11 @@ namespace E_Fame_Watch
             Width = _Width;
             Height = _Height;
             InitializeComponent();
+            LoadingRectangle.Width = _Height - 10;
         }
 
         private async void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadingRectangle.Width = this.ActualHeight - 10;
             while (true)
             {
                 for (int i = 0; i < 180; i += 10)
