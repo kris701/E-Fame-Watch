@@ -152,7 +152,7 @@ namespace E_Fame_Watch
             bool RetractAgain = false;
             if (SenderWindow.Clip.Bounds.Width == 260)
                 RetractAgain = true;
-            await SenderWindow.ExpandWindow(true);
+            await GI.ExpandWindow(SenderWindow, true);
 
             ColorPicker PickColor = new ColorPicker(SenderWindow);
             SenderWindow.MainGrid.Children.Add(PickColor);
@@ -177,12 +177,65 @@ namespace E_Fame_Watch
             }
 
             if (RetractAgain)
-                await SenderWindow.ExpandWindow(false);
+                await GI.ExpandWindow(SenderWindow, false);
         }
 
         private void ItemNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             ItemNameLabel.Content = ItemNameTextBox.Text;
+        }
+
+        public void ResetWarningLabels()
+        {
+            URLErrorLabel.Foreground = (Brush)Application.Current.FindResource("StandartItemDesignWarnColor");
+            XPathErrorLabel.Foreground = (Brush)Application.Current.FindResource("StandartItemDesignWarnColor");
+            URLErrorLabel.Visibility = Visibility.Visible;
+            XPathErrorLabel.Visibility = Visibility.Visible;
+        }
+
+        public void UpdateStatisticals(List<GI.GraphColunm> GraphData, double TotalValue, int Statistical_UseIndexIs, bool IsPieChartEnabled, int TimeElementsIndex)
+        {
+            int Index = SenderWindow.ItemStack.Children.IndexOf(this);
+            if (ItemURLTextBox.Text != "" && ItemXPathTextBox.Text != "")
+            {
+                if (GraphData[0].GraphElements != null && GraphData[1].GraphElements != null)
+                {
+                    if (GraphData[0].GraphElements.Count > 0 && GraphData[1].GraphElements.Count > 0)
+                    {
+                        ItemValueLabel.Content = "Value: " + GraphData[0].GraphElements[Index].Value[Statistical_UseIndexIs];
+                        ItemValueLabel.ToolTip = "( " + GraphData[0].TimeTable + " )";
+
+                        if (IsPieChartEnabled)
+                        {
+                            double ShareVal = (((double)GraphData[0].GraphElements[Index].Value[Statistical_UseIndexIs] / TotalValue) * 100);
+                            ItemShareLabel.Content = "Share: " + (int)ShareVal + "%";
+                        }
+                        else
+                        {
+                            ItemShareLabel.Content = "Share: Disabled";
+                        }
+                        ItemShareLabel.ToolTip = "( " + GraphData[0].TimeTable + " )";
+
+                        double ChangeVal = GraphData[0].GraphElements[Index].Value[0] - GraphData[1].GraphElements[Index].Value[0];
+                        ItemChangeLabel.Foreground = GI.GetColorFromPosNegNeuValue(ChangeVal, (Brush)Application.Current.FindResource("StandartItemDesignGoodColor"), (Brush)Application.Current.FindResource("StandartItemDesignBadColor"), (Brush)Application.Current.FindResource("StandartItemDesignLabelsForground"));
+                        ItemChangeLabel.Content = "Change: " + ChangeVal;
+                        ItemChangeLabel.ToolTip = "( " + GraphData[0].TimeTable + " )";
+
+                        double AvrChange = 0;
+                        for (int j = 1; j < TimeElementsIndex - 1; j++)
+                        {
+                            if (GraphData[j].GraphElements.Count > 0)
+                                if (GraphData[j + 1].GraphElements.Count > 0)
+                                    AvrChange += GraphData[j].GraphElements[Index].Value[Statistical_UseIndexIs] - GraphData[j + 1].GraphElements[Index].Value[Statistical_UseIndexIs];
+                        }
+                        AvrChange = AvrChange / (TimeElementsIndex - 1);
+
+                        ItemAvrChangeLabel.Foreground = GI.GetColorFromPosNegNeuValue(AvrChange, (Brush)Application.Current.FindResource("StandartItemDesignGoodColor"), (Brush)Application.Current.FindResource("StandartItemDesignBadColor"), (Brush)Application.Current.FindResource("StandartItemDesignLabelsForground"));
+                        ItemAvrChangeLabel.Content = "Avr Change: " + Math.Round(AvrChange, 2);
+                        ItemAvrChangeLabel.ToolTip = "( " + GraphData[0].TimeTable + " )";
+                    }
+                }
+            }
         }
     }
 }

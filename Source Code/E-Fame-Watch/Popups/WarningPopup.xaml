@@ -11,7 +11,7 @@
           Grid.ColumnSpan="10"
           Grid.RowSpan="10">
 
-    <Grid Background="#FF202225" Initialized="Grid_Initialized">
+    <Grid Background="{StaticResource StandartPopupTopBarColor}" Initialized="Grid_Initialized">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
@@ -24,7 +24,7 @@
 
         <Label x:Name="WarningTopLabel" Grid.ColumnSpan="2" Content="" FontSize="50" Style="{StaticResource StandartLabelStyle}"/>
 
-        <Canvas Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" Background="#FF36393F"/>
+        <Canvas Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" Background="{StaticResource StandartPopupMiddleColor}"/>
 
         <TextBlock x:Name="WarningTextBlock" Grid.ColumnSpan="2" Grid.Row="1" Text="" TextWrapping="Wrap" TextAlignment="Center" Margin="10" Style="{StaticResource StandartTextBlockStyle}"/>
         <Button x:Name="WarningYesButton" Grid.Row="2" Content="Yes" Margin="20" Style="{StaticResource StandartExitButtonStyle}" Click="WarningYesButton_Click"/>

@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="E-Fame Watch" Height="300" Width="520" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStyle="None" Icon="icon.ico" Opacity="1" AllowsTransparency="True">
+        Title="E-Fame Watch" Height="300" Width="520" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStyle="None" Icon="icon.ico" Opacity="1" AllowsTransparency="True" Closing="Window_Closing">
 
-    <Border x:Name="MainBorder" BorderThickness="0" BorderBrush="DarkGray" Background="#FF36393F" Loaded="Grid_Loaded" MouseDown="Grid_MouseDown" MouseUp="Grid_MouseUp" MouseMove="Grid_MouseMove">
+    <Border x:Name="MainBorder" BorderThickness="0" Loaded="Grid_Loaded" MouseDown="Grid_MouseDown" MouseUp="Grid_MouseUp" MouseMove="Grid_MouseMove" Style="{StaticResource StandartWindowStyle}">
         <Grid x:Name="MainGrid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
@@ -24,12 +24,12 @@
                 <ColumnDefinition Width="130"/>
             </Grid.ColumnDefinitions>
 
-            <Canvas Grid.ColumnSpan="5"  Background="#FF202225"/>
+            <Canvas Grid.ColumnSpan="5" Grid.RowSpan="2" Style="{StaticResource StandartCanvasStyle}"/>
             <Label x:Name="TitleLabel" Grid.ColumnSpan="3" Content="E-Fame Watch" FontSize="20" Style="{StaticResource StandartLabelStyle}"/>
             <Button x:Name="ExitButton" HorizontalAlignment="Left" Width="30" Content="X" Margin="4" Style="{StaticResource StandartExitButtonStyle}" Click="ExitButton_Click"/>
             <Button x:Name="ExpandButton" Grid.Column="1" HorizontalAlignment="Right" Width="30" Content=">" Margin="4" Style="{StaticResource StandartButtonStyle}" Click="ExpandButton_Click"/>
 
-            <Grid x:Name="GraphGrid" Grid.ColumnSpan="3" Grid.Row="1" Background="#FF202225" Height="165">
+            <Grid x:Name="GraphGrid" Grid.ColumnSpan="3" Grid.Row="1" Height="165">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="20"/>
@@ -43,16 +43,17 @@
                 </Grid.ColumnDefinitions>
 
                 <Label x:Name="GraphTopLabel" Grid.Column="1" Content="Total" Style="{StaticResource StandartLabelStyle}"/>
+                <Button x:Name="GraphRefreshButton" Grid.Column="0" Content="&#x1F5D8;" Style="{StaticResource StandartButtonStyle}" Click="GraphRefreshButton_Click"/>
 
                 <Label x:Name="GraphTopValLabel" Grid.Row="1" Content="1" FontSize="7" Style="{StaticResource StandartLabelStyle}"/>
-                <Label Grid.Row="2" Content="E-Fame" Foreground="White" FontSize="10" Style="{StaticResource StandartLabelStyle}" RenderTransformOrigin="0.5,0.5">
+                <Label Grid.Row="2" Content="E-Fame" FontSize="10" Style="{StaticResource StandartLabelStyle}" RenderTransformOrigin="0.5,0.5">
                     <Label.LayoutTransform>
                         <RotateTransform Angle="90"/>
                     </Label.LayoutTransform>
                 </Label>
                 <Label x:Name="GraphBottomValLabel" Grid.Row="3" Content="0" FontSize="7" Style="{StaticResource StandartLabelStyle}"/>
-                <Canvas x:Name="GraphCanvas" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Background="#FF2E3134"/>
-                <Canvas x:Name="GraphCanvasMiddleLine" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Height="2" Background="Gray" Visibility="Hidden"/>
+                <Canvas x:Name="GraphCanvas" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Style="{StaticResource StandartGraphCanvasStyle}"/>
+                <Canvas x:Name="GraphCanvasMiddleLine" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Height="2" Background="{DynamicResource StandartGraphMiddleLineColor}" Visibility="Hidden"/>
             </Grid>
 
             <Button x:Name="NextGraphButton" Grid.Column="3" Grid.Row="2" Content="Change mode" Style="{StaticResource StandartButtonStyle}" Click="ChangeModeButton_Click"/>
@@ -60,6 +61,7 @@
             <Button x:Name="FlatlineGraphButton" Grid.Column="4" Grid.Row="3" Content="Flatline graph" Style="{StaticResource StandartButtonStyle}" Click="FlatlineGraphButton_Click"/>
             <Button x:Name="EqualizeColorsBotton" Grid.Column="3" Grid.Row="3" Content="Equalize Colors" Style="{StaticResource StandartButtonStyle}" Click="EqualizeColorsBotton_Click"/>
             <Button x:Name="MinimizeItemStackButton" Grid.Column="3" Grid.Row="4" Content="Minimize Items" Style="{StaticResource StandartButtonStyle}" Click="MinimizeItemStackButton_Click"/>
+            <Button x:Name="ChangeThemeButton" Grid.Column="4" Grid.Row="4" Content="Change Theme" Style="{StaticResource StandartButtonStyle}" Click="ChangeThemeButton_Click"/>
 
             <Label x:Name="AvrChangeLabel" Grid.Row="2" Content="Avr Change: " Style="{StaticResource StandartLabelStyle}"/>
             <Label x:Name="TotalLabel" Grid.Row="2" Grid.Column="1" Content="Total: " Style="{StaticResource StandartLabelStyle}"/>
@@ -75,8 +77,7 @@
                 </StackPanel>
             </ScrollViewer>
 
-            <Canvas Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3"  Background="#FF202225"/>
-            <Canvas x:Name="PieGraphCanvas" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Height="155" Width="245" Margin="5" Background="#FF2E3134"/>
+            <Canvas x:Name="PieGraphCanvas" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Margin="5" Style="{StaticResource StandartGraphCanvasStyle}"/>
             <Label x:Name="PieGraphLabel" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Content="Disabled" Foreground="Red" Style="{StaticResource StandartLabelStyle}" Visibility="Hidden"/>
             
         </Grid>

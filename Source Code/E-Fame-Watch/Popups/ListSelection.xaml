@@ -11,7 +11,7 @@
             Grid.ColumnSpan="10"
             Grid.RowSpan="10">
 
-    <Grid Background="#FF202225" Initialized="Grid_Initialized">
+    <Grid Background="{StaticResource StandartPopupTopBarColor}" Initialized="Grid_Initialized">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
@@ -23,7 +23,7 @@
 
         <Label x:Name="ListSelectionTopLabel" Content="" FontSize="20" Style="{StaticResource StandartLabelStyle}"/>
 
-        <StackPanel x:Name="ListSelectionStackPanel" Grid.Row="1" Background="#FF36393F"/>
+        <StackPanel x:Name="ListSelectionStackPanel" Grid.Row="1" Background="{StaticResource StandartPopupMiddleColor}"/>
 
         <Button x:Name="ListSelectionCancelButton" Grid.Row="12" Content="Cancel" Margin="4" FontSize="10" Style="{StaticResource StandartExitButtonStyle}" Click="ListSelectionCancelButton_Click"/>
     </Grid>

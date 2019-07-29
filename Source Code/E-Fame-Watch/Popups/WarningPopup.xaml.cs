@@ -39,18 +39,18 @@ namespace E_Fame_Watch
 
         private async void WarningNoButton_Click(object sender, RoutedEventArgs e)
         {
-            await SenderWindow.FadeOut(this);
+            await GI.FadeOut(this);
             if (RetractAgain)
-                await SenderWindow.ExpandWindow(false);
+                await GI.ExpandWindow(SenderWindow, false);
             YesBool = false;
             SelectionMade = true;
         }
 
         private async void WarningYesButton_Click(object sender, RoutedEventArgs e)
         {
-            await SenderWindow.FadeOut(this);
+            await GI.FadeOut(this);
             if (RetractAgain)
-                await SenderWindow.ExpandWindow(false);
+                await GI.ExpandWindow(SenderWindow, false);
             YesBool = true;
             SelectionMade = true;
         }
@@ -59,8 +59,8 @@ namespace E_Fame_Watch
         {
             if (SenderWindow.Clip.Bounds.Width == 260)
                 RetractAgain = true;
-            await SenderWindow.ExpandWindow(true);
-            await SenderWindow.FadeIn(this);
+            await GI.ExpandWindow(SenderWindow, true);
+            await GI.FadeIn(this);
         }
     }
 }

@@ -20,12 +20,15 @@ namespace E_Fame_Watch
     /// </summary>
     public partial class GraphLoadingControl : UserControl
     {
-        public GraphLoadingControl(double _Width, double _Height)
+        Canvas SenderCanvas;
+
+        public GraphLoadingControl(Canvas _SenderCanvas,double _Width, double _Height)
         {
             Width = _Width;
             Height = _Height;
             InitializeComponent();
             LoadingRectangle.Width = _Height - 10;
+            SenderCanvas = _SenderCanvas;
         }
 
         private async void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -39,6 +42,11 @@ namespace E_Fame_Watch
                 }
                 LoadingRectangle.RenderTransform = new RotateTransform(0);
             }
+        }
+
+        public void DoRemove()
+        {
+            SenderCanvas.Children.Remove(this);
         }
     }
 }

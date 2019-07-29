@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:E_Fame_Watch"
              mc:Ignorable="d" 
              d:DesignHeight="185" d:DesignWidth="515" Height="180" Width="520">
-    
-    <Grid x:Name="MainItemGrid" Background="#FF595C61" Margin="2">
+
+    <Grid x:Name="MainItemGrid" Style="{DynamicResource StandartItemDesignGridStyle}" Margin="2">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="150"/>
@@ -21,9 +21,9 @@
 
         <Button x:Name="ItemRemoveButton" Content="X" Style="{StaticResource StandartExitButtonStyle}" Click="ItemRemoveButton_Click"/>
         <Button x:Name="ItemMinimizeButton" Grid.Column="1" Content="V" Style="{StaticResource StandartButtonStyle}" Click="ItemMinimizeButton_Click"/>
-        <Label x:Name="ItemNameLabel" Grid.Column="2" Content="Name" Style="{StaticResource StandartLabelStyle}"/>
+        <Label x:Name="ItemNameLabel" Grid.Column="2" Content="Name" Style="{StaticResource StandartItemDesignLabelStyle}"/>
 
-        <Grid x:Name="InnerGrid" Background="#FF595C61" Grid.Row="1" Grid.ColumnSpan="5">
+        <Grid x:Name="InnerGrid" Grid.Row="1" Grid.ColumnSpan="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
@@ -45,25 +45,25 @@
             <Button x:Name="ItemMoveUpButton" Grid.Column="5" Content="Move Up" Style="{StaticResource StandartButtonStyle}" Click="ItemMoveUpButton_Click"/>
             <Button x:Name="ItemMoveDownButton" Grid.Column="6" Content="Move Down" Style="{StaticResource StandartButtonStyle}" Click="ItemMoveDownButton_Click"/>
 
-            <Label Grid.ColumnSpan="3" Grid.Row="1" Content="URL" HorizontalAlignment="Right" Style="{StaticResource StandartLabelStyle}"/>
+            <Label Grid.ColumnSpan="3" Grid.Row="1" Content="URL" HorizontalAlignment="Right" Style="{StaticResource StandartItemDesignLabelStyle}"/>
             <TextBox x:Name="ItemURLTextBox" Grid.Row="1" Grid.Column="3" Text="" Style="{StaticResource StandartTextBoxStyle}"/>
 
-            <Label Grid.ColumnSpan="3" Grid.Row="2" Content="XPath" HorizontalAlignment="Right" Style="{StaticResource StandartLabelStyle}"/>
+            <Label Grid.ColumnSpan="3" Grid.Row="2" Content="XPath" HorizontalAlignment="Right" Style="{StaticResource StandartItemDesignLabelStyle}"/>
             <TextBox x:Name="ItemXPathTextBox" Grid.Row="2" Grid.Column="3" Text="" Style="{StaticResource StandartTextBoxStyle}"/>
 
-            <Label Grid.ColumnSpan="3" Grid.Row="3" Content="Border Color" HorizontalAlignment="Right" Style="{StaticResource StandartLabelStyle}"/>
+            <Label Grid.ColumnSpan="3" Grid.Row="3" Content="Border Color" HorizontalAlignment="Right" Style="{StaticResource StandartItemDesignLabelStyle}"/>
             <Button Grid.Column="3" Grid.Row="3" x:Name="ItemBorderColorButton" Margin="2" Click="ItemBorderColorButton_Click"/>
 
-            <Label Grid.ColumnSpan="3" Grid.Row="4" Content="Fill Color" HorizontalAlignment="Right" Style="{StaticResource StandartLabelStyle}"/>
+            <Label Grid.ColumnSpan="3" Grid.Row="4" Content="Fill Color" HorizontalAlignment="Right" Style="{StaticResource StandartItemDesignLabelStyle}"/>
             <Button Grid.Column="3" Grid.Row="4" x:Name="ItemFillColorButton" Margin="2" Click="ItemFillColorButton_Click"/>
 
             <Label x:Name="URLErrorLabel" Grid.Column="4" Grid.Row="1" Content="!" FontSize="20" Foreground="Red" ToolTip="Error loading URL" Style="{StaticResource StandartLabelStyle}" Visibility="Hidden"/>
             <Label x:Name="XPathErrorLabel" Grid.Column="4" Grid.Row="2" Content="!" FontSize="20" Foreground="Red" ToolTip="Error loading XPath" Style="{StaticResource StandartLabelStyle}" Visibility="Hidden"/>
 
-            <Label x:Name="ItemValueLabel" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="1" Content="Value: Loading" Style="{StaticResource StandartLabelStyle}"/>
-            <Label x:Name="ItemShareLabel" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="2" Content="Share: Loading" Style="{StaticResource StandartLabelStyle}"/>
-            <Label x:Name="ItemChangeLabel" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="3" Content="Change: Loading" Style="{StaticResource StandartLabelStyle}"/>
-            <Label x:Name="ItemAvrChangeLabel" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="4" Content="Avr Change: Loading" Style="{StaticResource StandartLabelStyle}"/>
+            <Label x:Name="ItemValueLabel" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="1" Content="Value: Loading" Style="{StaticResource StandartItemDesignLabelStyle}"/>
+            <Label x:Name="ItemShareLabel" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="2" Content="Share: Loading" Style="{StaticResource StandartItemDesignLabelStyle}"/>
+            <Label x:Name="ItemChangeLabel" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="3" Content="Change: Loading" Style="{StaticResource StandartItemDesignLabelStyle}"/>
+            <Label x:Name="ItemAvrChangeLabel" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="4" Content="Avr Change: Loading" Style="{StaticResource StandartItemDesignLabelStyle}"/>
 
 
         </Grid>

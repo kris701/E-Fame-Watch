@@ -10,7 +10,7 @@
         
         <Rectangle x:Name="LoadingBackgroundRectangle" Fill="Black" Opacity="0.5"/>
 
-        <Rectangle x:Name="LoadingRectangle" Width="100" Height="20" Fill="Blue" Canvas.Left="10" Canvas.Top="39" RadiusY="10" RadiusX="10" RenderTransformOrigin="0.5,0.5"/>
+        <Rectangle x:Name="LoadingRectangle" Width="100" Height="20" Fill="{StaticResource StandartGraphLoadingColor}" Canvas.Left="10" Canvas.Top="39" RadiusY="10" RadiusX="10" RenderTransformOrigin="0.5,0.5"/>
 
     </Grid>
 </UserControl>

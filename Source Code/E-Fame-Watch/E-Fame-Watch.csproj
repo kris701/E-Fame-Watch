@@ -66,20 +66,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ColorPicker.xaml.cs">
+    <Compile Include="Popups\ColorPicker.xaml.cs">
       <DependentUpon>ColorPicker.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ListSelection.xaml.cs">
+    <Compile Include="GeneralInterface.cs" />
+    <Compile Include="Popups\ListSelection.xaml.cs">
       <DependentUpon>ListSelection.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WarningPopup.xaml.cs">
+    <Compile Include="SaveAndLoadClass.cs" />
+    <Compile Include="Popups\WarningPopup.xaml.cs">
       <DependentUpon>WarningPopup.xaml</DependentUpon>
     </Compile>
-    <Page Include="ColorPicker.xaml">
+    <Page Include="Themes\DefaultTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GraphLoadingControl.xaml">
+    <Page Include="Popups\ColorPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Popups\GraphLoadingControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -87,7 +93,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ListSelection.xaml">
+    <Page Include="Popups\ListSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,7 +105,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GraphLoadingControl.xaml.cs">
+    <Compile Include="Popups\GraphLoadingControl.xaml.cs">
       <DependentUpon>GraphLoadingControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ItemDesign.xaml.cs">
@@ -109,7 +115,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="WarningPopup.xaml">
+    <Page Include="Popups\WarningPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\GrayTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

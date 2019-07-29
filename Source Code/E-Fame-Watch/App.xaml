@@ -3,160 +3,185 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:E_Fame_Watch"
              StartupUri="MainWindow.xaml">
-    
+
     <Application.Resources>
-        <Thickness x:Key="StandartMargin" Top="2" Bottom="2" Left="2" Right="2"/>
-        <FontFamily x:Key="StandartFont">Lucida Console</FontFamily>
 
-        <Style TargetType="Label" x:Key="StandartLabelStyle">
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontFamily" Value="{StaticResource StandartFont}"/>
-            <Setter Property="Margin" Value="{StaticResource StandartMargin}"/>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/DefaultTheme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Thickness x:Key="StandartMargin" Top="2" Bottom="2" Left="2" Right="2"/>
 
-        <Style TargetType="TextBlock" x:Key="StandartTextBlockStyle">
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontFamily" Value="{StaticResource StandartFont}"/>
-            <Setter Property="Margin" Value="{StaticResource StandartMargin}"/>
-        </Style>
+            <Style TargetType="Border" x:Key="StandartWindowStyle">
+                <Setter Property="Background" Value="{DynamicResource StandartApplicationBackground}" />
+            </Style>
 
-        <Style TargetType="Button" x:Key="StandartButtonStyle">
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontFamily" Value="{StaticResource StandartFont}"/>
-            <Setter Property="Margin" Value="{StaticResource StandartMargin}"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="Overlay" Background="#FF1B212E">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter TargetName="Overlay" Property="Background" Value="#FF2F384B"/>
+            <Style TargetType="Label" x:Key="StandartLabelStyle">
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="Foreground" Value="{DynamicResource StandartFrontColor}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource StandartFont}"/>
+                <Setter Property="Margin" Value="{StaticResource StandartMargin}"/>
+            </Style>
+
+            <Style TargetType="TextBlock" x:Key="StandartTextBlockStyle">
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="Foreground" Value="{DynamicResource StandartTextboxFrontColor}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource StandartFont}"/>
+                <Setter Property="Margin" Value="{StaticResource StandartMargin}"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="StandartButtonStyle">
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="Foreground" Value="{DynamicResource StandartButtonFrontColor}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource StandartFont}"/>
+                <Setter Property="Margin" Value="{StaticResource StandartMargin}"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="Overlay" Background="{DynamicResource StandartButtonColor}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter TargetName="Overlay" Property="Background" Value="{DynamicResource StandartDisabledButtonColor}"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property = "Foreground" Value = "{DynamicResource StandartButtonColorHover}"/>
+                                    <Setter Property = "Cursor" Value="Hand"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style TargetType="Button" x:Key="StandartExitButtonStyle">
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="Foreground" Value="{DynamicResource StandartRedButtonFrontColor}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource StandartFont}"/>
+                <Setter Property="Margin" Value="{StaticResource StandartMargin}"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="Overlay" Background="{DynamicResource StandartRedButtonColor}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter TargetName="Overlay" Property="Background" Value="{DynamicResource StandartRedDisabledButtonColor}"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property = "Foreground" Value = "{DynamicResource StandartRedButtonColorHover}"/>
+                                    <Setter Property = "Cursor" Value="Hand"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style TargetType="TextBox" x:Key="StandartTextBoxStyle">
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="Foreground" Value="{DynamicResource StandartTextboxFrontColor}"/>
+                <Setter Property="Background" Value="{DynamicResource StandartTextboxBackgroundColor}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource StandartFont}"/>
+                <Setter Property="Margin" Value="{StaticResource StandartMargin}"/>
+            </Style>
+
+            <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="ToggleButton">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Border x:Name="Border" Grid.ColumnSpan="2" Background="{DynamicResource StandartComboboxButtonBackColor}" BorderThickness="0" />
+                    <Border Background="{DynamicResource StandartComboboxBorderBackgroundColor}"/>
+                    <Path x:Name="Arrow" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M 0 0 L 5 9 L 10 0 Z" Fill="{DynamicResource StandartComboboxButtonForeColor}"/>
+                </Grid>
+            </ControlTemplate>
+
+            <Style x:Key = "StandartComboboxStyle" TargetType = "ComboBox">
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="FontFamily" Value="{DynamicResource StandartFont}"/>
+                <Setter Property="Foreground" Value = "{DynamicResource StandartFrontColor}" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ComboBox">
+                            <Grid>
+                                <ToggleButton Name="ToggleButton" Template="{DynamicResource ComboBoxToggleButton}" Grid.Column="2" Focusable="false" IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press"/>
+                                <ContentPresenter Name="ContentSite" IsHitTestVisible="False" Margin="3,3,23,3" VerticalAlignment="Center" HorizontalAlignment="Left" Content="{TemplateBinding ComboBox.SelectionBoxItem}" ContentTemplate="{TemplateBinding ComboBox.SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"/>
+                                <Popup Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True" Focusable="False" PopupAnimation="Slide">
+                                    <Grid Name="DropDown" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                        <Border x:Name="DropDownBorder" Background="{DynamicResource StandartComboboxBackgroundColor}" BorderThickness="1"/>
+                                        <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                            <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                        </ScrollViewer>
+                                    </Grid>
+                                </Popup>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style TargetType="ScrollViewer" x:Key="StandartScrollviewerStyle">
+                <Style.Resources>
+                    <Style TargetType="ScrollBar">
+                        <Style.Triggers>
+                            <Trigger Property="Orientation" Value="Vertical">
+                                <Setter Property="Width" Value="10"/>
+                                <Setter Property="MinWidth" Value="10"/>
+                                <Setter Property="Background" Value="{DynamicResource StandartScrollViewBackground}"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Setter Property="Clip">
+                                    <Setter.Value>
+                                        <RectangleGeometry Rect="0 18 10 670"/>
+                                    </Setter.Value>
+                                </Setter>
                             </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property = "Foreground" Value = "#FF007AD9"/>
-                                <Setter Property = "Cursor" Value="Hand"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+                        </Style.Triggers>
+                    </Style>
+                </Style.Resources>
+            </Style>
 
-        <Style TargetType="Button" x:Key="StandartExitButtonStyle">
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontFamily" Value="{StaticResource StandartFont}"/>
-            <Setter Property="Margin" Value="{StaticResource StandartMargin}"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="Overlay" Background="Red">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter TargetName="Overlay" Property="Background" Value="Pink"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property = "Foreground" Value = "Pink"/>
-                                <Setter Property = "Cursor" Value="Hand"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+            <Style TargetType="Canvas" x:Key="StandartCanvasStyle">
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="Background" Value="{DynamicResource StandartCanvasBackground}"/>
+            </Style>
 
-        <Style TargetType="TextBox" x:Key="StandartTextBoxStyle">
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="#FF1B212E"/>
-            <Setter Property="FontFamily" Value="{StaticResource StandartFont}"/>
-            <Setter Property="Margin" Value="{StaticResource StandartMargin}"/>
-        </Style>
+            <Style TargetType="Canvas" x:Key="StandartGraphCanvasStyle">
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="Background" Value="{DynamicResource StandartGraphCanvasBackground}"/>
+            </Style>
 
-        <Style TargetType="CheckBox" x:Key="StandartCheckBoxStyle">
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontFamily" Value="{StaticResource StandartFont}"/>
-            <Setter Property="Margin" Value="{StaticResource StandartMargin}"/>
-        </Style>
-        
-        <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="ToggleButton">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="20" />
-                </Grid.ColumnDefinitions>
-                <Border x:Name="Border" Grid.ColumnSpan="2" Background="#FF1B212E" BorderThickness="0" />
-                <Border Background="#FF1B212E"/>
-                <Path x:Name="Arrow" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M 0 0 L 5 9 L 10 0 Z" Fill="White"/>
-            </Grid>
-        </ControlTemplate>
+            <Style TargetType="Grid" x:Key="StandartItemDesignGridStyle">
+                <Setter Property="Background" Value="{DynamicResource StandartItemDesignBackground}"/>
+            </Style>
 
-        <Style x:Key = "StandartComboboxStyle" TargetType = "ComboBox">
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="FontFamily" Value="{StaticResource StandartFont}"/>
-            <Setter Property ="Foreground" Value = "White" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ComboBox">
-                        <Grid>
-                            <ToggleButton Name="ToggleButton" Template="{StaticResource ComboBoxToggleButton}" Grid.Column="2" Focusable="false" IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press"/>
-                            <ContentPresenter Name="ContentSite" IsHitTestVisible="False" Margin="3,3,23,3" VerticalAlignment="Center" HorizontalAlignment="Left" Content="{TemplateBinding ComboBox.SelectionBoxItem}" ContentTemplate="{TemplateBinding ComboBox.SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"/>
-                            <Popup Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True" Focusable="False" PopupAnimation="Slide">
-                                <Grid Name="DropDown" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
-                                    <Border x:Name="DropDownBorder" Background="#FF1B212E" BorderThickness="1"/>
-                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
-                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
-                                    </ScrollViewer>
-                                </Grid>
-                            </Popup>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+            <Style TargetType="Label" x:Key="StandartItemDesignLabelStyle">
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="Foreground" Value="{DynamicResource StandartItemDesignLabelsForground}"/>
+                <Setter Property="FontFamily" Value="{DynamicResource StandartFont}"/>
+                <Setter Property="Margin" Value="{StaticResource StandartMargin}"/>
+            </Style>
 
-        <Style TargetType="ScrollViewer" x:Key="StandartScrollviewerStyle">
-            <Style.Resources>
-                <Style TargetType="ScrollBar">
-                    <Style.Triggers>
-                        <Trigger Property="Orientation" Value="Vertical">
-                            <Setter Property="Width" Value="10"/>
-                            <Setter Property="MinWidth" Value="10"/>
-                            <Setter Property="Background" Value="#FF36393F"/>
-                            <Setter Property="BorderThickness" Value="0"/>
-                            <Setter Property="Clip">
-                                <Setter.Value>
-                                    <RectangleGeometry Rect="0 18 10 670"/>
-                                </Setter.Value>
-                            </Setter>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Style.Resources>
-        </Style>
-        
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

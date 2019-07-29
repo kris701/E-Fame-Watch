@@ -57,19 +57,19 @@ namespace E_Fame_Watch
                 }
             }
 
-            await SenderWindow.FadeIn(this);
+            await GI.FadeIn(this);
         }
 
         private async void ColorClick_Click(object sender, RoutedEventArgs e)
         {
-            await SenderWindow.FadeOut(this);
+            await GI.FadeOut(this);
             SelectedColor = (sender as Button).Background;
             SelectionMade = true;
         }
 
         private async void ColorPickerCancel_Click(object sender, RoutedEventArgs e)
         {
-            await SenderWindow.FadeOut(this);
+            await GI.FadeOut(this);
             SelectedColor = null;
             SelectionMade = true;
         }

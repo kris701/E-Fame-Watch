@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <FontFamily x:Key="StandartFont">Lucida Console</FontFamily>
+    <SolidColorBrush x:Key="StandartFrontColor" Color="Black" />
+    <SolidColorBrush x:Key="StandartFrontGoodColor" Color="DarkGreen" />
+    <SolidColorBrush x:Key="StandartFrontBadColor" Color="DarkRed" />
+
+    <SolidColorBrush x:Key="StandartRedButtonFrontColor" Color="White" />
+    <SolidColorBrush x:Key="StandartRedDisabledButtonColor" Color="DarkRed" />
+    <SolidColorBrush x:Key="StandartRedButtonColor" Color="#FF830000" />
+    <SolidColorBrush x:Key="StandartRedButtonColorHover" Color="#FFAE0120" />
+
+    <SolidColorBrush x:Key="StandartButtonFrontColor" Color="Black" />
+    <SolidColorBrush x:Key="StandartDisabledButtonColor" Color="Gray" />
+    <SolidColorBrush x:Key="StandartButtonColor" Color="DarkGray" />
+    <SolidColorBrush x:Key="StandartButtonColorHover" Color="#FFDED3D3" />
+
+    <SolidColorBrush x:Key="StandartTextboxFrontColor" Color="Black" />
+    <SolidColorBrush x:Key="StandartTextboxBackgroundColor" Color="DarkGray" />
+
+    <SolidColorBrush x:Key="StandartComboboxButtonBackColor" Color="Gray" />
+    <SolidColorBrush x:Key="StandartComboboxButtonForeColor" Color="Black" />
+    <SolidColorBrush x:Key="StandartComboboxBorderBackgroundColor" Color="Gray" />
+    <SolidColorBrush x:Key="StandartComboboxBackgroundColor" Color="Gray" />
+    
+    <SolidColorBrush x:Key="StandartScrollViewBackground" Color="White" />
+    <SolidColorBrush x:Key="StandartCanvasBackground" Color="#FFDED3D3" />
+    <SolidColorBrush x:Key="StandartGraphCanvasBackground" Color="#FFC5B7B7"/>
+    <SolidColorBrush x:Key="StandartGraphMiddleLineColor" Color="Black"/>
+    
+    <SolidColorBrush x:Key="StandartGraphLoadingColor" Color="DarkGray" />
+
+    <SolidColorBrush x:Key="StandartPopupTopBarColor" Color="#FFDED3D3" />
+    <SolidColorBrush x:Key="StandartPopupMiddleColor" Color="White" />
+
+    <SolidColorBrush x:Key="StandartItemDesignBackground" Color="#FFDED3D3" />
+    <SolidColorBrush x:Key="StandartItemDesignLabelsForground" Color="Black" />
+    <SolidColorBrush x:Key="StandartItemDesignGoodColor" Color="DarkGreen" />
+    <SolidColorBrush x:Key="StandartItemDesignWarnColor" Color="Orange" />
+    <SolidColorBrush x:Key="StandartItemDesignBadColor" Color="DarkRed" />
+
+    <SolidColorBrush x:Key="StandartApplicationBackground" Color="White" />
+    <SolidColorBrush x:Key="StandartApplicationBorder" Color="Black" />
+</ResourceDictionary>

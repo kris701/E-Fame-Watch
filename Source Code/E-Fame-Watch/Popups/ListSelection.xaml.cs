@@ -49,18 +49,18 @@ namespace E_Fame_Watch
 
         private async void ListSelectionCancelButton_Click(object sender, RoutedEventArgs e)
         {
-            await SenderWindow.FadeOut(this);
+            await GI.FadeOut(this);
             SelectionMade = true;
         }
 
         private async void Grid_Initialized(object sender, EventArgs e)
         {
-            await SenderWindow.FadeIn(this);
+            await GI.FadeIn(this);
         }
 
         private async void ListSelectionButton_Click(object sender, RoutedEventArgs e)
         {
-            await SenderWindow.FadeOut(this);
+            await GI.FadeOut(this);
             SelectedIndex = (int)(sender as Button).Tag;
             SelectionMade = true;
         }
