@@ -146,40 +146,43 @@ namespace E_Fame_Watch
                     GI.GraphColunm NewDataSet = new GI.GraphColunm(DateTime.Now, new List<GI.GraphElement>());
                     try
                     {
-                        for (int i = 0; i < ItemStack.Children.Count; i++)
+                        if (IsTimeOver(DateTime.Now, GraphData[0].TimeTable, TimeFrameCombobox.SelectedIndex))
                         {
-                            if (ExitSave)
-                                break;
-
-                            ItemDesign SenderDesign = ItemStack.Children[i] as ItemDesign;
-
-                            SenderDesign.URLErrorLabel.Foreground = (Brush)Application.Current.FindResource("StandartItemDesignBadColor");
-                            SenderDesign.XPathErrorLabel.Foreground = (Brush)Application.Current.FindResource("StandartItemDesignBadColor");
-
-                            if (SenderDesign.ItemURLTextBox.Text != "" && SenderDesign.ItemXPathTextBox.Text != "")
+                            for (int i = 0; i < ItemStack.Children.Count; i++)
                             {
-                                HtmlWeb web = new HtmlWeb();
-                                HtmlDocument doc = await web.LoadFromWebAsync(SenderDesign.ItemURLTextBox.Text);
-
-                                SenderDesign.URLErrorLabel.Visibility = Visibility.Hidden;
-
-                                HtmlNode node = doc.DocumentNode.SelectSingleNode(SenderDesign.ItemXPathTextBox.Text.Replace("/tbody", ""));
-
-                                if (node == null)
+                                if (ExitSave)
                                     break;
 
-                                SenderDesign.XPathErrorLabel.Visibility = Visibility.Hidden;
+                                ItemDesign SenderDesign = ItemStack.Children[i] as ItemDesign;
 
-                                double[] NewData = new double[GraphModes.Count];
-                                for (int j = 0; j < GraphModes.Count; j++)
+                                SenderDesign.URLErrorLabel.Foreground = (Brush)Application.Current.FindResource("StandartItemDesignBadColor");
+                                SenderDesign.XPathErrorLabel.Foreground = (Brush)Application.Current.FindResource("StandartItemDesignBadColor");
+
+                                if (SenderDesign.ItemURLTextBox.Text != "" && SenderDesign.ItemXPathTextBox.Text != "")
                                 {
-                                    NewData[j] = RunCommandList(j, GraphModes[j].ValueProcessingList ,node, GraphData, i);
+                                    HtmlWeb web = new HtmlWeb();
+                                    HtmlDocument doc = await web.LoadFromWebAsync(SenderDesign.ItemURLTextBox.Text);
+
+                                    SenderDesign.URLErrorLabel.Visibility = Visibility.Hidden;
+
+                                    HtmlNode node = doc.DocumentNode.SelectSingleNode(SenderDesign.ItemXPathTextBox.Text.Replace("/tbody", ""));
+
+                                    if (node == null)
+                                        break;
+
+                                    SenderDesign.XPathErrorLabel.Visibility = Visibility.Hidden;
+
+                                    double[] NewData = new double[GraphModes.Count];
+                                    for (int j = 0; j < GraphModes.Count; j++)
+                                    {
+                                        NewData[j] = RunCommandList(j, GraphModes[j].ValueProcessingList, node, GraphData, i);
+                                    }
+
+                                    NewDataSet.GraphElements.Add(new GI.GraphElement(NewData, SenderDesign.ItemNameTextBox.Text, (SolidColorBrush)SenderDesign.ItemFillColorButton.Background, (SolidColorBrush)SenderDesign.ItemBorderColorButton.Background));
+
+                                    doc = null;
+                                    GC.Collect();
                                 }
-
-                                NewDataSet.GraphElements.Add(new GI.GraphElement(NewData, SenderDesign.ItemNameTextBox.Text, (SolidColorBrush)SenderDesign.ItemFillColorButton.Background, (SolidColorBrush)SenderDesign.ItemBorderColorButton.Background));
-
-                                doc = null;
-                                GC.Collect();
                             }
                         }
 
@@ -191,9 +194,8 @@ namespace E_Fame_Watch
                                 {
                                     GraphData[i] = GraphData[i - 1];
                                 }
+                                GraphData[0] = NewDataSet;
                             }
-
-                            GraphData[0] = NewDataSet;
 
                             if (EqualizeColorsData)
                             {
