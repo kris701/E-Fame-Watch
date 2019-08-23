@@ -16,7 +16,7 @@ namespace E_Fame_Watch
             {
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter("cfg.txt"))
                 {
-                    file.WriteLine(Application.Current.MainWindow.Left + ";" + Application.Current.MainWindow.Top + ";");
+                    file.WriteLine((int)Application.Current.MainWindow.Left + ";" + (int)Application.Current.MainWindow.Top + ";");
                     file.WriteLine(SenderWindow.TimeFrameCombobox.SelectedIndex + ";" + SenderWindow.TimeElementsCombobox.SelectedIndex + ";");
                     file.WriteLine(CurrentModeIndex + ";" + CurrentThemeIndex + ";");
                     for (int i = 0; i < SenderWindow.ItemStack.Children.Count; i++)
@@ -181,6 +181,7 @@ namespace E_Fame_Watch
             catch
             {
                 MessageBox.Show("Could not load cfg");
+                Application.Current.Shutdown();
             }
         }
 
