@@ -95,8 +95,6 @@ namespace E_Fame_Watch
         {
             while (true)
             {
-                ManualRefresh = false;
-
                 if (ExitSave)
                 {
                     if (!SaveComplete)
@@ -146,7 +144,7 @@ namespace E_Fame_Watch
                     GI.GraphColunm NewDataSet = new GI.GraphColunm(DateTime.Now, new List<GI.GraphElement>());
                     try
                     {
-                        if (IsTimeOver(DateTime.Now, GraphData[0].TimeTable, TimeFrameCombobox.SelectedIndex))
+                        if (IsTimeOver(DateTime.Now, GraphData[0].TimeTable, TimeFrameCombobox.SelectedIndex) || ManualRefresh)
                         {
                             for (int i = 0; i < ItemStack.Children.Count; i++)
                             {
@@ -188,7 +186,7 @@ namespace E_Fame_Watch
 
                         if (!ExitSave)
                         {
-                            if (IsTimeOver(DateTime.Now, GraphData[0].TimeTable, TimeFrameCombobox.SelectedIndex))
+                            if (IsTimeOver(DateTime.Now, GraphData[0].TimeTable, TimeFrameCombobox.SelectedIndex) || ManualRefresh)
                             {
                                 for (int i = GraphData.Count - 1; i > 0; i--)
                                 {
@@ -234,6 +232,8 @@ namespace E_Fame_Watch
                 {
                     NewLoading2.DoRemove();
                 }
+
+                ManualRefresh = false;
 
                 if (ErrorInLoading)
                 { 
@@ -386,7 +386,7 @@ namespace E_Fame_Watch
 
         private async void ResetGraphButton_Click(object sender, RoutedEventArgs e)
         {
-            WarningPopup inputDialog = new WarningPopup(this, "Flattening the graph will set all historic value to the newest one. Are you sure you want to continue?", "Warning");
+            WarningPopup inputDialog = new WarningPopup(this, "Reseting the graph will remove all historic data. Are you sure you want to continue?", "Warning");
             MainGrid.Children.Add(inputDialog);
             while (true)
             {
@@ -394,7 +394,7 @@ namespace E_Fame_Watch
                 {
                     if (inputDialog.YesBool)
                     {
-                        FlatlineGraphData = true;
+                        ClearGraphData = true;
                         MainGrid.Children.Remove(inputDialog);
                         break;
                     }

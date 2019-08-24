@@ -14,71 +14,50 @@ namespace E_Fame_Watch
         {
             try
             {
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter("cfg.txt"))
+                FI SaveConfigs = new FI();
+                SaveConfigs.ItemStack.Add(
+                    new FI.ValueCategory("MainWindow Data", new List<FI.FIItems>() {
+                    new FI.IntValue("Location X", (int)Application.Current.MainWindow.Left),
+                    new FI.IntValue("Location Y", (int)Application.Current.MainWindow.Top),
+                    new FI.IntValue("TimeFrame Index", SenderWindow.TimeFrameCombobox.SelectedIndex),
+                    new FI.IntValue("Time Elements Index", SenderWindow.TimeElementsCombobox.SelectedIndex),
+                    new FI.IntValue("Current Mode", CurrentModeIndex),
+                    new FI.IntValue("Theme Index", CurrentThemeIndex)
+                    }));
+
+                for (int i = 0; i < SenderWindow.ItemStack.Children.Count; i++)
                 {
-                    file.WriteLine((int)Application.Current.MainWindow.Left + ";" + (int)Application.Current.MainWindow.Top + ";");
-                    file.WriteLine(SenderWindow.TimeFrameCombobox.SelectedIndex + ";" + SenderWindow.TimeElementsCombobox.SelectedIndex + ";");
-                    file.WriteLine(CurrentModeIndex + ";" + CurrentThemeIndex + ";");
-                    for (int i = 0; i < SenderWindow.ItemStack.Children.Count; i++)
-                    {
-                        ItemDesign SenderDesign = SenderWindow.ItemStack.Children[i] as ItemDesign;
-                        file.WriteLine("I;" + SenderDesign.ItemNameTextBox.Text + ";" + SenderDesign.ItemURLTextBox.Text + ";" + SenderDesign.ItemXPathTextBox.Text + ";" + (SolidColorBrush)SenderDesign.ItemBorderColorButton.Background + ";" + (SolidColorBrush)SenderDesign.ItemFillColorButton.Background + ";");
-                    }
-
-                    for (int i = 0; i < DataCacheSize; i++)
-                    {
-                        string WriteString = "D;" + GraphData[i].TimeTable + ";";
-                        for (int j = 0; j < GraphData[i].GraphElements.Count; j++)
-                        {
-                            if (i != 0)
-                            {
-                                WriteString += "S;";
-                                if (GraphData[i].GraphElements[j].Name == GraphData[i - 1].GraphElements[j].Name)
-                                {
-                                    WriteString += "^;";
-                                }
-                                else
-                                {
-                                    WriteString += GraphData[i].GraphElements[j].Name + ";";
-                                }
-
-                                if (DoubleArrayToString(":", GraphData[i].GraphElements[j].Value) == DoubleArrayToString(":", GraphData[i - 1].GraphElements[j].Value))
-                                {
-                                    WriteString += "^;";
-                                }
-                                else
-                                {
-                                    WriteString += DoubleArrayToString(":", GraphData[i].GraphElements[j].Value) + ";";
-                                }
-
-                                if (GraphData[i].GraphElements[j].BorderColor.ToString() == GraphData[i - 1].GraphElements[j].BorderColor.ToString())
-                                {
-                                    WriteString += "^;";
-                                }
-                                else
-                                {
-                                    WriteString += GraphData[i].GraphElements[j].BorderColor + ";";
-                                }
-
-                                if (GraphData[i].GraphElements[j].FillColor.ToString() == GraphData[i - 1].GraphElements[j].FillColor.ToString())
-                                {
-                                    WriteString += "^;";
-                                }
-                                else
-                                {
-                                    WriteString += GraphData[i].GraphElements[j].FillColor + ";";
-                                }
-
-                                WriteString += "E;";
-                            }
-                            else
-                            {
-                                WriteString += "S;" + GraphData[i].GraphElements[j].Name + ";" + DoubleArrayToString(":", GraphData[i].GraphElements[j].Value) + ";" + GraphData[i].GraphElements[j].BorderColor + ";" + GraphData[i].GraphElements[j].FillColor + ";E;";
-                            }
-                        }
-                        file.WriteLine(WriteString);
-                    }
+                    ItemDesign SenderDesign = SenderWindow.ItemStack.Children[i] as ItemDesign;
+                    SaveConfigs.ItemStack.Add(
+                    new FI.ValueCategory("Item", new List<FI.FIItems>() {
+                        new FI.StringValue("Name", SenderDesign.ItemNameTextBox.Text),
+                        new FI.StringValue("URL", SenderDesign.ItemURLTextBox.Text),
+                        new FI.StringValue("XPath", SenderDesign.ItemXPathTextBox.Text),
+                        new FI.BrushValue("BorderColor", (SolidColorBrush)SenderDesign.ItemBorderColorButton.Background),
+                        new FI.BrushValue("FillColor", (SolidColorBrush)SenderDesign.ItemFillColorButton.Background)
+                    }));
                 }
+
+                for (int i = 0; i < DataCacheSize; i++)
+                {
+                    FI.ValueCategory MomentCat = new FI.ValueCategory("HistoricData", new List<FI.FIItems>());
+                    MomentCat.ValueStack.Add(new FI.DateTimeValue("Timestamp", GraphData[i].TimeTable));
+
+                    for (int j = 0; j < GraphData[i].GraphElements.Count; j++)
+                    {
+                        MomentCat.ValueStack.Add(new FI.ListValue("", ""));
+                        MomentCat.ValueStack.Add(new FI.StringValue("Name", GraphData[i].GraphElements[j].Name));
+                        MomentCat.ValueStack.Add(new FI.IntValue("Value1", (int)GraphData[i].GraphElements[j].Value[0]));
+                        MomentCat.ValueStack.Add(new FI.IntValue("Value2", (int)GraphData[i].GraphElements[j].Value[1]));
+                        MomentCat.ValueStack.Add(new FI.BrushValue("BorderColor", GraphData[i].GraphElements[j].BorderColor));
+                        MomentCat.ValueStack.Add(new FI.BrushValue("FillColor", GraphData[i].GraphElements[j].FillColor));
+                        MomentCat.ValueStack.Add(new FI.EndListValue("", ""));
+                    }
+
+                    SaveConfigs.ItemStack.Add(MomentCat);
+                }
+
+                SaveConfigs.SaveToFile("cfg.txt");
             }
             catch
             {
@@ -90,92 +69,57 @@ namespace E_Fame_Watch
         {
             try
             {
-                if (System.IO.File.Exists("cfg.txt"))
+                FI SaveConfigs = new FI();
+                SaveConfigs.LoadFromFile("cfg.txt");
+                FI.CategoryData CurrentCategory = new FI.CategoryData("MainWindow Data", 0);
+                Application.Current.MainWindow.Left = SaveConfigs.FindtItemInItemstack_INT(CurrentCategory, new FI.ItemData("Location X", 0));
+                Application.Current.MainWindow.Top = SaveConfigs.FindtItemInItemstack_INT(CurrentCategory, new FI.ItemData("Location Y", 0));
+                SenderWindow.TimeFrameCombobox.SelectedIndex = SaveConfigs.FindtItemInItemstack_INT(CurrentCategory, new FI.ItemData("TimeFrame Index", 0));
+                SenderWindow.TimeElementsCombobox.SelectedIndex = SaveConfigs.FindtItemInItemstack_INT(CurrentCategory, new FI.ItemData("Time Elements Index", 0));
+                SenderWindow.CurrentGraphMode = SaveConfigs.FindtItemInItemstack_INT(CurrentCategory, new FI.ItemData("Current Mode", 0));
+                SenderWindow.CurrentThemeIndex = SaveConfigs.FindtItemInItemstack_INT(CurrentCategory, new FI.ItemData("Theme Index", 0));
+
+                CurrentCategory = new FI.CategoryData("Item", 0);
+                while (SaveConfigs.IsAnyMoreOfCat(CurrentCategory))
                 {
-                    GraphData.Clear();
-                    for (int i = 0; i < DataCacheSize; i++)
+                    GI.MakeNewItemPanel(
+                        SenderWindow,
+                        SaveConfigs.FindtItemInItemstack_STR(CurrentCategory, new FI.ItemData("Name", 0)),
+                        SaveConfigs.FindtItemInItemstack_STR(CurrentCategory, new FI.ItemData("URL", 0)),
+                        SaveConfigs.FindtItemInItemstack_STR(CurrentCategory, new FI.ItemData("XPath", 0)),
+                        (SolidColorBrush)SaveConfigs.FindtItemInItemstack_BRS(CurrentCategory, new FI.ItemData("BorderColor", 0)),
+                        (SolidColorBrush)SaveConfigs.FindtItemInItemstack_BRS(CurrentCategory, new FI.ItemData("FillColor", 0)),
+                        true
+                    );
+
+                    CurrentCategory.Offset++;
+                }
+
+                CurrentCategory = new FI.CategoryData("HistoricData", 0);
+                while (SaveConfigs.IsAnyMoreOfCat(CurrentCategory))
+                {
+                    GI.GraphColunm NewData = new GI.GraphColunm();
+                    NewData.TimeTable = SaveConfigs.FindtItemInItemstack_DAT(CurrentCategory, new FI.ItemData("Timestamp", 0));
+                    NewData.GraphElements = new List<GI.GraphElement>();
+
+                    FI.ItemData MomentItem = new FI.ItemData("Name", 0);
+                    while (SaveConfigs.IsAnyMoreWithinCat(CurrentCategory, MomentItem))
                     {
-                        GraphData.Add(new GI.GraphColunm(DateTime.Now, new List<GI.GraphElement>()));
+                        GI.GraphElement NewElement = new GI.GraphElement();
+                        NewElement.Name = SaveConfigs.FindtItemInItemstack_STR(CurrentCategory, MomentItem);
+                        double[] MomentValues = new double[2];
+                        MomentValues[0] = SaveConfigs.FindtItemInItemstack_INT(CurrentCategory, new FI.ItemData("Value1", MomentItem.Offset));
+                        MomentValues[1] = SaveConfigs.FindtItemInItemstack_INT(CurrentCategory, new FI.ItemData("Value2", MomentItem.Offset));
+                        NewElement.Value = MomentValues;
+                        NewElement.BorderColor = (SolidColorBrush)SaveConfigs.FindtItemInItemstack_BRS(CurrentCategory, new FI.ItemData("BorderColor", MomentItem.Offset));
+                        NewElement.FillColor = (SolidColorBrush)SaveConfigs.FindtItemInItemstack_BRS(CurrentCategory, new FI.ItemData("FillColor", MomentItem.Offset));
+                        NewData.GraphElements.Add(NewElement);
+
+                        MomentItem.Offset++;
                     }
 
-                    string[] lines = System.IO.File.ReadAllLines("cfg.txt");
-
-                    Application.Current.MainWindow.Left = Int32.Parse(lines[0].Split(';')[0]);
-                    Application.Current.MainWindow.Top = Int32.Parse(lines[0].Split(';')[1]);
-
-                    SenderWindow.TimeFrameCombobox.SelectedIndex = Int32.Parse(lines[1].Split(';')[0]);
-                    SenderWindow.TimeElementsCombobox.SelectedIndex = Int32.Parse(lines[1].Split(';')[1]);
-
-                    SenderWindow.CurrentGraphMode = Int32.Parse(lines[2].Split(';')[0]);
-                    SenderWindow.CurrentThemeIndex = Int32.Parse(lines[2].Split(';')[1]);
-
-                    int InnerIndex = 0;
-
-                    for (int i = 3; i < lines.Length; i++)
-                    {
-                        string[] Split = lines[i].Split(';');
-                        if (Split[0] == "I")
-                        {
-                            GI.MakeNewItemPanel(SenderWindow, Split[1], Split[2], Split[3], (SolidColorBrush)(new BrushConverter().ConvertFrom(Split[4])), (SolidColorBrush)(new BrushConverter().ConvertFrom(Split[5])), true);
-                        }
-                        if (Split[0] == "D")
-                        {
-                            GI.GraphColunm NewData = new GI.GraphColunm();
-                            NewData.TimeTable = DateTime.Parse(Split[1]);
-                            NewData.GraphElements = new List<GI.GraphElement>();
-                            int Count = 0;
-                            for (int j = 2; j < Split.Length; j++)
-                            {
-                                if (Split[j] == "S")
-                                {
-                                    GI.GraphElement NewElement = new GI.GraphElement();
-                                    if (Split[j + 2] == "^")
-                                    {
-                                        NewElement.Value = GraphData[InnerIndex - 1].GraphElements[Count].Value;
-                                    }
-                                    else
-                                    {
-                                        NewElement.Value = SplitString(':', Split[j + 2], GraphModeCount);
-                                    }
-
-                                    if (Split[j + 1] == "^")
-                                    {
-                                        NewElement.Name = GraphData[InnerIndex - 1].GraphElements[Count].Name;
-                                    }
-                                    else
-                                    {
-                                        NewElement.Name = Split[j + 1];
-                                    }
-
-                                    if (Split[j + 4] == "^")
-                                    {
-                                        NewElement.FillColor = GraphData[InnerIndex - 1].GraphElements[Count].FillColor;
-                                    }
-                                    else
-                                    {
-                                        NewElement.FillColor = (SolidColorBrush)(new BrushConverter().ConvertFrom(Split[j + 4]));
-                                    }
-
-                                    if (Split[j + 3] == "^")
-                                    {
-                                        NewElement.BorderColor = GraphData[InnerIndex - 1].GraphElements[Count].BorderColor;
-                                    }
-                                    else
-                                    {
-                                        NewElement.BorderColor = (SolidColorBrush)(new BrushConverter().ConvertFrom(Split[j + 3]));
-                                    }
-
-                                    NewData.GraphElements.Add(NewElement);
-                                    Count++;
-                                    j += 5;
-                                }
-                            }
-                            GraphData[InnerIndex] = NewData;
-                            InnerIndex++;
-                            if (InnerIndex > GraphData.Count - 1)
-                                break;
-                        }
-                    }
+                    GraphData[CurrentCategory.Offset] = NewData;
+                    CurrentCategory.Offset++;
                 }
             }
             catch
@@ -183,27 +127,6 @@ namespace E_Fame_Watch
                 MessageBox.Show("Could not load cfg");
                 Application.Current.Shutdown();
             }
-        }
-
-        private static double[] SplitString(char Delimiter, string Input, int DoubleListSize)
-        {
-            string[] SplitString = Input.Split(Delimiter);
-            double[] DoubleList = new double[DoubleListSize];
-            for (int i = 0; i < DoubleListSize; i++)
-            {
-                if (i > DoubleList.Length - 1)
-                    break;
-                DoubleList[i] = Convert.ToDouble(SplitString[i]);
-            }
-            return DoubleList;
-        }
-
-        private static string DoubleArrayToString(string Delimiter, double[] Input)
-        {
-            string OutString = "";
-            for (int i = 0; i < Input.Length; i++)
-                OutString += Input[i] + Delimiter;
-            return OutString;
         }
     }
 }

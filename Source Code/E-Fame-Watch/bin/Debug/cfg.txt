@@ -1,61 +1,3014 @@
-1907;414;
-1;2;
-0;1;
-I;Shika Bunker;https://steamcommunity.com/sharedfiles/filedetails/?id=1108256081;//*[@id="rightContents"]/div/div[3]/table/tbody/tr[2]/td[1];#FFF0F8FF;#FF8A2BE2;
-I;Prop Ink;https://steamcommunity.com/sharedfiles/filedetails/?id=174343369;//*[@id="rightContents"]/div/div[3]/table/tbody/tr[2]/td[1];#FF191970;#FF556B2F;
-I;Zombie Zone;https://steamcommunity.com/sharedfiles/filedetails/?id=165459904;//*[@id="rightContents"]/div/div[3]/table/tbody/tr[2]/td[1];#FFFF1493;#FFFF6347;
-I;Battle of Berlin River;https://steamcommunity.com/sharedfiles/filedetails/?id=1110569972;//*[@id="rightContents"]/div/div[3]/table/tbody/tr[2]/td[1];#FFADFF2F;#FFFFFF00;
-I;Prop Ink Train;https://steamcommunity.com/sharedfiles/filedetails/?id=274450207;//*[@id="rightContents"]/div/div[3]/table/tbody/tr[2]/td[1];#FF191970;#FF0000FF;
-I;Crazy Flechette Gun;https://steamcommunity.com/sharedfiles/filedetails/?id=202994694;//*[@id="rightContents"]/div/div[3]/table/tbody/tr[2]/td[1];#FFF5DEB3;#FFFFFAFA;
-I;ULTRA FISTS;https://steamcommunity.com/sharedfiles/filedetails/?id=202982855;//*[@id="rightContents"]/div/div[3]/table/tbody/tr[2]/td[1];#FFB8860B;#FFDEB887;
-I;Server Plugin;https://steamcommunity.com/sharedfiles/filedetails/?id=181441091;//*[@id="rightContents"]/div/div[3]/table/tbody/tr[2]/td[1];#FF00CED1;#FF000080;
-D;02-08-2019 20:53:20;S;Shika Bunker;2813:9:;#FFF0F8FF;#FF8A2BE2;E;S;Prop Ink;86330:87:;#FF191970;#FF556B2F;E;S;Zombie Zone;21176:8:;#FFFF1493;#FFFF6347;E;S;Battle of Berlin River;836:-2:;#FFADFF2F;#FFFFFF00;E;S;Prop Ink Train;12446:45:;#FF191970;#FF0000FF;E;S;Crazy Flechette Gun;1308:3:;#FFF5DEB3;#FFFFFAFA;E;S;ULTRA FISTS;10759:-7:;#FFB8860B;#FFDEB887;E;S;Server Plugin;3079:6:;#FF00CED1;#FF000080;E;
-D;29-07-2019 14:02:58;S;^;2802:-2:;^;^;E;S;^;86268:25:;^;^;E;S;^;21175:7:;^;^;E;S;^;835:-3:;^;^;E;S;^;12413:12:;^;^;E;S;^;1305:0:;^;^;E;S;^;10762:-4:;^;^;E;S;^;3074:1:;^;^;E;
-D;28-07-2019 12:22:29;S;^;2804:0:;^;^;E;S;^;86243:1:;^;^;E;S;^;21168:-1:;^;^;E;S;^;838:1:;^;^;E;S;^;12401:0:;^;^;E;S;^;^;^;^;E;S;^;10766:0:;^;^;E;S;^;3073:0:;^;^;E;
-D;28-07-2019 12:07:47;S;^;2804:3:;^;^;E;S;^;86242:28:;^;^;E;S;^;21169:-1:;^;^;E;S;^;837:-2:;^;^;E;S;^;12401:21:;^;^;E;S;^;1305:-1:;^;^;E;S;^;10766:2:;^;^;E;S;^;3073:1:;^;^;E;
-D;26-07-2019 09:15:57;S;^;2801:0:;^;^;E;S;^;86214:0:;^;^;E;S;^;21170:-1:;^;^;E;S;^;839:0:;^;^;E;S;^;12380:0:;^;^;E;S;^;1306:0:;^;^;E;S;^;10764:0:;^;^;E;S;^;3072:0:;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;26-07-2019 08:55:18;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;26-07-2019 08:54:03;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;24-07-2019 21:23:44;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;S;^;^;^;^;E;
-D;28-07-2019 12:02:09;
-D;28-07-2019 12:02:09;
-D;28-07-2019 12:02:09;
-D;28-07-2019 12:02:09;
-D;28-07-2019 12:02:09;
-D;28-07-2019 12:02:09;
-D;28-07-2019 12:02:09;
+( [0] : MainWindow Data ) { 
+ (INT) [0] : Location X = 3540
+ (INT) [1] : Location Y = 28
+ (INT) [2] : TimeFrame Index = 0
+ (INT) [3] : Time Elements Index = 5
+ (INT) [4] : Current Mode = 1
+ (INT) [5] : Theme Index = 0
+}
+( [1] : Item ) { 
+ (STR) [0] : Name = Shika Bunker
+ (STR) [1] : URL = https://steamcommunity.com/sharedfiles/filedetails/?id=1108256081
+ (STR) [2] : XPath = //*[@id="rightContents"]/div/div[3]/table/tbody/tr[2]/td[1]
+ (BRS) [3] : BorderColor = #FFF0F8FF
+ (BRS) [4] : FillColor = #FF8A2BE2
+}
+( [2] : Item ) { 
+ (STR) [0] : Name = Prop Ink
+ (STR) [1] : URL = https://steamcommunity.com/sharedfiles/filedetails/?id=174343369
+ (STR) [2] : XPath = R[1.2]
+ (BRS) [3] : BorderColor = #FF191970
+ (BRS) [4] : FillColor = #FF556B2F
+}
+( [3] : Item ) { 
+ (STR) [0] : Name = Zombie Zone
+ (STR) [1] : URL = https://steamcommunity.com/sharedfiles/filedetails/?id=165459904
+ (STR) [2] : XPath = R[1.2]
+ (BRS) [3] : BorderColor = #FFFF1493
+ (BRS) [4] : FillColor = #FFFF6347
+}
+( [4] : Item ) { 
+ (STR) [0] : Name = Battle of Berlin River
+ (STR) [1] : URL = https://steamcommunity.com/sharedfiles/filedetails/?id=1110569972
+ (STR) [2] : XPath = R[1.2]
+ (BRS) [3] : BorderColor = #FFADFF2F
+ (BRS) [4] : FillColor = #FFFFFF00
+}
+( [5] : Item ) { 
+ (STR) [0] : Name = Prop Ink Train
+ (STR) [1] : URL = https://steamcommunity.com/sharedfiles/filedetails/?id=274450207
+ (STR) [2] : XPath = R[1.2]
+ (BRS) [3] : BorderColor = R[2.3]
+ (BRS) [4] : FillColor = #FF0000FF
+}
+( [6] : Item ) { 
+ (STR) [0] : Name = Crazy Flechette Gun
+ (STR) [1] : URL = https://steamcommunity.com/sharedfiles/filedetails/?id=202994694
+ (STR) [2] : XPath = R[1.2]
+ (BRS) [3] : BorderColor = #FFF5DEB3
+ (BRS) [4] : FillColor = #FFFFFAFA
+}
+( [7] : Item ) { 
+ (STR) [0] : Name = ULTRA FISTS
+ (STR) [1] : URL = https://steamcommunity.com/sharedfiles/filedetails/?id=202982855
+ (STR) [2] : XPath = R[1.2]
+ (BRS) [3] : BorderColor = #FFB8860B
+ (BRS) [4] : FillColor = #FFDEB887
+}
+( [8] : Item ) { 
+ (STR) [0] : Name = Server Plugin
+ (STR) [1] : URL = https://steamcommunity.com/sharedfiles/filedetails/?id=181441091
+ (STR) [2] : XPath = R[1.2]
+ (BRS) [3] : BorderColor = #FF00CED1
+ (BRS) [4] : FillColor = #FF000080
+}
+( [9] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 24-08-2019 22:07:23
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2822
+  (INT) [4] : Value2 = -5
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86683
+  (INT) [11] : Value2 = 43
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21195
+  (INT) [18] : Value2 = 3
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 828
+  (INT) [25] : Value2 = -1
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12611
+  (INT) [32] : Value2 = 24
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1301
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10738
+  (INT) [46] : Value2 = -1
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3088
+  (INT) [53] : Value2 = -3
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [10] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 22-08-2019 19:40:30
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2825
+  (INT) [4] : Value2 = -3
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86654
+  (INT) [11] : Value2 = 26
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21191
+  (INT) [18] : Value2 = 1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 827
+  (INT) [25] : Value2 = -3
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12596
+  (INT) [32] : Value2 = 13
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1301
+  (INT) [39] : Value2 = -2
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10737
+  (INT) [46] : Value2 = 1
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3090
+  (INT) [53] : Value2 = -5
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [11] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 21-08-2019 19:40:30
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2827
+  (INT) [4] : Value2 = 1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86640
+  (INT) [11] : Value2 = 25
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21192
+  (INT) [18] : Value2 = 0
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 829
+  (INT) [25] : Value2 = 1
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12587
+  (INT) [32] : Value2 = 11
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1301
+  (INT) [39] : Value2 = -2
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10739
+  (INT) [46] : Value2 = 2
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3091
+  (INT) [53] : Value2 = -1
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [12] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 20-08-2019 19:40:30
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2828
+  (INT) [4] : Value2 = -4
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86628
+  (INT) [11] : Value2 = 20
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21190
+  (INT) [18] : Value2 = -7
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 830
+  (INT) [25] : Value2 = 1
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12583
+  (INT) [32] : Value2 = 19
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1303
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10736
+  (INT) [46] : Value2 = -3
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3095
+  (INT) [53] : Value2 = 5
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [13] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 19-08-2019 19:40:30
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2826
+  (INT) [4] : Value2 = -2
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86615
+  (INT) [11] : Value2 = 34
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21192
+  (INT) [18] : Value2 = -9
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 828
+  (INT) [25] : Value2 = -2
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12576
+  (INT) [32] : Value2 = 13
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1303
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10737
+  (INT) [46] : Value2 = 2
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3092
+  (INT) [53] : Value2 = 1
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [14] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 18-08-2019 19:40:30
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2832
+  (INT) [4] : Value2 = 3
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86608
+  (INT) [11] : Value2 = 51
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21197
+  (INT) [18] : Value2 = -1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 829
+  (INT) [25] : Value2 = -6
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12564
+  (INT) [32] : Value2 = 13
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1303
+  (INT) [39] : Value2 = -1
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10739
+  (INT) [46] : Value2 = 2
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3090
+  (INT) [53] : Value2 = 3
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [15] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 17-08-2019 19:40:30
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2828
+  (INT) [4] : Value2 = -2
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86581
+  (INT) [11] : Value2 = 37
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21201
+  (INT) [18] : Value2 = 6
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 830
+  (INT) [25] : Value2 = -7
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12563
+  (INT) [32] : Value2 = 22
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1303
+  (INT) [39] : Value2 = -1
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10735
+  (INT) [46] : Value2 = -2
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3091
+  (INT) [53] : Value2 = 7
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [16] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 16-08-2019 19:40:30
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2829
+  (INT) [4] : Value2 = 3
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86557
+  (INT) [11] : Value2 = 28
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21198
+  (INT) [18] : Value2 = -1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = -3
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12551
+  (INT) [32] : Value2 = 14
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1304
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10737
+  (INT) [46] : Value2 = -2
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3087
+  (INT) [53] : Value2 = 4
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [17] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 15-08-2019 19:40:30
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2830
+  (INT) [4] : Value2 = 5
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86544
+  (INT) [11] : Value2 = 53
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21195
+  (INT) [18] : Value2 = -6
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 837
+  (INT) [25] : Value2 = -2
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12541
+  (INT) [32] : Value2 = 38
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1304
+  (INT) [39] : Value2 = -1
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10737
+  (INT) [46] : Value2 = -11
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3084
+  (INT) [53] : Value2 = 4
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [18] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 14-08-2019 19:40:30
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2826
+  (INT) [4] : Value2 = 6
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86529
+  (INT) [11] : Value2 = 63
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21199
+  (INT) [18] : Value2 = 4
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 838
+  (INT) [25] : Value2 = 4
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12537
+  (INT) [32] : Value2 = 37
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1304
+  (INT) [39] : Value2 = -1
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10739
+  (INT) [46] : Value2 = -8
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3083
+  (INT) [53] : Value2 = 1
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [19] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 11-08-2019 20:52:21
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2825
+  (INT) [4] : Value2 = -4
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86491
+  (INT) [11] : Value2 = 47
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21201
+  (INT) [18] : Value2 = 15
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 839
+  (INT) [25] : Value2 = 8
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12503
+  (INT) [32] : Value2 = 4
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10748
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3080
+  (INT) [53] : Value2 = -1
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [20] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 10-08-2019 20:52:21
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2820
+  (INT) [4] : Value2 = -9
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86466
+  (INT) [11] : Value2 = 41
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21195
+  (INT) [18] : Value2 = 21
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 834
+  (INT) [25] : Value2 = 8
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12500
+  (INT) [32] : Value2 = 7
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = -4
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10747
+  (INT) [46] : Value2 = -5
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3082
+  (INT) [53] : Value2 = 3
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [21] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 09-08-2019 20:52:21
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2829
+  (INT) [4] : Value2 = 12
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86444
+  (INT) [11] : Value2 = 35
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21186
+  (INT) [18] : Value2 = 15
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 831
+  (INT) [25] : Value2 = 3
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12499
+  (INT) [32] : Value2 = 22
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = -4
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10748
+  (INT) [46] : Value2 = -8
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3081
+  (INT) [53] : Value2 = 2
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [22] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 08-08-2019 20:52:21
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2829
+  (INT) [4] : Value2 = 10
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86425
+  (INT) [11] : Value2 = 18
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21174
+  (INT) [18] : Value2 = 0
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 826
+  (INT) [25] : Value2 = -2
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12493
+  (INT) [32] : Value2 = 16
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1309
+  (INT) [39] : Value2 = 1
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10752
+  (INT) [46] : Value2 = -3
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3079
+  (INT) [53] : Value2 = -7
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [23] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 07-08-2019 20:52:21
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2817
+  (INT) [4] : Value2 = -1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86409
+  (INT) [11] : Value2 = 38
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21171
+  (INT) [18] : Value2 = -9
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 828
+  (INT) [25] : Value2 = -2
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12477
+  (INT) [32] : Value2 = 15
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1309
+  (INT) [39] : Value2 = 1
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10756
+  (INT) [46] : Value2 = 4
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3079
+  (INT) [53] : Value2 = -9
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [24] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 06-08-2019 20:52:21
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2819
+  (INT) [4] : Value2 = 2
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86407
+  (INT) [11] : Value2 = 63
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21174
+  (INT) [18] : Value2 = -3
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 828
+  (INT) [25] : Value2 = -7
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12477
+  (INT) [32] : Value2 = 18
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1308
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10755
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3086
+  (INT) [53] : Value2 = 3
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [25] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 05-08-2019 20:52:21
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2818
+  (INT) [4] : Value2 = 5
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86371
+  (INT) [11] : Value2 = 30
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21180
+  (INT) [18] : Value2 = 4
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 830
+  (INT) [25] : Value2 = -4
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12462
+  (INT) [32] : Value2 = 1
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1308
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10752
+  (INT) [46] : Value2 = -7
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3088
+  (INT) [53] : Value2 = 2
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [26] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 04-08-2019 20:52:21
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2817
+  (INT) [4] : Value2 = 4
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86344
+  (INT) [11] : Value2 = 14
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21177
+  (INT) [18] : Value2 = 1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = -1
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12459
+  (INT) [32] : Value2 = 12
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1308
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10755
+  (INT) [46] : Value2 = -4
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3083
+  (INT) [53] : Value2 = 4
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [27] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 03-08-2019 20:52:21
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2813
+  (INT) [4] : Value2 = 2
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86341
+  (INT) [11] : Value2 = 39
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21176
+  (INT) [18] : Value2 = 4
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 834
+  (INT) [25] : Value2 = -2
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12461
+  (INT) [32] : Value2 = 30
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1308
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10759
+  (INT) [46] : Value2 = -2
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3086
+  (INT) [53] : Value2 = 10
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [28] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 02-08-2019 20:47:11
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2813
+  (INT) [4] : Value2 = 2
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86330
+  (INT) [11] : Value2 = 28
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21176
+  (INT) [18] : Value2 = 4
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 836
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12447
+  (INT) [32] : Value2 = 16
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1308
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10759
+  (INT) [46] : Value2 = -2
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3079
+  (INT) [53] : Value2 = 3
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [29] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 01-08-2019 08:52:00
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2811
+  (INT) [4] : Value2 = 5
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86302
+  (INT) [11] : Value2 = 35
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21172
+  (INT) [18] : Value2 = -2
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 836
+  (INT) [25] : Value2 = 3
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12431
+  (INT) [32] : Value2 = 13
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1308
+  (INT) [39] : Value2 = 3
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10761
+  (INT) [46] : Value2 = -1
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3076
+  (INT) [53] : Value2 = 2
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [30] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 21:41:42
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2806
+  (INT) [4] : Value2 = 1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86267
+  (INT) [11] : Value2 = 1
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21174
+  (INT) [18] : Value2 = -1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 833
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12418
+  (INT) [32] : Value2 = 1
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 1
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = -1
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [31] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 20:41:42
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2806
+  (INT) [4] : Value2 = 1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86266
+  (INT) [11] : Value2 = -2
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21175
+  (INT) [18] : Value2 = -1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 833
+  (INT) [25] : Value2 = -1
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12418
+  (INT) [32] : Value2 = 0
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10761
+  (INT) [46] : Value2 = -1
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = -1
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [32] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 19:35:51
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2805
+  (INT) [4] : Value2 = -1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86266
+  (INT) [11] : Value2 = -2
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21175
+  (INT) [18] : Value2 = -1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 833
+  (INT) [25] : Value2 = -1
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12417
+  (INT) [32] : Value2 = -1
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10761
+  (INT) [46] : Value2 = -1
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3075
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [33] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 18:35:51
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2805
+  (INT) [4] : Value2 = -2
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86268
+  (INT) [11] : Value2 = 0
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21176
+  (INT) [18] : Value2 = 0
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 834
+  (INT) [25] : Value2 = -1
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12418
+  (INT) [32] : Value2 = 1
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3075
+  (INT) [53] : Value2 = -1
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [34] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 17:35:50
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2806
+  (INT) [4] : Value2 = -1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86268
+  (INT) [11] : Value2 = 0
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21176
+  (INT) [18] : Value2 = -3
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 834
+  (INT) [25] : Value2 = -1
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12418
+  (INT) [32] : Value2 = 2
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3075
+  (INT) [53] : Value2 = 1
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [35] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 16:35:50
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2807
+  (INT) [4] : Value2 = 1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86268
+  (INT) [11] : Value2 = -1
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21176
+  (INT) [18] : Value2 = -2
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12417
+  (INT) [32] : Value2 = 2
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 1
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3076
+  (INT) [53] : Value2 = 2
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [36] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 15:35:49
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2807
+  (INT) [4] : Value2 = 4
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86268
+  (INT) [11] : Value2 = 0
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21179
+  (INT) [18] : Value2 = 1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12416
+  (INT) [32] : Value2 = 0
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 2
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [37] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 14:35:49
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2806
+  (INT) [4] : Value2 = 4
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86269
+  (INT) [11] : Value2 = -1
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21178
+  (INT) [18] : Value2 = 1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12415
+  (INT) [32] : Value2 = 1
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10761
+  (INT) [46] : Value2 = 1
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [38] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 13:35:49
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2803
+  (INT) [4] : Value2 = 0
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86268
+  (INT) [11] : Value2 = -3
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21178
+  (INT) [18] : Value2 = 1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12416
+  (INT) [32] : Value2 = 2
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10760
+  (INT) [46] : Value2 = -1
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [39] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 12:35:48
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2802
+  (INT) [4] : Value2 = -1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86270
+  (INT) [11] : Value2 = 3
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21177
+  (INT) [18] : Value2 = 0
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12414
+  (INT) [32] : Value2 = 1
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10760
+  (INT) [46] : Value2 = -1
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [40] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 11:35:48
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2803
+  (INT) [4] : Value2 = 0
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86271
+  (INT) [11] : Value2 = 4
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21177
+  (INT) [18] : Value2 = 0
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12414
+  (INT) [32] : Value2 = 0
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10761
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [41] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 10:35:47
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2803
+  (INT) [4] : Value2 = 0
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86267
+  (INT) [11] : Value2 = 3
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21177
+  (INT) [18] : Value2 = -1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12413
+  (INT) [32] : Value2 = 0
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10761
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [42] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 09:35:46
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2803
+  (INT) [4] : Value2 = 0
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86267
+  (INT) [11] : Value2 = 0
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21177
+  (INT) [18] : Value2 = -2
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12414
+  (INT) [32] : Value2 = 1
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10761
+  (INT) [46] : Value2 = 1
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [43] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 08:35:46
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2803
+  (INT) [4] : Value2 = -1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86264
+  (INT) [11] : Value2 = -8
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21178
+  (INT) [18] : Value2 = -1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12413
+  (INT) [32] : Value2 = 0
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10761
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [44] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 07:35:45
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2803
+  (INT) [4] : Value2 = 2
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86267
+  (INT) [11] : Value2 = -5
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21179
+  (INT) [18] : Value2 = 1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12413
+  (INT) [32] : Value2 = 2
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10760
+  (INT) [46] : Value2 = -2
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [45] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 30-07-2019 00:05:17
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2804
+  (INT) [4] : Value2 = 3
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86272
+  (INT) [11] : Value2 = 0
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21179
+  (INT) [18] : Value2 = 0
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12413
+  (INT) [32] : Value2 = 2
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10761
+  (INT) [46] : Value2 = -1
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [46] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 29-07-2019 23:05:16
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2801
+  (INT) [4] : Value2 = -1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86272
+  (INT) [11] : Value2 = -1
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21178
+  (INT) [18] : Value2 = -2
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12411
+  (INT) [32] : Value2 = 0
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [47] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 29-07-2019 22:05:15
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2801
+  (INT) [4] : Value2 = -1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86272
+  (INT) [11] : Value2 = 1
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21179
+  (INT) [18] : Value2 = -1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12411
+  (INT) [32] : Value2 = 0
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [48] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 29-07-2019 21:05:14
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2802
+  (INT) [4] : Value2 = 1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86273
+  (INT) [11] : Value2 = 3
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21180
+  (INT) [18] : Value2 = 1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12411
+  (INT) [32] : Value2 = 1
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [49] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 29-07-2019 20:05:14
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2802
+  (INT) [4] : Value2 = 0
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86271
+  (INT) [11] : Value2 = 0
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21180
+  (INT) [18] : Value2 = 1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12411
+  (INT) [32] : Value2 = -1
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [50] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 29-07-2019 19:05:13
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2801
+  (INT) [4] : Value2 = -2
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86270
+  (INT) [11] : Value2 = 1
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21179
+  (INT) [18] : Value2 = 1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12410
+  (INT) [32] : Value2 = -3
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 1
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [51] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 29-07-2019 18:05:12
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2802
+  (INT) [4] : Value2 = -1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86271
+  (INT) [11] : Value2 = 2
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21179
+  (INT) [18] : Value2 = 2
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12412
+  (INT) [32] : Value2 = -1
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 1
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [52] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 29-07-2019 17:05:11
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2803
+  (INT) [4] : Value2 = 1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86269
+  (INT) [11] : Value2 = -1
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21178
+  (INT) [18] : Value2 = 1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12413
+  (INT) [32] : Value2 = 1
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3073
+  (INT) [53] : Value2 = -1
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [53] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 29-07-2019 16:05:11
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2803
+  (INT) [4] : Value2 = 1
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86269
+  (INT) [11] : Value2 = 1
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21177
+  (INT) [18] : Value2 = 2
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12413
+  (INT) [32] : Value2 = 0
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3073
+  (INT) [53] : Value2 = -1
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [54] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 29-07-2019 15:05:11
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2802
+  (INT) [4] : Value2 = 0
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86270
+  (INT) [11] : Value2 = 5
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21177
+  (INT) [18] : Value2 = 2
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = -1
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12412
+  (INT) [32] : Value2 = -1
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [55] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 29-07-2019 14:05:10
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2802
+  (INT) [4] : Value2 = 0
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86268
+  (INT) [11] : Value2 = 3
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21175
+  (INT) [18] : Value2 = 0
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 835
+  (INT) [25] : Value2 = -1
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12413
+  (INT) [32] : Value2 = 0
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [56] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 29-07-2019 12:35:28
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2802
+  (INT) [4] : Value2 = 0
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86265
+  (INT) [11] : Value2 = 1
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21175
+  (INT) [18] : Value2 = 2
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 836
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12413
+  (INT) [32] : Value2 = 0
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = 0
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [57] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 29-07-2019 11:35:28
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2802
+  (INT) [4] : Value2 = 0
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86264
+  (INT) [11] : Value2 = 8
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21174
+  (INT) [18] : Value2 = 0
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 836
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12413
+  (INT) [32] : Value2 = 3
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = -1
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
+( [58] : HistoricData ) { 
+ (DAT) [0] : Timestamp = 29-07-2019 10:35:27
+ (LST)
+  (STR) [2] : Name = R[1.0]
+  (INT) [3] : Value1 = 2802
+  (INT) [4] : Value2 = 0
+  (BRS) [5] : BorderColor = R[1.3]
+  (BRS) [6] : FillColor = R[1.4]
+ (ELS)
+ (LST)
+  (STR) [9] : Name = R[2.0]
+  (INT) [10] : Value1 = 86264
+  (INT) [11] : Value2 = 14
+  (BRS) [12] : BorderColor = R[2.3]
+  (BRS) [13] : FillColor = R[2.4]
+ (ELS)
+ (LST)
+  (STR) [16] : Name = R[3.0]
+  (INT) [17] : Value1 = 21173
+  (INT) [18] : Value2 = -1
+  (BRS) [19] : BorderColor = R[3.3]
+  (BRS) [20] : FillColor = R[3.4]
+ (ELS)
+ (LST)
+  (STR) [23] : Name = R[4.0]
+  (INT) [24] : Value1 = 836
+  (INT) [25] : Value2 = 0
+  (BRS) [26] : BorderColor = R[4.3]
+  (BRS) [27] : FillColor = R[4.4]
+ (ELS)
+ (LST)
+  (STR) [30] : Name = R[5.0]
+  (INT) [31] : Value1 = 12413
+  (INT) [32] : Value2 = 1
+  (BRS) [33] : BorderColor = R[2.3]
+  (BRS) [34] : FillColor = R[5.4]
+ (ELS)
+ (LST)
+  (STR) [37] : Name = R[6.0]
+  (INT) [38] : Value1 = 1305
+  (INT) [39] : Value2 = 0
+  (BRS) [40] : BorderColor = R[6.3]
+  (BRS) [41] : FillColor = R[6.4]
+ (ELS)
+ (LST)
+  (STR) [44] : Name = R[7.0]
+  (INT) [45] : Value1 = 10762
+  (INT) [46] : Value2 = -1
+  (BRS) [47] : BorderColor = R[7.3]
+  (BRS) [48] : FillColor = R[7.4]
+ (ELS)
+ (LST)
+  (STR) [51] : Name = R[8.0]
+  (INT) [52] : Value1 = 3074
+  (INT) [53] : Value2 = 0
+  (BRS) [54] : BorderColor = R[8.3]
+  (BRS) [55] : FillColor = R[8.4]
+ (ELS)
+}
