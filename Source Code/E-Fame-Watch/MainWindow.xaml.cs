@@ -220,6 +220,11 @@ namespace E_Fame_Watch
                         }
 
                         SaveAndLoadClass.SaveSettings(GraphData, this, DataCacheSize, CurrentGraphMode, CurrentThemeIndex);
+                        SettingsSavedLabel.Visibility = Visibility.Visible;
+                        await GI.FadeIn(SettingsSavedLabel);
+                        await Task.Delay(1000);
+                        await GI.FadeOut(SettingsSavedLabel);
+                        SettingsSavedLabel.Visibility = Visibility.Hidden;
                     }
                     catch
                     {
@@ -256,7 +261,6 @@ namespace E_Fame_Watch
 
         private async void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ExitSave = true;
             RefreshModeChange = true;
 
             e.Cancel = true;

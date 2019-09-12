@@ -43,6 +43,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Label x:Name="GraphTopLabel" Grid.Column="1" Content="Total" Style="{StaticResource StandartLabelStyle}"/>
+                <Label x:Name="SettingsSavedLabel" Grid.Column="1" Content="Settings Saved!" HorizontalAlignment="Left" FontSize="8" Visibility="Hidden" Style="{StaticResource StandartLabelStyle}"/>
                 <Button x:Name="GraphRefreshButton" Grid.Column="0" Content="&#x1F5D8;" Style="{StaticResource StandartButtonStyle}" Click="GraphRefreshButton_Click"/>
 
                 <Label x:Name="GraphTopValLabel" Grid.Row="1" Content="1" FontSize="7" Style="{StaticResource StandartLabelStyle}"/>
